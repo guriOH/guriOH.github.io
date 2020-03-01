@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docs on henry site</title>
-    <link>http://gurioh.github.com/docs/</link>
+    <link>https://gurioh.github.io/docs/</link>
     <description>Recent content in Docs on henry site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://gurioh.github.com/docs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gurioh.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

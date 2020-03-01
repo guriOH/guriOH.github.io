@@ -22,7 +22,7 @@
     </item>
     
     <item>
-      <title>Without ToC</title>
+      <title>Test</title>
       <link>https://gurioh.github.io/docs/example/table-of-contents/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -175,6 +175,17 @@ Example {{&amp;lt; mermaid [class=&amp;#34;text-center&amp;#34;]&amp;gt;}} seque
       
       <guid>https://gurioh.github.io/docs/shortcodes/tabs/</guid>
       <description>Tabs Tabs let you organize content by context, for example installation instructions for each supported platform.
+{{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}} {{&amp;lt; tab &amp;#34;MacOS&amp;#34; &amp;gt;}} # MacOS Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Linux&amp;#34; &amp;gt;}} # Linux Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Windows&amp;#34; &amp;gt;}} # Windows Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabs &amp;gt;}} Example MacOS  MacOS This is tab MacOS content.
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/docs/shortcodes/task/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/shortcodes/task/</guid>
+      <description>Task Tabs let you organize content by context, for example installation instructions for each supported platform.
 {{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}} {{&amp;lt; tab &amp;#34;MacOS&amp;#34; &amp;gt;}} # MacOS Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Linux&amp;#34; &amp;gt;}} # Linux Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Windows&amp;#34; &amp;gt;}} # Windows Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabs &amp;gt;}} Example MacOS  MacOS This is tab MacOS content.
 Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!</description>
     </item>

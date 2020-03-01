@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Columns"><meta property="og:title" content="" />
-<meta property="og:description" content="Columns Columns help organize shorter pieces of content horizontally for readability.
-{{&lt; columns &gt;}} &lt;!-- begin columns block --&gt; # Left Content Lorem markdownum insigne... &lt;---&gt; &lt;!-- magic sparator, between columns --&gt; # Mid Content Lorem markdownum insigne... &lt;---&gt; &lt;!-- magic sparator, between columns --&gt; # Right Content Lorem markdownum insigne... {{&lt; /columns &gt;}} Example Left Content Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!" />
+<meta name="description" content="Task"><meta property="og:title" content="" />
+<meta property="og:description" content="Task Tabs let you organize content by context, for example installation instructions for each supported platform.
+{{&lt; tabs &#34;uniqueid&#34; &gt;}} {{&lt; tab &#34;MacOS&#34; &gt;}} # MacOS Content {{&lt; /tab &gt;}} {{&lt; tab &#34;Linux&#34; &gt;}} # Linux Content {{&lt; /tab &gt;}} {{&lt; tab &#34;Windows&#34; &gt;}} # Windows Content {{&lt; /tab &gt;}} {{&lt; /tabs &gt;}} Example MacOS  MacOS This is tab MacOS content.
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://gurioh.github.io/docs/shortcodes/columns/" />
+<meta property="og:url" content="https://gurioh.github.io/docs/shortcodes/task/" />
 
-<title>Columns | henry site</title>
+<title>Task | henry site</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 
 
@@ -218,7 +219,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/docs/shortcodes/columns/" class="active">Columns</a>
+  <a href="/docs/shortcodes/columns/" class="">Columns</a>
   
 
 </li>
@@ -278,7 +279,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/docs/shortcodes/task/" class="">Task</a>
+  <a href="/docs/shortcodes/task/" class="active">Task</a>
   
 
 </li>
@@ -347,7 +348,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Columns</strong>
+  <strong>Task</strong>
 
   <label for="toc-control">
     <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -373,48 +374,55 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="columns">Columns</h1>
-<p>Columns help organize shorter pieces of content horizontally for readability.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{&lt; <span style="color:#f92672">columns</span> &gt;}} <span style="color:#75715e">&lt;!-- begin columns block --&gt;</span>
-# Left Content
-Lorem markdownum insigne...
-
-&lt;<span style="color:#f92672">---</span>&gt; <span style="color:#75715e">&lt;!-- magic sparator, between columns --&gt;</span>
-
-# Mid Content
-Lorem markdownum insigne...
-
-&lt;<span style="color:#f92672">---</span>&gt; <span style="color:#75715e">&lt;!-- magic sparator, between columns --&gt;</span>
-
-# Right Content
-Lorem markdownum insigne...
-{{&lt; /<span style="color:#f92672">columns</span> &gt;}}
+  <article class="markdown"><h1 id="task">Task</h1>
+<p>Tabs let you organize content by context, for example installation instructions for each supported platform.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tpl" data-lang="tpl"><span style="color:#75715e">{{</span><span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">tabs</span> <span style="color:#e6db74">&#34;uniqueid&#34;</span> <span style="color:#f92672">&gt;</span><span style="color:#75715e">}}</span>
+<span style="color:#75715e">{{</span><span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">tab</span> <span style="color:#e6db74">&#34;MacOS&#34;</span> <span style="color:#f92672">&gt;</span><span style="color:#75715e">}}</span> # MacOS Content <span style="color:#75715e">{{</span><span style="color:#f92672">&lt;</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">tab</span> <span style="color:#f92672">&gt;</span><span style="color:#75715e">}}</span>
+<span style="color:#75715e">{{</span><span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">tab</span> <span style="color:#e6db74">&#34;Linux&#34;</span> <span style="color:#f92672">&gt;</span><span style="color:#75715e">}}</span> # Linux Content <span style="color:#75715e">{{</span><span style="color:#f92672">&lt;</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">tab</span> <span style="color:#f92672">&gt;</span><span style="color:#75715e">}}</span>
+<span style="color:#75715e">{{</span><span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">tab</span> <span style="color:#e6db74">&#34;Windows&#34;</span> <span style="color:#f92672">&gt;</span><span style="color:#75715e">}}</span> # Windows Content <span style="color:#75715e">{{</span><span style="color:#f92672">&lt;</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">tab</span> <span style="color:#f92672">&gt;</span><span style="color:#75715e">}}</span>
+<span style="color:#75715e">{{</span><span style="color:#f92672">&lt;</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">tabs</span> <span style="color:#f92672">&gt;</span><span style="color:#75715e">}}</span>
 </code></pre></div><h2 id="example">Example</h2>
-<div class="book-columns flex flex-wrap">
-  
-  <div class="flex-even markdown-inner">
-    <h2 id="left-content">Left Content</h2>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="hidden" name="tabs-uniqueid" id="tabs-uniqueid-0" checked="checked" />
+  <label for="tabs-uniqueid-0">
+    MacOS
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <h1 id="macos">MacOS</h1>
+<p>This is tab <strong>MacOS</strong> content.</p>
 <p>Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
 stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
 protulit, sed sed aere valvis inhaesuro Pallas animam: qui <em>quid</em>, ignes.
-Miseratus fonte Ditis conubia.
-  </div>
-  
-  <div class="flex-even markdown-inner">
-    <h2 id="mid-content">Mid Content</h2>
-<p>Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter!
-  </div>
-  
-  <div class="flex-even markdown-inner">
-    <h2 id="right-content">Right Content</h2>
+Miseratus fonte Ditis conubia.</p>
+
+  </div><input type="radio" class="hidden" name="tabs-uniqueid" id="tabs-uniqueid-1"  />
+  <label for="tabs-uniqueid-1">
+    Linux
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <h1 id="linux">Linux</h1>
+<p>This is tab <strong>Linux</strong> content.</p>
 <p>Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
 stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
 protulit, sed sed aere valvis inhaesuro Pallas animam: qui <em>quid</em>, ignes.
-Miseratus fonte Ditis conubia.
-  </div>
-  
-</div>
+Miseratus fonte Ditis conubia.</p>
+
+  </div><input type="radio" class="hidden" name="tabs-uniqueid" id="tabs-uniqueid-2"  />
+  <label for="tabs-uniqueid-2">
+    Windows
+  </label>
+  <div class="book-tabs-content markdown-inner">
+    <h1 id="windows">Windows</h1>
+<p>This is tab <strong>Windows</strong> content.</p>
+<p>Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
+stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+protulit, sed sed aere valvis inhaesuro Pallas animam: qui <em>quid</em>, ignes.
+Miseratus fonte Ditis conubia.</p>
+
+  </div></div>
 
 </article>
  

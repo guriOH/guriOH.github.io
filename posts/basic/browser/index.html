@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="브라우저?"><meta property="og:title" content="브라우저?" />
+<meta property="og:description" content="브라우저 브라우저 역시 소프트웨어. 가장 많이 사용하는 소트웨어.
+주요기능 사용자가 선택한 자원을 서버에 요청하고 브라우저에 표시하는것 자원은 보통 HTML이지만 PDF, 또는 이미지 등 다른 형태일 수 있다. 자원의 주소는 URI에 의해 정해진다.
+구성요소  사용자 인터페이스 : 주소표시줄, 이전/다음 버튼 등 요청한 페이지를 보여주는 창을 제외한 나머지 모든 부분 브라우저 엔진 - 사용자 인터페이스와 렌더릴 엔진 사이의 동작 제어 렌더링 엔진 - 요청한 콘텐츠를 표시. 통신 - 네트워크 호출에 사용 - 플랫폼 독자적인 인터페이스이고 각 플랫폼 하부에서 실행 UI 백엔드 - 콤보 박스와 창 같은 기본적인 장치를 그림." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gurioh.github.io/posts/basic/browser/" />
+<meta property="article:published_time" content="2020-02-28T23:56:00+00:00" />
+<meta property="article:modified_time" content="2020-02-28T23:56:00+00:00" />
+<title>브라우저? | henry site</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.829f7602029a29a47bf1b0c9c4bb52982089a6d13558c9433d3c8b7e38c8b3b8.css" integrity="sha256-gp92AgKaKaR78bDJxLtSmCCJptE1WMlDPTyLfjjIs7g=">
+
+
+<script defer src="/en.search.min.d5cb1ab78daa3fcce80675b72ff620313b03e5f65e247253ee6040394d8e24bf.js" integrity="sha256-1csat42qP8zoBnW3L/YgMTsD5fZeJHJT7mBAOU2OJL8="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>henry site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/shortcodes/" class="">Shortcodes</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/task/" class="">Task</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/categories/" class="">Categories</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="collapsed ">프로그래밍</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/" class="collapsed ">빅데이터</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>도구</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>오픈소스</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>클라우드</span>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        henry
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>브라우저?</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents"></nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/basic/browser/">브라우저?</a>
+  </h1>
+  
+
+  <h5>February 28, 2020</h5>
+
+
+
+  
+
+  
+
+
+  <p><h1 id="브라우저">브라우저</h1>
+<p>브라우저 역시 소프트웨어.
+가장 많이 사용하는 소트웨어.</p>
+<h1 id="주요기능">주요기능</h1>
+<p>사용자가 선택한 자원을 서버에 요청하고 브라우저에 표시하는것
+자원은 보통 HTML이지만 PDF, 또는 이미지 등 다른 형태일 수 있다.
+자원의 주소는 URI에 의해 정해진다.</p>
+<h1 id="구성요소">구성요소</h1>
+<p><img src="../../image/2020-02-29-00-13-25.png" alt=""></p>
+<ol>
+<li>사용자 인터페이스 : 주소표시줄, 이전/다음 버튼 등 요청한 페이지를 보여주는 창을 제외한 나머지 모든 부분</li>
+<li>브라우저 엔진 - 사용자 인터페이스와 렌더릴 엔진 사이의 동작 제어</li>
+<li>렌더링 엔진 - 요청한 콘텐츠를 표시.</li>
+<li>통신 - 네트워크 호출에 사용 - 플랫폼 독자적인 인터페이스이고 각 플랫폼 하부에서 실행</li>
+<li>UI 백엔드 - 콤보 박스와 창 같은 기본적인 장치를 그림. 플랫폼에서 명시하지 않은 일반적인 인터페이스로서 OS 사용자 인터페이스 체계를 사용.</li>
+<li>자바스크립트 해석기 - 자바스크립트 코드를 해석하고 실행.</li>
+<li>자료 저장소 - 이 부분은 자료를 저장하는 캡슐. 쿠키를 저장하는 것과 같이 모든 종류의 자원을 하드 디스크에 저장할 필요가 있음.</li>
+</ol>
+<ul>
+<li>크롬은 대부분의 브라우저와 달리 각 탭마다 별도의 렌더링 엔진 인스턴스를 유지함, 독립적인 프로세스로 처리.</li>
+</ul>
+<h1 id="렌더링-엔진">렌더링 엔진</h1>
+<p>애플 사파리, 크롬 - 웹킷
+파이어폭스 - 게코</p>
+<p><a href="https://d2.naver.com/helloworld/59361">https://d2.naver.com/helloworld/59361</a></p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+          
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents"></nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

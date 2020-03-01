@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS on henry site</title>
+    <link>https://gurioh.github.io/tags/aws/</link>
+    <description>Recent content in AWS on henry site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Dec 2019 19:37:57 +0000</lastBuildDate>
+    
+	<atom:link href="https://gurioh.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS 설정 연습</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/exam/practice/</link>
+      <pubDate>Tue, 03 Dec 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/exam/practice/</guid>
+      <description>ECS 컨테이너 서비스 구축 </description>
+    </item>
+    
+    <item>
+      <title>AWS 시험 정리</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/exam/summary_all/</link>
+      <pubDate>Tue, 03 Dec 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/exam/summary_all/</guid>
+      <description>IAM  IAM role can be attached to the Amazon EC2 instance.  S3  S3에서는 특정 파일(Object)에 제한된 시간 동안 접근할 수 있도록 임시 permission을 부여하는 S3 pre-signed url 기능을 제공  S3 Glacier  장기 백업을 위한 안전하고 내구성이 뛰어나고 매우 저렴한 Amazon S3 클라우드 스토리지 클래스 고객은 월별 테라바이트당 1 USD의 저렴한 요금으로 데이터를 저장할 수 있으므로 온프레미스 솔루션과 비교하면 상당한 비용 절감을 기대할 수 있습니다 비용을 낮게 유지하면서 동시에 다양한 검색 요구를 지원하기 위해 Amazon S3 Glacier에서는 아카이브에 액세스하는 3가지 옵션(몇 분에서 몇 시간까지 소요)을 제공하며 S3 Glacier Deep Archive는 2가지 액세스 옵션(12~48시간 소요)을 제공합니다.</description>
+    </item>
+    
+    <item>
+      <title>AWS 용어 정리</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/exam/faq/</link>
+      <pubDate>Tue, 03 Dec 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/exam/faq/</guid>
+      <description>컴퓨팅  람다(Lambda)  람다에서 실행하는 코드는 람다함수로 업로드됨. 각 함수에는 이름과 설명, 진입점, 리소스 요구 사항등 연관된 구성 정보가 포함되어 있다. 람다함수의 상태가 비저장이어야 하는 이유는 함수를 상태 비저장으로 유지하면 AWS Lambda에서 필요한 만큼 함수 사본을 빠르게 시작하여 수신 이벤트 비율에 따라 조정 람다의 프로그래밍 모델은 상태 비저장이지만 코드에서 S3, DynamoDB 등 다른 웹 서비스를 호출하면 상태 저장 데이터에 액세스 할 수 있다. 함다함수 코드 제한  인바운드 네트워크 연결 아웃바운드 TCP/IP 및 UDP/IP 소켓만 지원 TCP 포트 25 트래픽도 스팸 방지 조치로 차단.</description>
+    </item>
+    
+    <item>
+      <title>AWS 용어 정리</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/exam/summary_word/</link>
+      <pubDate>Tue, 03 Dec 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/exam/summary_word/</guid>
+      <description>Basic service architecture Auto Scaling group   애플리케이션의 로드를 처리할 수 있는 정확한 수의 Amazon EC2 인스턴스를 보유하도록 보장
+  Auto Scaling 그룹이라는 EC2 인스턴스 모음을 생성하며, 최소값과 최대값을 지정하며 이 범위를 넘어서지 않는다.
+  bastion host  보루, 요새라는 뜻으로 중세 시대에 영주나 왕이 살고 있는 중요한 기지인 성을 둘러싸고 있는 방어막 컴퓨터 보안에서도 이런 의미를 가져와서 보호된 네트워크에 접근하기 위해 유일하게 외부에 노출되는 호스트를 Bastion 호스트라고 정의  Oracle Data Pump  import complex databases or databases that are several hundred megabytes or several terabytes in size.</description>
+    </item>
+    
+  </channel>
+</rss>

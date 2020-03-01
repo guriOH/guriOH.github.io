@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hexo-command on henry site</title>
+    <link>https://gurioh.github.io/tags/hexo-command/</link>
+    <description>Recent content in hexo-command on henry site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Dec 2019 09:21:02 +0000</lastBuildDate>
+    
+	<atom:link href="https://gurioh.github.io/tags/hexo-command/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hexo command</title>
+      <link>https://gurioh.github.io/posts/opensource/hexo/hexo-command/</link>
+      <pubDate>Mon, 02 Dec 2019 09:21:02 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/opensource/hexo/hexo-command/</guid>
+      <description>$ hexo new [layout] &amp;lt;title&amp;gt; layout : 기본 레이아웃은 3가지 종류가 있고 각기 다른 경로에 보관됩니다.
+ post(Default) page draft title : 파일 제목  </description>
+    </item>
+    
+  </channel>
+</rss>

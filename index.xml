@@ -6,40 +6,10 @@
     <description>Recent content in Introduction on henry site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2020 23:56:00 +0000</lastBuildDate>
     
 	<atom:link href="https://gurioh.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>With ToC</title>
-      <link>https://gurioh.github.io/docs/example/table-of-contents/with-toc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://gurioh.github.io/docs/example/table-of-contents/with-toc/</guid>
-      <description>Caput vino delphine in tamen vias Cognita laeva illo fracta Lorem markdownum pavent auras, surgit nunc cingentibus libet Laomedonque que est. Pastor An arbor filia foedat, ne fugit aliter, per. Helicona illas et callida neptem est Oresitrophos caput, dentibus est venit. Tenet reddite famuli praesentem fortibus, quaeque vis foret si frondes gelidos gravidae circumtulit inpulit armenta nativum.
- Te at cruciabere vides rubentis manebo Maturuit in praetemptat ruborem ignara postquam habitasse Subitarum supplevit quoque fontesque venabula spretis modo Montis tot est mali quasque gravis Quinquennem domus arsit ipse Pellem turis pugnabant locavit  Natus quaerere Pectora et sine mulcere, coniuge dum tincta incurvae.</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>https://gurioh.github.io/docs/example/table-of-contents/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://gurioh.github.io/docs/example/table-of-contents/test/</guid>
-      <description>At me ipso nepotibus nunc celebratior genus Tanto oblite Lorem markdownum pectora novis patenti igne sua opus aurae feras materiaque illic demersit imago et aristas questaque posset. Vomit quoque suo inhaesuro clara. Esse cumque, per referri triste. Ut exponit solisque communis in tendens vincetis agisque iamque huic bene ante vetat omina Thebae rates. Aeacus servat admonitu concidit, ad resimas vultus et rugas vultu dignamque Siphnon.
-Quam iugulum regia simulacra, plus meruit humo pecorumque haesit, ab discedunt dixit: ritu pharetramque.</description>
-    </item>
-    
-    <item>
-      <title>Without ToC</title>
-      <link>https://gurioh.github.io/docs/example/table-of-contents/without-toc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://gurioh.github.io/docs/example/table-of-contents/without-toc/</guid>
-      <description>At me ipso nepotibus nunc celebratior genus Tanto oblite Lorem markdownum pectora novis patenti igne sua opus aurae feras materiaque illic demersit imago et aristas questaque posset. Vomit quoque suo inhaesuro clara. Esse cumque, per referri triste. Ut exponit solisque communis in tendens vincetis agisque iamque huic bene ante vetat omina Thebae rates. Aeacus servat admonitu concidit, ad resimas vultus et rugas vultu dignamque Siphnon.
-Quam iugulum regia simulacra, plus meruit humo pecorumque haesit, ab discedunt dixit: ritu pharetramque.</description>
-    </item>
     
     <item>
       <title>Creating a New Theme</title>
@@ -60,6 +30,637 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>브라우저?</title>
+      <link>https://gurioh.github.io/posts/basic/browser/</link>
+      <pubDate>Fri, 28 Feb 2020 23:56:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/basic/browser/</guid>
+      <description>브라우저 브라우저 역시 소프트웨어. 가장 많이 사용하는 소트웨어.
+주요기능 사용자가 선택한 자원을 서버에 요청하고 브라우저에 표시하는것 자원은 보통 HTML이지만 PDF, 또는 이미지 등 다른 형태일 수 있다. 자원의 주소는 URI에 의해 정해진다.
+구성요소  사용자 인터페이스 : 주소표시줄, 이전/다음 버튼 등 요청한 페이지를 보여주는 창을 제외한 나머지 모든 부분 브라우저 엔진 - 사용자 인터페이스와 렌더릴 엔진 사이의 동작 제어 렌더링 엔진 - 요청한 콘텐츠를 표시. 통신 - 네트워크 호출에 사용 - 플랫폼 독자적인 인터페이스이고 각 플랫폼 하부에서 실행 UI 백엔드 - 콤보 박스와 창 같은 기본적인 장치를 그림.</description>
+    </item>
+    
+    <item>
+      <title>인터넷이란?</title>
+      <link>https://gurioh.github.io/posts/basic/internet/</link>
+      <pubDate>Fri, 28 Feb 2020 23:56:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/basic/internet/</guid>
+      <description>인터넷이란?? 흔히 말하는 인터넷이란?
+인터넷이란 단어에서 그 의미를 찾을 수 있다.
+Internet = Inter + net
+Inter는 &amp;lsquo;상호간의&#39;라는 뜻이고, net은 network을 의미한다.
+즉, 인터넷이란 네트워크간의 상호 연결되어있는 상태를 말한다.
+그렇다면 인터넷은 어떻게 동작할까&amp;hellip;
+인터넷의 동작 원리 </description>
+    </item>
+    
+    <item>
+      <title>SvelteJS</title>
+      <link>https://gurioh.github.io/posts/framework/svelte/sveltejs/</link>
+      <pubDate>Thu, 23 Jan 2020 12:45:02 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/framework/svelte/sveltejs/</guid>
+      <description>기초시작
+컴포넌트 포멧 템플릿 Attributes and props Text expressions 명령어 Element directives 컴포넌트 이벤트 Run time Compile time </description>
+    </item>
+    
+    <item>
+      <title>API Gateway</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/applications/apigateway/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/applications/apigateway/</guid>
+      <description>API Gateway  It is a fully managed service that makes it easy for developers to publish, maintain, monitor, and secure APIs at any scale.  What can api gateway do?  Expose HTTPS endpoints to define RESTful API Serverless-ly connect to service like lamda &amp;amp; DynamoDB Send each API endpoint to a different target Run efficiently with low cost Scale effortlessly Track and control usage by API key Throttle requests to prevent attacks Connect to CloudWatch to log all requests for monitorinng Maintain multiple versions of your API  Tips  Remeber what api gatway is at a high level API gateway has caching capabilities to increase performance APi gateway is log cost and scales automatically You can throttle API Gateway to prevent attacks You can log results to CloudWatch If you are using Javascript/AJAX that uses multiple domains with API Gateway, ensure that you have enabled CORS on API Gateway  </description>
+    </item>
+    
+    <item>
+      <title>Application Summary</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/applications/summary/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/applications/summary/</guid>
+      <description>SQS  SQS is a way to decouple hour infrastructure SQS is pull based, not pushed based. Messages are 256 KB in size. Messages can be kept in the queue from 1 minute to 14 days; the default retention period is 4 days. Standard SQS and FIFO SQS Standard order is not quaranteed and messages can be delivered more than once. FIFO order is strictly maintained and messages are delivered only once.</description>
+    </item>
+    
+    <item>
+      <title>Cognito &amp; Web Identity Federation)</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/applications/cognito/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/applications/cognito/</guid>
+      <description>Web Identity Federation  Web Identity Federation lets you give your users access to AWS resources after they have successfully authenticated with a web-based identify provider like Amazon, Facebook, or Google. Following successful authentication, ther user receives an authentication code from the Web ID provider, which they can trade for temporary AWS security credentials.  Amazon Gognito  Amazon Gognito providers Web Identify Federation  Sign-up and sign-in to your apps Access for guest users Acts as an Identify Broker between your application and Web ID providers, so you don&amp;rsquo;t need to write any additional code.</description>
+    </item>
+    
+    <item>
+      <title>ElasticTranscoder</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/applications/elastictranscoder/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/applications/elastictranscoder/</guid>
+      <description>ElasticTranscoder  Media Transcoder in the cloud Convert media files from their original source format in to different formats that will play on smartphones, tablets, PCs, stc Provides transcoding presets for popular output formats, which means that you don&amp;rsquo;t need to guess about which settings work best on particular devices Pay based on the minutes that you transcode and the resolution at which you transcode.  How we use Elastic Transcoder  S3 bucket -&amp;gt; Lamda -&amp;gt; Elastic Tanscoder -&amp;gt; S3 bucket  Tips Just remember Elastic Transcoder is a media transcoder in the cloud.</description>
+    </item>
+    
+    <item>
+      <title>ES6 연습환경</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/javascript_es6/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/javascript_es6/</guid>
+      <description>연습환경 만들기 원하는 폴더에서 아래 명령어 입력
+&amp;gt;npm init
+기본 정보들을 입력하고 package.json 이 생성된다.
+Babel CLI 설치
+&amp;gt; npm install --save-dev babel-cli
+위와 같이 package.json 파일에서 설정이 된걸 확인 할 수 있다.
+그리고 &amp;lsquo;start&amp;rsquo;, &amp;lsquo;test&amp;rsquo; 등등 npm 명령어를 등록하면 터미널에서 간단하게 코드를 실행할 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>ES6 연습환경</title>
+      <link>https://gurioh.github.io/posts/language/javascript/javascript_es6/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/language/javascript/javascript_es6/</guid>
+      <description>연습환경 만들기 원하는 폴더에서 아래 명령어 입력
+&amp;gt;npm init
+기본 정보들을 입력하고 package.json 이 생성된다.
+Babel CLI 설치
+&amp;gt; npm install --save-dev babel-cli
+위와 같이 package.json 파일에서 설정이 된걸 확인 할 수 있다.
+그리고 &amp;lsquo;start&amp;rsquo;, &amp;lsquo;test&amp;rsquo; 등등 npm 명령어를 등록하면 터미널에서 간단하게 코드를 실행할 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>Kinesis 101</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/applications/kinesis101/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/applications/kinesis101/</guid>
+      <description>Streaming data  Puchases from online stores Stock prices Game data Social network data Geospatial data (uber) IOT sensor data  Kinesis  Kinesis is a platform on aws to send your streaming data to. Kinesis makes it easy to load and analze streaming data, and also providing the abilirty for you to build your own custom applications for you business needs.  3 different types  Kinesis Streams Kinesis Firehose Kinesis Analytics  shard  5 transactions per second for reads, up to a maxium total data read rate of 2MB per second and up to 1000 records per second for writes, up to a maximum total data write rate of 1 MB per second (including partition keys)  Tips  Kinesis Streams Kinesis Firehose Kinesis Analytics shard  </description>
+    </item>
+    
+    <item>
+      <title>Simple Notification Service</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/applications/sns/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/applications/sns/</guid>
+      <description>SNS SNS is web service that makes easy to set up, operate, and send notification from the cloud. It provides developers with a highly scaleable, flexible, and cost-effective capability to publish message from an application and immediately deliver them to subscribers or other applications.
+SNS Benefits  Instantaneous, push-based delivery (no polling) Simple APIs and easy integration with applications Flexible message delivery over multiple transport protocols Inexpensive, pay-as-you-go model with no up-front costs Web-based AWS management Console offers the simplicity of a point-and-click-interface  SNS vs SQS  Both Messaging Service in AWS SNS - Push SQS - Polls(Pulls)  </description>
+    </item>
+    
+    <item>
+      <title>Simple Work Flow Service</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/applications/swf/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/applications/swf/</guid>
+      <description>SWF SWF is a web service that makes it easy to coordinate work across distributed application components. SWF enables applications for a range of use cases, including media processing, web application back-ends, business process workflows, and analytics pipeliens, to be designed as a coordination of tasks.
+SWF vs SQS  SQS has a retention period of up to 14days, with SWF, workflow executions can last up to 1 year. Amozon SWF ensures that a task is assigned only once and is never duplicated.</description>
+    </item>
+    
+    <item>
+      <title>SQS</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/applications/sqs/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/applications/sqs/</guid>
+      <description>SQS SQS is web service that gices you access to a message queue that can be used to store message while waiting for a computer to process them.2
+Two type queue  Standard Queues (default) Fifo Queues (Complemet Standard queue)  Tips
+  SQS is pull baed, not pushed baed.
+  Messages are 256 kb in size.
+  Message can be kept in the queue from 1 minute to 14 days; the default retnetion period is 4 days.</description>
+    </item>
+    
+    <item>
+      <title>리액트 훅(hook)!</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/react_hook/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/react_hook/</guid>
+      <description>Hooks 리액트 훅은 함수형 컴포넌트에서도 상태관리를 할 수 있는 useState, 렌더링 직후 작업을 설정하는 useEffect 등의 기능을 제공하여 기존의 함수형 컴포넌트에서 할 수 없었던 다양한 작업을 할 수 있게 한다.
+useState  함수형 컴포넌트가 가변적인 상태를 갖게 한다.    useState를 Import 하여 사용한다. 이러한 문법을 배열 비구조화 할당 문법이라고 하나보다.. ㅎㅎ  useEffect  리액트 컴포넌트가 렌더링 될 떄마다 특정 작업을 수해하도록 설정할 수 있는 Hook이다.   가장 처음 렌더링 됬을때만 실행하고 업데이트 할때는 필요없을 때  useEffect(() =&amp;gt; { console.</description>
+    </item>
+    
+    <item>
+      <title>리액트 훅(hook)!</title>
+      <link>https://gurioh.github.io/posts/language/javascript/react_hook/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/language/javascript/react_hook/</guid>
+      <description>Hooks 리액트 훅은 함수형 컴포넌트에서도 상태관리를 할 수 있는 useState, 렌더링 직후 작업을 설정하는 useEffect 등의 기능을 제공하여 기존의 함수형 컴포넌트에서 할 수 없었던 다양한 작업을 할 수 있게 한다.
+useState  함수형 컴포넌트가 가변적인 상태를 갖게 한다.    useState를 Import 하여 사용한다. 이러한 문법을 배열 비구조화 할당 문법이라고 하나보다.. ㅎㅎ  useEffect  리액트 컴포넌트가 렌더링 될 떄마다 특정 작업을 수해하도록 설정할 수 있는 Hook이다.   가장 처음 렌더링 됬을때만 실행하고 업데이트 할때는 필요없을 때  useEffect(() =&amp;gt; { console.</description>
+    </item>
+    
+    <item>
+      <title>스프링 부트배치 디비 설정</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/batch_init/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/batch_init/</guid>
+      <description> 기본적으로 H2 DB를 사용할 경우엔 해당 테이블을 Boot가 실행될때 자동으로 생성해주지만, MySQL이나 Oracle과 같은 DB를 사용할때는 개발자가 직접 생성  스프링 부트에서는 해당 테이블의 쿼리를 같이 배포하고 있다.
+ schema- 검색!! </description>
+    </item>
+    
+    <item>
+      <title>스프링 부트배치 디비 설정</title>
+      <link>https://gurioh.github.io/posts/framework/springboot/batch_init/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/framework/springboot/batch_init/</guid>
+      <description> 기본적으로 H2 DB를 사용할 경우엔 해당 테이블을 Boot가 실행될때 자동으로 생성해주지만, MySQL이나 Oracle과 같은 DB를 사용할때는 개발자가 직접 생성  스프링 부트에서는 해당 테이블의 쿼리를 같이 배포하고 있다.
+ schema- 검색!! </description>
+    </item>
+    
+    <item>
+      <title>타입스크립트로 리액트 사용하기</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/typescript_01/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/typescript_01/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>타입스크립트로 리액트 사용하기</title>
+      <link>https://gurioh.github.io/posts/language/javascript/typescript_01/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/language/javascript/typescript_01/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ACL</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/vpcs/chaper02/</link>
+      <pubDate>Wed, 15 Jan 2020 12:55:35 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/vpcs/chaper02/</guid>
+      <description>ACL   Your VPC automatically comes with a default network ACL, and by default it allows all outbound and inbound traffic.
+  You can create custom network ACLs. By default, each custom network ACL denies all inbound and outbound traffic untill you add rules
+  Each subnet in your VPC must be associated with a network ACL. If you don&amp;rsquo;t explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL.</description>
+    </item>
+    
+    <item>
+      <title>Advanced Load Balancers Theory</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ha-architecture/chapter02/</link>
+      <pubDate>Wed, 15 Jan 2020 12:55:35 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ha-architecture/chapter02/</guid>
+      <description>Sticky Sessions   Classic Load Balancer routes each request independently to the registered EC2 instance with the smallest load. Sticky sessions allow you to bind a user&amp;rsquo;s session to a specific EC2 instance. This ensures that all requests from the user during the session are sent to the same instance. You can enable Sticky Sessions for application load balancers as well, but the traffic will be sent at the target group level.</description>
+    </item>
+    
+    <item>
+      <title>Auto Scaling Groups</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ha-architecture/chapter03/</link>
+      <pubDate>Wed, 15 Jan 2020 12:55:35 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ha-architecture/chapter03/</guid>
+      <description>   </description>
+    </item>
+    
+    <item>
+      <title>Bastions</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/vpcs/chaper04/</link>
+      <pubDate>Wed, 15 Jan 2020 12:55:35 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/vpcs/chaper04/</guid>
+      <description>Bastion host   A bastion host is a special purpose computer on a network specifically designed and configured to withstand attacks.
+  A NAT Gateway or NAT instance is used to provide internet traffic to EC2 instances in a private subnets.
+  A Bastion is used to securely adminster EC2 instances(Using SSH or RDP). Bastions are called Jump Boxes in Australia.
+  You cannot use a NAT Gateway as a Bastion host.</description>
+    </item>
+    
+    <item>
+      <title>Direct Connect</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/vpcs/chaper05/</link>
+      <pubDate>Wed, 15 Jan 2020 12:55:35 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/vpcs/chaper05/</guid>
+      <description>Direct Connect  Direct Connect directly connects your data center to AWS Useful for high throughput workloads (a lots of network traffic) Or if you need a stable reliable secure connection.  </description>
+    </item>
+    
+    <item>
+      <title>HA Architecture</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ha-architecture/chapter04/</link>
+      <pubDate>Wed, 15 Jan 2020 12:55:35 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ha-architecture/chapter04/</guid>
+      <description>HA Sample question.    You have a website that requires a minumum of 6 instances and it must be highly available. You must also be able to tolerate the failure of 1 Availablity Zone.
+  Always Design for failure
+  Use Multiple AZ&amp;rsquo;s and Multiple Regions where ever you can.
+  Know the difference between Multi-AZ and Read Replicas for RDS.
+  Know the difference scailing out and scailing up.</description>
+    </item>
+    
+    <item>
+      <title>Load Balancers Theory</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ha-architecture/chapter01/</link>
+      <pubDate>Wed, 15 Jan 2020 12:55:35 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ha-architecture/chapter01/</guid>
+      <description>Elastic Load Balancer    Typs
+ Application  HTTP and HTTPS   Network  TCP traffic Use for extreme performance   Classic  HTTP/HTTPS/TCP      504 Error means the gateway has timed out. This means that the application not responding within the idle timeout period.
+  Application Load Balancer
+ designed to handle streaming, real-time, and WebSocket workloads in an optimized fashion.</description>
+    </item>
+    
+    <item>
+      <title>Route53 summary</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/route53/summary/</link>
+      <pubDate>Wed, 15 Jan 2020 12:55:35 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/route53/summary/</guid>
+      <description>DNS Summary  ELBs do not have pre-defined IPv4 addresses; you resolve to them using a DNS name. Understand the difference between an Alias Record and a CNAME Given the choice, always choose an Alias Record over a CNAME  Common DNS Types  SOA Records NS Records A Records CNAMES MX Records PTR Records  Routing Rolicies that available with Route53  Simple Routing Weighted Routing Latency-based Routing Failover Routing Geolocation Routing Geoproximity Routing (Traffic Flow Only) Multivalue Answer Routing  Health Checks  You can set health checks on individual record sets.</description>
+    </item>
+    
+    <item>
+      <title>VPC Endpoints</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/vpcs/chaper06/</link>
+      <pubDate>Wed, 15 Jan 2020 12:55:35 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/vpcs/chaper06/</guid>
+      <description>VPC Endpoints   A VPC endpoint enables you to privately connect your VPC to supported AWS services and VPC endpoint services powered by PrivateLink without requiring an internet gateway. NAT device, VPN connection, or AWS Direct Connect connection. Instances in your VPC do not require public IP addresses to communicate with reesource in the service. Traffic between your VPC and the other service does not leave the Amazon network.</description>
+    </item>
+    
+    <item>
+      <title>VPC Flow logs</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/vpcs/chaper03/</link>
+      <pubDate>Wed, 15 Jan 2020 12:55:35 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/vpcs/chaper03/</guid>
+      <description>Custom VPCs and ELBs VPC Flow logs levels  VPC Subnet Network Interface Level  Not all IP Traffic is monitored.  Traffic generated by instances when they contact the Amazon DNS server. If you use your own DNS server, then all traffic to that DNS server is logged. Traffic generated by a Windows instance for Amazon Windows license activation. DHCP traffic. Traffic to the reserved IP address for the default VPC router.</description>
+    </item>
+    
+    <item>
+      <title>VPC overview</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/vpcs/chaper01/</link>
+      <pubDate>Wed, 15 Jan 2020 12:55:35 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/vpcs/chaper01/</guid>
+      <description>What can we do with a VPC  Launch instances into a subnet of your choosing Assign custom IP address ranges in each subnet Configure route tables between subnets Create insternet gateway and attach it to our VPC Much better security control over your AWS resources Instance security groups Subnet network access control lists (ACLS)  Default VPC vs Custom VPC  Default VPC is user friendly, allowing you to immediately deploy instances.</description>
+    </item>
+    
+    <item>
+      <title>Spring bean life cycle</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_bean_understanding/</link>
+      <pubDate>Wed, 15 Jan 2020 10:32:09 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_bean_understanding/</guid>
+      <description>스프링에서는 빈의 생명주기 관리를 위한 방법을 몇가지를 제공하고 있다. 본 문서에서는 스프링 빈의 생명주기를 알아보고 관련 인터페이스 몇가지를 알아보자.
+Spring bean life cycle overview  Part 1 - 빈 생성이후 사용전까지 각 단계, 전 처리 단계, 각 생성자 호출하여 생성. Part 2 - 빈 삭제 단계  Aware Interfaces 많이 사용되는 인터페이스.
+ BeanFactoryAware : setBeanFactory() 제공 BeanNameAware : ThesetVeanName() 빈의 이름을 생성하는 인터페이스 제공 ApplicationContextAware : ThesetApplicationContext() 해당 빈의 ApplicationContext 객체 제공.</description>
+    </item>
+    
+    <item>
+      <title>Spring bean life cycle</title>
+      <link>https://gurioh.github.io/posts/framework/springboot/spring_bean_understanding/</link>
+      <pubDate>Wed, 15 Jan 2020 10:32:09 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/framework/springboot/spring_bean_understanding/</guid>
+      <description>스프링에서는 빈의 생명주기 관리를 위한 방법을 몇가지를 제공하고 있다. 본 문서에서는 스프링 빈의 생명주기를 알아보고 관련 인터페이스 몇가지를 알아보자.
+Spring bean life cycle overview  Part 1 - 빈 생성이후 사용전까지 각 단계, 전 처리 단계, 각 생성자 호출하여 생성. Part 2 - 빈 삭제 단계  Aware Interfaces 많이 사용되는 인터페이스.
+ BeanFactoryAware : setBeanFactory() 제공 BeanNameAware : ThesetVeanName() 빈의 이름을 생성하는 인터페이스 제공 ApplicationContextAware : ThesetApplicationContext() 해당 빈의 ApplicationContext 객체 제공.</description>
+    </item>
+    
+    <item>
+      <title>POSIX</title>
+      <link>https://gurioh.github.io/posts/os/common/posix/</link>
+      <pubDate>Thu, 12 Dec 2019 09:12:12 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/os/common/posix/</guid>
+      <description> POSIX(포직스)  포직스는 유닉스 운영체계에 기반을 두고 있는 이식 가능 운영 체제 인터페이스이다.
+  stdin
+  stdout
+  stderr
+  pipes
+  </description>
+    </item>
+    
+    <item>
+      <title>Useful command</title>
+      <link>https://gurioh.github.io/posts/os/linux/tip/</link>
+      <pubDate>Thu, 12 Dec 2019 09:12:12 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/os/linux/tip/</guid>
+      <description>특정 포트를 사용하는 프로세스 검사
+ lsof -i :[port]  파일의 전체 내용출력
+ awk &amp;lsquo;{print}&amp;rsquo; [File]  지정된 문자열을 포함하는 레코드만 출력
+ awk &amp;lsquo;/STR/&amp;rsquo; [File]  특정 포트를 사용하는 프로세스 정보보기
+ lsof -i TCP:22  특정 명령어가 사용하는 포트 보기
+ lsof -c httpd  </description>
+    </item>
+    
+    <item>
+      <title>ACID</title>
+      <link>https://gurioh.github.io/posts/database/common/acid/</link>
+      <pubDate>Mon, 09 Dec 2019 17:13:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/database/common/acid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sql_20191208</title>
+      <link>https://gurioh.github.io/posts/database/mysql/sql-20191208/</link>
+      <pubDate>Mon, 09 Dec 2019 17:13:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/database/mysql/sql-20191208/</guid>
+      <description>AUTO_INCREMENT 초기화
+ALTER TABLE &#39;테이블이름&#39; AUTO_INCREMENT = 1; 캐리지 리턴 제거 (개행제거)
+UPDATE &#39;테이블이름&#39; SET &#39;컬럼명&#39; = replace(&#39;컬럼명&#39;, char(13), &#39;&#39;) UPDATE &#39;테이블이름&#39; SET &#39;컬럼명&#39; = replace(&#39;컬럼명&#39;, &#39;\r\n&#39;, &#39;&#39;) </description>
+    </item>
+    
+    <item>
+      <title>sql_20191208</title>
+      <link>https://gurioh.github.io/posts/database/mysql/sql_tunning/</link>
+      <pubDate>Mon, 09 Dec 2019 17:13:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/database/mysql/sql_tunning/</guid>
+      <description>SQL 튜닝
+튜닝 기초
+ 성능 높일시 비중이 높은부분을 높이는것이 중요  EXPLAIN 사용  EXPLAIN을 사용하여 쿼리 플랜 분석 ![스크린샷 2019-12-05 오전 11.13.11](‎⁨Macintosh HD⁩ ▸ ⁨사용자⁩ ▸ ⁨hoonoh⁩ ▸ ⁨데스크탑⁩/스크린샷 2019-12-05 오전 11.13.11.png)  </description>
+    </item>
+    
+    <item>
+      <title>기본</title>
+      <link>https://gurioh.github.io/posts/database/mysql/sql_basic/</link>
+      <pubDate>Mon, 09 Dec 2019 17:13:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/database/mysql/sql_basic/</guid>
+      <description>1. INSERT INTO 테이블이름(필드이름1, 필드이름2, 필드이름3, ...) VALUES (데이터값1, 데이터값2, 데이터값3, ...) 2. INSERT INTO 테이블이름 VALUES (데이터값1, 데이터값2, 데이터값3, ...) </description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>https://gurioh.github.io/posts/test/</link>
+      <pubDate>Sun, 08 Dec 2019 22:33:15 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring_20191205</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring-20191205/</link>
+      <pubDate>Fri, 06 Dec 2019 10:05:25 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring-20191205/</guid>
+      <description>스프링 제어 WebMvcConfigurer
+ 포멧, 메시지 컨버트 관련하여 스프링 MVC를 제어 한다.  </description>
+    </item>
+    
+    <item>
+      <title>Spring_20191205</title>
+      <link>https://gurioh.github.io/posts/framework/springboot/spring-20191205/</link>
+      <pubDate>Fri, 06 Dec 2019 10:05:25 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/framework/springboot/spring-20191205/</guid>
+      <description>스프링 제어 WebMvcConfigurer
+ 포멧, 메시지 컨버트 관련하여 스프링 MVC를 제어 한다.  </description>
+    </item>
+    
+    <item>
+      <title>AWS 설정 연습</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/exam/practice/</link>
+      <pubDate>Tue, 03 Dec 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/exam/practice/</guid>
+      <description>ECS 컨테이너 서비스 구축 </description>
+    </item>
+    
+    <item>
+      <title>AWS 시험 정리</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/exam/summary_all/</link>
+      <pubDate>Tue, 03 Dec 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/exam/summary_all/</guid>
+      <description>IAM  IAM role can be attached to the Amazon EC2 instance.  S3  S3에서는 특정 파일(Object)에 제한된 시간 동안 접근할 수 있도록 임시 permission을 부여하는 S3 pre-signed url 기능을 제공  S3 Glacier  장기 백업을 위한 안전하고 내구성이 뛰어나고 매우 저렴한 Amazon S3 클라우드 스토리지 클래스 고객은 월별 테라바이트당 1 USD의 저렴한 요금으로 데이터를 저장할 수 있으므로 온프레미스 솔루션과 비교하면 상당한 비용 절감을 기대할 수 있습니다 비용을 낮게 유지하면서 동시에 다양한 검색 요구를 지원하기 위해 Amazon S3 Glacier에서는 아카이브에 액세스하는 3가지 옵션(몇 분에서 몇 시간까지 소요)을 제공하며 S3 Glacier Deep Archive는 2가지 액세스 옵션(12~48시간 소요)을 제공합니다.</description>
+    </item>
+    
+    <item>
+      <title>AWS 용어 정리</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/exam/faq/</link>
+      <pubDate>Tue, 03 Dec 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/exam/faq/</guid>
+      <description>컴퓨팅  람다(Lambda)  람다에서 실행하는 코드는 람다함수로 업로드됨. 각 함수에는 이름과 설명, 진입점, 리소스 요구 사항등 연관된 구성 정보가 포함되어 있다. 람다함수의 상태가 비저장이어야 하는 이유는 함수를 상태 비저장으로 유지하면 AWS Lambda에서 필요한 만큼 함수 사본을 빠르게 시작하여 수신 이벤트 비율에 따라 조정 람다의 프로그래밍 모델은 상태 비저장이지만 코드에서 S3, DynamoDB 등 다른 웹 서비스를 호출하면 상태 저장 데이터에 액세스 할 수 있다. 함다함수 코드 제한  인바운드 네트워크 연결 아웃바운드 TCP/IP 및 UDP/IP 소켓만 지원 TCP 포트 25 트래픽도 스팸 방지 조치로 차단.</description>
+    </item>
+    
+    <item>
+      <title>AWS 용어 정리</title>
+      <link>https://gurioh.github.io/posts/cloud/aws/exam/summary_word/</link>
+      <pubDate>Tue, 03 Dec 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/exam/summary_word/</guid>
+      <description>Basic service architecture Auto Scaling group   애플리케이션의 로드를 처리할 수 있는 정확한 수의 Amazon EC2 인스턴스를 보유하도록 보장
+  Auto Scaling 그룹이라는 EC2 인스턴스 모음을 생성하며, 최소값과 최대값을 지정하며 이 범위를 넘어서지 않는다.
+  bastion host  보루, 요새라는 뜻으로 중세 시대에 영주나 왕이 살고 있는 중요한 기지인 성을 둘러싸고 있는 방어막 컴퓨터 보안에서도 이런 의미를 가져와서 보호된 네트워크에 접근하기 위해 유일하게 외부에 노출되는 호스트를 Bastion 호스트라고 정의  Oracle Data Pump  import complex databases or databases that are several hundred megabytes or several terabytes in size.</description>
+    </item>
+    
+    <item>
+      <title>스프링 시큐리티 이해하기</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/springsecurity_#1/</link>
+      <pubDate>Tue, 03 Dec 2019 13:32:19 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/springsecurity_#1/</guid>
+      <description>![스크린샷 2019-12-05 오전 11.13.11](/Users/hoonoh/Desktop/스크린샷 2019-12-05 오전 11.13.11.png)
+스프링시큐리티 시나리오
+ 인증 권한체크  Authentication 객체  이름 권한 인증여부  AuthenticatioFilter 에서 사용자 정보를 꺼내 Authentication 객체를 만들고,
+AuthenticationProvider에 전달한다.
+AuthenticationProvider에서는 실제 인증이 이루어 지고, 인증 결과를 Authentication에 담아 SecurityContextHolder에 저장 성공 여부에 따라 handler를 실행한다.</description>
+    </item>
+    
+    <item>
+      <title>스프링 시큐리티 이해하기</title>
+      <link>https://gurioh.github.io/posts/framework/springboot/springsecurity_#1/</link>
+      <pubDate>Tue, 03 Dec 2019 13:32:19 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/framework/springboot/springsecurity_#1/</guid>
+      <description>![스크린샷 2019-12-05 오전 11.13.11](/Users/hoonoh/Desktop/스크린샷 2019-12-05 오전 11.13.11.png)
+스프링시큐리티 시나리오
+ 인증 권한체크  Authentication 객체  이름 권한 인증여부  AuthenticatioFilter 에서 사용자 정보를 꺼내 Authentication 객체를 만들고,
+AuthenticationProvider에 전달한다.
+AuthenticationProvider에서는 실제 인증이 이루어 지고, 인증 결과를 Authentication에 담아 SecurityContextHolder에 저장 성공 여부에 따라 handler를 실행한다.</description>
+    </item>
+    
+    <item>
+      <title>hexo command</title>
+      <link>https://gurioh.github.io/posts/opensource/hexo/hexo-command/</link>
+      <pubDate>Mon, 02 Dec 2019 09:21:02 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/opensource/hexo/hexo-command/</guid>
+      <description>$ hexo new [layout] &amp;lt;title&amp;gt; layout : 기본 레이아웃은 3가지 종류가 있고 각기 다른 경로에 보관됩니다.
+ post(Default) page draft title : 파일 제목  </description>
+    </item>
+    
+    <item>
+      <title>카프카(Kafka) 실행시키기 - Intellj</title>
+      <link>https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/how_to_build_kafka_with_intellij/</link>
+      <pubDate>Sun, 01 Dec 2019 17:46:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/how_to_build_kafka_with_intellij/</guid>
+      <description>앞선 내용에서 Kafka에서 제공하는 스크립트를 통해 카프카를 실행 시켜 보았다.
+오늘은 카프카를 IDE를 통하여 실행을 시킴으로서 Kafka가 내부적으로 어떻게 동작을 하는지 더 정확히 확인을 해보려고 한다
+오늘의 목표
+ Intellij를 이용하여 Kafka 빌드  우선 Kafka 빌드에 앞서 선행적으로 준비가 되어야 할 것이 있다.
+ git Java 8 IntelliJ  위 환경이 준비가 되었다는 가정하에 문서를 보면 된다.
+ 인텔리제이의 경우 Scala, Gradle을 플러그인 형태로 아주 쉽게 다운로드 받을 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>카프카(Kafka) 실행시키기 - Intellj</title>
+      <link>https://gurioh.github.io/posts/opensource/bigdata/kafka/how_to_build_kafka_with_intellij/</link>
+      <pubDate>Sun, 01 Dec 2019 17:46:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/opensource/bigdata/kafka/how_to_build_kafka_with_intellij/</guid>
+      <description>앞선 내용에서 Kafka에서 제공하는 스크립트를 통해 카프카를 실행 시켜 보았다.
+오늘은 카프카를 IDE를 통하여 실행을 시킴으로서 Kafka가 내부적으로 어떻게 동작을 하는지 더 정확히 확인을 해보려고 한다
+오늘의 목표
+ Intellij를 이용하여 Kafka 빌드  우선 Kafka 빌드에 앞서 선행적으로 준비가 되어야 할 것이 있다.
+ git Java 8 IntelliJ  위 환경이 준비가 되었다는 가정하에 문서를 보면 된다.
+ 인텔리제이의 경우 Scala, Gradle을 플러그인 형태로 아주 쉽게 다운로드 받을 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>카프카(Kafka) 실행시키기 - 스크립트</title>
+      <link>https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/how_to_build_kafka_source_intellij/</link>
+      <pubDate>Sun, 01 Dec 2019 17:46:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/how_to_build_kafka_source_intellij/</guid>
+      <description>이제 카프카를 실행 시켜 보자!!
+목표는 아래와 같다.
+ 카프카를 설치해서 빌드된 스크립트를 이용하여 카프카의 동작여부를 확인해보자. 최종적으로는 Intellij를 통해 빌드해보며 어떤 식으로 돌아가는지 코드로 확인해 보자.  카프카(Kafka) 실행시키기 - 스크립트 Step.1 DownLoad 카프카 공식 홈페이지에서 다운로드!!
+현재기준 kafka 최신 버전은 2.3.0이다.
+$ tar -zvxf kafka_2.12-2.3.0.tgz $ cd kafka_2.12-2.3.0.tgz 다운로드 받아서 압축을 푹어준다.
+Step.2 실행시키기 카프카를 실행 시켜주면 된다.
+먼저 카프카는 기본적으로 Zookeeper에서 관리가 되고 있기 때문에 Zookeeper가 실행이 되어야만 동작한다.</description>
+    </item>
+    
+    <item>
+      <title>카프카(Kafka) 실행시키기 - 스크립트</title>
+      <link>https://gurioh.github.io/posts/opensource/bigdata/kafka/how_to_build_kafka_source_intellij/</link>
+      <pubDate>Sun, 01 Dec 2019 17:46:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/opensource/bigdata/kafka/how_to_build_kafka_source_intellij/</guid>
+      <description>이제 카프카를 실행 시켜 보자!!
+목표는 아래와 같다.
+ 카프카를 설치해서 빌드된 스크립트를 이용하여 카프카의 동작여부를 확인해보자. 최종적으로는 Intellij를 통해 빌드해보며 어떤 식으로 돌아가는지 코드로 확인해 보자.  카프카(Kafka) 실행시키기 - 스크립트 Step.1 DownLoad 카프카 공식 홈페이지에서 다운로드!!
+현재기준 kafka 최신 버전은 2.3.0이다.
+$ tar -zvxf kafka_2.12-2.3.0.tgz $ cd kafka_2.12-2.3.0.tgz 다운로드 받아서 압축을 푹어준다.
+Step.2 실행시키기 카프카를 실행 시켜주면 된다.
+먼저 카프카는 기본적으로 Zookeeper에서 관리가 되고 있기 때문에 Zookeeper가 실행이 되어야만 동작한다.</description>
+    </item>
+    
+    <item>
+      <title>카프카(Kafka) 이해하기</title>
+      <link>https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/what_is_kafka/</link>
+      <pubDate>Sun, 01 Dec 2019 17:46:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/what_is_kafka/</guid>
+      <description>카프카(Kafka) 이해하기 오늘은 카프카에 대해서 간략하게 알아보며 간단하게 실행을 시켜보는 시간을 가져보자.
+그냥 궁금해서.. :)
+​	Let&amp;rsquo;s get it!
+메시징 서비스 먼저 카프카는 메시지 퍼블리싱 어플리케이션으로서 메시지를 서로 전달할 수 있도록 연결하는 오픈소스입니다.
+카프카는 특히 실시간 대량 정보를 다루는데에 유용하게 사용될 수 있는데, 여러 정보를 소비자에게 빠르게 전달하는 과정에서 생기는 문제점을 해결하기 위한 솔루션입니다.
+ 카프카는 활동 스트림 데이터를 처리하는 데 유용하다는 점에서 스크라이브 또는 플럼 과 유사해 보이지만 아키텍처 관점에서는 액티브엠큐, 래빗엠큐 같은 메시징 시스템에 더 가깝다.</description>
+    </item>
+    
+    <item>
+      <title>카프카(Kafka) 이해하기</title>
+      <link>https://gurioh.github.io/posts/opensource/bigdata/kafka/what_is_kafka/</link>
+      <pubDate>Sun, 01 Dec 2019 17:46:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/opensource/bigdata/kafka/what_is_kafka/</guid>
+      <description>카프카(Kafka) 이해하기 오늘은 카프카에 대해서 간략하게 알아보며 간단하게 실행을 시켜보는 시간을 가져보자.
+그냥 궁금해서.. :)
+​	Let&amp;rsquo;s get it!
+메시징 서비스 먼저 카프카는 메시지 퍼블리싱 어플리케이션으로서 메시지를 서로 전달할 수 있도록 연결하는 오픈소스입니다.
+카프카는 특히 실시간 대량 정보를 다루는데에 유용하게 사용될 수 있는데, 여러 정보를 소비자에게 빠르게 전달하는 과정에서 생기는 문제점을 해결하기 위한 솔루션입니다.
+ 카프카는 활동 스트림 데이터를 처리하는 데 유용하다는 점에서 스크라이브 또는 플럼 과 유사해 보이지만 아키텍처 관점에서는 액티브엠큐, 래빗엠큐 같은 메시징 시스템에 더 가깝다.</description>
+    </item>
+    
+    <item>
+      <title>Agile daily scrum</title>
+      <link>https://gurioh.github.io/posts/seminar/agile/agile_daily_scrum/</link>
+      <pubDate>Fri, 01 Nov 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/seminar/agile/agile_daily_scrum/</guid>
+      <description>#스크럼 마스터 역할
+###진행
+ 이슈 유도  ###개발속도 확인 및 고융
+ 번다운차트 활용 필요한 경우 우선순위  ###장애요소 수집 및 해소
+###커뮤니케이션</description>
+    </item>
+    
+    <item>
+      <title>Migration_java_program</title>
+      <link>https://gurioh.github.io/posts/project/backup-program/</link>
+      <pubDate>Fri, 01 Nov 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/project/backup-program/</guid>
+      <description>Autor : 오 훈
+Title : Backup-program
+Backup-program (GitHub Link) 1. 시스템 구성 1.1 역할 Master  0.1초 주기로 Random 하게 생성되는 정수 값을 TimeStamp와 함께 DB에 저장. 소켓 연결 시 1초 단위로 꺼내서 데이터 전달.  Slave  소켓 통신을 이용하여 DataSource로부터 데이터를 가져옴. 설정한 back up DB에 데이터 저장.  1.2 개발 방법  다중 Slave 접속을 위한 멀티 쓰레드 활용 ScheduledExecutorService를 이용한 Thread trigger Slave 세션별 Offset맵핑을 통한 데이터 유실 보안  2.</description>
+    </item>
+    
+    <item>
+      <title>Spring_CRUD_practice</title>
+      <link>https://gurioh.github.io/posts/project/addressbook/</link>
+      <pubDate>Fri, 01 Nov 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/project/addressbook/</guid>
+      <description>Autor : 오 훈
+Title : AddressBook
+AddressBook (GitHub Link) 1. 목적  GET, PUT, POST, DELETE 를 이용한 주소록 CRUD 구현  2. 어플리케이션 디자인  구현에 앞서 기본적인 어플리케이션 디자인을 설명 드리겠습니다.
+어플리케이션은 크게 데이터 클래스 (Request, Response, Model), 비즈니스 로직을 포함한 데이터 처리 클래스로 나뉩니다.
+3. 프로젝트 구성  프로젝트는 SpringBoot 어플리케이션을 사용하여 작성하였습니다.
+Repository 컨트롤로는 JPA api를 사용하였고, DataBase로는 인메모리디비 H2를 사용하였습니다.
+3.1 데이터 구성 AddressInfo.class</description>
     </item>
     
     <item>
@@ -88,22 +689,101 @@ Follow the following steps:
     
     <item>
       <title></title>
-      <link>https://gurioh.github.io/docs/example/collapsed/3rd-level/4th-level/</link>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/java/environment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://gurioh.github.io/docs/example/collapsed/3rd-level/4th-level/</guid>
-      <description>4th Level of Menu Caesorum illa tu sentit micat vestes papyriferi Inde aderam facti; Theseus vis de tauri illa peream. Oculos uberaque non regisque vobis cursuque, opus venit quam vulnera. Et maiora necemque, lege modo; gestanda nitidi, vero? Dum ne pectoraque testantur.
-Venasque repulsa Samos qui, exspectatum eram animosque hinc, aut manes, Assyrii. Cupiens auctoribus pariter rubet, profana magni super nocens. Vos ius sibilat inpar turba visae iusto! Sedes ante dum superest extrema.</description>
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/java/environment/</guid>
+      <description>Mac JDK 설치 및 환경변수 설정 Default 설치 위치는 /usr/libexec/java_home -V  로 확인 가능하다.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://gurioh.github.io/docs/example/hidden/</link>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/react/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://gurioh.github.io/docs/example/hidden/</guid>
-      <description>This page is hidden in menu Quondam non pater est dignior ille Eurotas Latent te facies Lorem markdownum arma ignoscas vocavit quoque ille texit mandata mentis ultimus, frementes, qui in vel. Hippotades Peleus pennas conscia cuiquam Caeneus quas.
- Pater demittere evincitque reddunt Maxime adhuc pressit huc Danaas quid freta Soror ego Luctus linguam saxa ultroque prior Tatiumque inquit Saepe liquitur subita superata dederat Anius sudor  Cum honorum Latona O fallor in sustinui iussorum equidem.</description>
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/react/</guid>
+      <description>React Context React + Redux flow </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/shell/configuration_env_with_intellij/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/shell/configuration_env_with_intellij/</guid>
+      <description>인텔리제이 쉘스크립트 개발환경 구성 Linux/Mac라면 굳이 쉘스크립트 작성을 위한 개발환경이 필요하지 않아도 되지만,
+제품 빌드 스크립트등을 작성 할 시, 각종 환경변수와 컨피그 파일 로드를 포함하여 복잡한 스크립트를 작성해야 할 수도 있다.
+이 때, 조금이라도 더 편하게 스크립트를 작성 할 수 있을 것 같다&amp;hellip;ㅎㅎ
+Empty project 생성 단지 쉘스크립트를 위한 환경이니 빈프로젝트를 생성. 개인 취향에 맡게 개발 환경을 만들자. 나는 아래와 같은 폴더구조를 만들었다.
+테스트 프로그램 실행. 아래의 코드를 실행해보자 .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/shell/shellscript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/shell/shellscript/</guid>
+      <description>쉘스크립트 문법 정리  쉘스크립트 첫라인 #!/bin/bash 의미?
+  스크립트파일을 bash로 실행시킨다는 의미
+  기재하지 않으면 리눅스 배포판의 경우 디폴트가 bash이므로 무리 없이 작동하지만 다른 쉘간의 오류를 방지를 위함.
+   기본 문법  echo, printf $# : 스크립트에 전달되는 인자들의 수(C언어에서 argc) $0 : 실행하는 스크립트의 파일명으로 실행했을 때 경로를 포함한다면 경로를 포함해서 나옵니다. $1, $2 … : 스크립트로 전달된 인자들(C언어에서 argv[0], argv[1]…)  echo &amp;#34;Echo Test&amp;#34; printf &amp;#34;printf Test\n&amp;#34; printf &amp;#34;Name of script : %s\n&amp;#34; $0 printf &amp;#34;%d arguments %s %s\n&amp;#34; $# $1 $2 exit exit 100 # 스크립트 종료후 echo $?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/java-reflection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/java-reflection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/jwt_authenticate_process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/jwt_authenticate_process/</guid>
+      <description>Spring Security 필요개념  접근주체(Principal) : 접근 사용자 인증(Authenticate) : 접근 주체 확인 인가(Authorize) : 접근 주체의 권한 검사  스프링의 구조는 필터와 필터된 Authentication객체를 가지고 실질적인 Validation을 하는 Provider로 나뉜다.
+Filter chain 스프링 시큐리티 역시 Filter가 구성이 되어있다.
+기본적으로 11개의 Filter로 구성이 되어있고, Filter를 커스터마이징 하여 추가 확장 시킬수 있다.
+이때 중요한것은 필터간의 순서가 중요하다.
+Provider 프로바이더는 실질적인 검증을 하는 클래스로 AuthenticationProvider를 구현하고
+AuthenticationManagerBuilder에 커스터마이징하여 등록이 가능하다.
+@Override protected void configure(AuthenticationManagerBuilder auth) throws Exception { auth.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring-aop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring-aop/</guid>
+      <description>스프링 AOP를 구현하는 방법 기술. AOP 개념
+Aspect : 공통 기능을 말합니다.
+Advice : Aspect의 기능 자체를 말합니다.
+Jointpoint : Advice를 적용해야 하는 부분입니다. 필드나 메소드이고, 스프링에서는 메소드만
+해당됩니다.
+Pointcut : Jointpoint의 부분, 실제로 Advice가 적용된 부분
+Weaving : Advice를 핵심 기능에 적용하는 행위를 말합니다.
+  RTW (Runtime Weaving) 스프링 AOP에서 사용하는 위빙 방식. Proxy를 생성하여 실제 타깃 오브젝트의 변형없이 위빙을 수행. 실제 런타임 시, 메소드 호출과 동시에 위빙이 이루어 지는 방식이다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_basic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_basic/</guid>
+      <description>Anotation 어노테이셔 : 소스코드에 메타데이터를 표현하는것 Built-in Annotation @Override - 메소드 오버라이드 검증
+@Deprecated - 메소드를 사용하지 않도록 유도.
+@SuppressWarnings - 컴파일 경고를 무시하도록 함.
+@SafeVarargs - 제너릴 같은 가변인자 매개변수를 사용할 때 경고 무시 (자바 7 이상)
+@FunctionalInterface - 람다 함수등을 위한 인터페이스를 지정. 메소드가 두개 이상 되면 컴파일 오류 (자바 8 이상)
+Meta Annotations @Retention - 어노테이션 영향 범위 결정.
+@Documented - 어노테이션 정보 출력.
+@Target - 어노테이션 적용 위치 결정.</description>
     </item>
     
     <item>
@@ -112,7 +792,7 @@ Venasque repulsa Samos qui, exspectatum eram animosque hinc, aut manes, Assyrii.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://gurioh.github.io/docs/shortcodes/buttons/</guid>
-      <description>Buttons Buttons are styled links that can lead to local page or external link.
+      <description>Buttond Buttons are styled links that can lead to local page or external link.
 Example {{&amp;lt; button relref=&amp;#34;/&amp;#34; [class=&amp;#34;...&amp;#34;] &amp;gt;}}Get Home{{&amp;lt; /button &amp;gt;}} {{&amp;lt; button href=&amp;#34;https://github.com/alex-shpak/hugo-book&amp;#34; &amp;gt;}}Contribute{{&amp;lt; /button &amp;gt;}}  Get Home  Contribute  </description>
     </item>
     
@@ -188,6 +868,496 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
       <description>Task Tabs let you organize content by context, for example installation instructions for each supported platform.
 {{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}} {{&amp;lt; tab &amp;#34;MacOS&amp;#34; &amp;gt;}} # MacOS Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Linux&amp;#34; &amp;gt;}} # Linux Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Windows&amp;#34; &amp;gt;}} # Windows Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabs &amp;gt;}} Example MacOS  MacOS This is tab MacOS content.
 Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/build-location/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/build-location/</guid>
+      <description>sudo ls -al /root/.jenkins/workspace/중랑구_스마트시티/iot-api/build/asciidoc/html5/admin
+sudo ls -al /root/.jenkins/workspace/중랑구_스마트시티/iot-api/build/libs/
+/root/.jenkins/workspace/중랑구_스마트시티/iot-api/build/libs</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/database/chapter01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/database/chapter01/</guid>
+      <description>Databases 101 Relational databases on AWS
+ SQL Server Oracle MySql PostgreSql Aurora MariaDB  Multi-AZ vs Read Replicas
+ Multi-AZ - For Disaster Recovery Read Replicas - For Performance  Non Relational databases on AWS
+ Collection = Table Document = Row Key Value Pairs = Fields  OLTP vs OLAP
+ElasticCache
+ web service that makes it easy to deploy, operate, and scale an in memory cache in the cloud.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/database/chapter03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/database/chapter03/</guid>
+      <description>RDS backups, Multi-AZ &amp;amp; Read Replicas Multi-AZ Support  SQL Server Oracle MySql Server PostgreSQL MariaDB  Read Replicas  Oracle MySql Server PostgreSQL MariaDB Aurora  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/database/chapter04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/database/chapter04/</guid>
+      <description>DynamoDB </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/database/chapter5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/database/chapter5/</guid>
+      <description>Redshift OLTP vs OLAP
+Tips   Amazon Redshift efficient storage and optimum query performance through a combination of massively parallel processing, columnar data storage, and very efficient, targeted data compression encoding schemes.
+  Columnar storage
+ optimizing analytic query performance  reduce disk I/O reduces the amount of data you need to load from disk.      </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/database/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/database/summary/</guid>
+      <description>Databases Summary RDS (OLTP)  SQL MySQL PostgreSQL Oracle Aurora MariaDB  DynamoDB (NoSQL) Red Shift OLAP Elasticache   Memcached
+  Redis
+  Remember  RDS runs on virtual machines You cannot log in to these operating systems however. Patching of the RDS Operating System and DB is Amazon&amp;rsquo;s responsiblilty RDS is NOT Serverless Aurora Serverless IS Serverless  Two different types of Backups for RDS  Automated Backups Databases Snapshots  Read Replicas  Can be multi-az Used to increase performance.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper01/</guid>
+      <description>EC2 101 Elastic compute cloud What is EC2
+EC2 is a web service that provide resizable compute capacity in the cloud.
+장점 : EC2는 서버 인스턴스 구성시 간편하고, 스케일 업/다운 방식에 상관없이 빠르게 변경 가능하다.
+Pricing Models
+ On Demand Reserved  Standard Reserved instances Convertible Reserved Instances Scheduled Reserved Instances   spot  etc   Dedicated Hosts  etc    EC2 Instance Types
+ F1, I3, G3, H1, T3&amp;hellip;.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper02/</guid>
+      <description>Lanuch EC2 Instance lab1 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper03/</guid>
+      <description>Lanuch EC2 Instance lab2 Tips
+ Terminate Protection Turned off by default On an EBS-backed instance, the default action is for the root EBS volume to be deleted when the instance is terminated. EBS Root Volumes of your DEFAULT AMI&amp;rsquo;s can be encrypted Additional volumnes can be encypted.  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper04/</guid>
+      <description>Security Group Tips
+  All inbound traffic is blocked by default
+  All Outbountd traffic is allowed.
+  Change to Security groups take effect immediatly.
+  You can have any number of EC2 instances within a security group
+  You can have multiple security groups attached to Ec2 instances.
+  Security Groups are STATEFUL.
+  If you create an inbound rule allowing traffic in, that traffic is automatically allowed back out again</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper05/</guid>
+      <description>EBS101 EBS (Elastic Block Storage)  대규모로 처리량과 트랜잭션 집약적인 워크로드 모두를 지원하기 위해 Amazon Elastic Compute Cloud(EC2)에서 사용하도록 설계된 사용하기 쉬운 고성능 블록 스토리지 서비스입니다  What is EBS
+Elastic Block Store
+5 diff type of EBS storage;
+ General Purpose (SSD) Provisioned IOPS (SSD) Throughput Optimized HDD   The data streams are typically large and sequential  Cold HDD EBS Magnetic  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper06/</guid>
+      <description>EBS1 Volumne EBS 스토리지는 ec2 인스턴스와 같은 가용공간에 있어야함.
+추가적인 볼륨들은 Ec2인스턴스 삭제를 해도 지워지지 않는다.
+Tips
+  EBS : virtual hard disk
+  Snapshots exist on S3. Think of snapshots as a photograph of the disk
+  Snapshots are point in time copies of Volumes.
+  Snapshots are incremental - this means that only the blocks that have changed since your last snapshot are moved to S3.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper07/</guid>
+      <description>AMI types (EBS vs Instance store)  Select AMI based on:   Region Operating system. Architecture (32-bit or 64-bit) Launch Permissions Storage for Root device  All AMIs are categorized as either backed by EBS or Instance store   For EBD Volume : The root device for an instance launched from the AMI is an Amazon EBS volume created from an Amazon EBS snapshot
+  For Instance Store Volumes : The root device for an instance launched from the AMI is an instance store volume created from a template stored in Amazon S3.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper08/</guid>
+      <description>Encryped Root Device Volumes &amp;amp; Snapshots  Snapshots of encrypted volumes are encrypted automatically Volumes restored from encrypted snapshots are encrypted automatically You can share snapshots, but only if they are unencrypted. These snapshots can be shared with other AWS accounts or made public  Process
+ Create a Snapshot of the unencrypted root device volume Create a copy of the Snapshot and select encrypt option Create an AMI from the encrypted Snapshot Use that AMI to launch new encryted instances  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper09/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper09/</guid>
+      <description>CloudWatch 101 What is Cloud watch
+ monitoring service  cloudWatch monitors performance
+ Compute  EC2 Autoscaling Groups Elastic Load Balancers Route53 Health Checks   Storage &amp;amp; Content Delivery  EBS Volumes Storage Gateways CloudFront    Host Level Metrics Consist of
+ CPU Network Disk Status Check  Cloud Trail compare with CloudWatch
+Cloud Trail like CCTV
+ CloudWatch monitors performance. CloudTrail monitors API calls in the AWS platform.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper10/</guid>
+      <description>CloudWatch 101 Tips
+ Standard Monitoring = 5 min Detailed Monitoring = 1 min  What can i do with CloudWatch
+  Dashboard - Creates awesome dashboards to see what is happening with your AWS env
+  Alarms - Allows you to set Alarms that norify you when particular threshold are hit.
+  Events - CloudWatch Events helps you to respond to state changes in your AWS resources.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper11/</guid>
+      <description>AWS Command Line (CLI) Tips
+ You can interact with AWS from anywhere in the world just by using command line(CLI) You will need to set up access in IAM Commands themselves are not in the exam but some bacis command will be useful to know for real life  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper12/</guid>
+      <description>Identity Access Management Roles Tips
+ Roles are more secure than storing your access key and secret access key on individual EC2 instances. Roles are easier to manager. Roles can ve assigned to an EC2 intance after it is created using both the console &amp;amp; command line. Roles are universal - you can use them in any region.  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper13/</guid>
+      <description>Instancde Metadata Tips
+ Used to get information about an instance (such as public ip) curl http://(ip_address)/latest/meta-data/ curl http://(ip_address)/latest/user-data/  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper14/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper14/</guid>
+      <description>EFS (Elastic File System) What is EFS
+File storage service for ec2 instances.
+It is easy to use and provides a simple interface that allows you to create and configure file systems quickly and easily.
+Tips
+ Supports the Network File System version 4 (NFSv4) protocol You only pay for the storage you use(no pre-provisioning required) Can scale up to the petabytes Can support thousands of concurrent NFS connections Data is stored across multiple AZ&amp;rsquo;s within a region Read After Write Consistency  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/chaper15/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/chaper15/</guid>
+      <description>EC2 Placement Groups Three Types of placement Groups;
+ Clustered Placement Group  Low Network Latency / High Network Throughput   Spread Placement Group  Individual Critical EC2 instances   Partitioned  Multiple EC2 instances HDFS, HBase, and Cassandra    Tips
+ A clustered placement group can&amp;rsquo;t span multiple Avilability Zones. A spread placement and partitioned group can The name you specify for a placement group must be unique within your AWS account.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/ec2/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/ec2/summary/</guid>
+      <description>Summary Tips
+Pricing model  on Demand Reserved Spot  If the Spot instance is terminated by EC2, you will not be charged for a partial hour of usage, However if you terminate the instance yourself, you will be charged for any hour in which the instance ran   Dedicated Hosts  Instance Type EBS  Terminatin Protection is turned off by default, you must turn it omn On an EBS-backed instance, the default action is for the root EBS volume to be deleted whe the instance is termicated.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/exam/part1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/exam/part1/</guid>
+      <description>영역 1: 복원력을 갖춘 아키텍처 설계 AWS 인프라 구성  전 세계 21개의 지리적 리전 내에 66새의 가용영역을 운용  Region 의미  리전은 개별 지역 내 존재하는 지리적 위치  AZ (가용역역) 의미  가용영역은 리전 내 있는 구분된 가용성 영역 의미 전용선으로 연결되어 있어 한 클러스터처럼 동작  Amazon CloudFront 글로벌 엣지 네트워크  유저에게 짧은 지연시간으로 콘텐츠를 전송 할 수 있도록 해줌  특징  여러공격으로부터 네트워크 및 어플리케이션 계층을 보호 AWS Edge역할 가용성 향상을 위해 콘텐츠 캐싱 오리진 서버 부하 줄임 여러 오리진을 설정, 소스오리진 사용불가시 자동으로 백업 오리진 사용하도록 라우팅 프로그래밍 가능한 정식 API 제공      클라우드 서비스를 설계하는 방법  설계 포인트  보안 : 전송 및 보관시 암호화, IAM으로 권한 관리, VPC로 인프라 보호, CloudWatch로 감시 제어 활동 안정성: 복구 절차 테스트 및 자동 복구 설정, 수평확장이 가능하도록 구성 성능 효율화: AWS에서 최신 기술 쉽게 사용하도록 지원, 글로벌 어플리케이션 지원 및 서버리스 아키텍처를 이용한 새로운 아이디어 실험 비용 최적화: 오토 스케일링을 통한 필요한 자원만 사용, 비용 효율적인 지원 사용    AWS 기반 마이크로 서비스 아키텍쳐 구현 방안  마이크로서비스란?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/exam/part2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/exam/part2/</guid>
+      <description>영역2 : 성능이 뛰어난 아키텍처 정의 AWS ElastCache  클라우드 상에 메모리 기반으로 구성된 데이터 스토어 또는 캐시를 쉽게 운영할 수 있는 서비스 - In Memory 방식 Memcached 및 Redis와 호환되는 프로토콜이므로 기존 Memcached 또는 Redis환경에서 현재 사용하는 코드, 애플리케이션 및 주요도구를 Amazon ElasticCache에서 문제없이 사용 할 수 있다.  Amazon Machine Image : AMI  AMI란?  인스턴스를 시작할 때 필요한 정보를 제공 AMI 생성 및 등록한 후 새 인스턴스 시작할 때 그 이미지를 사용할 수 있으며, 동일 리전 및 다른 리전에서도 사용할 수 있음 AMI를 퍼블릭으로 설정하여 외부와 공유할 수 있으며, AMI marketplace에서 AMI를 판매할 수 있다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/exam/part3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/exam/part3/</guid>
+      <description>영역3: 안전한 애플리케이션 및 아키텍처 클라우드 보안 모범 백서  IAM 서비스 이용 : IAM으로 사용자가 어떤 AWS 서비스와 리소스에 액세스 할 수 있는지를 제어하는 암호, 액세스 키 및 사용권한 정책과 같은 보안 자격 증명을 한 곳에서 관리할 수 있다.  인프라 서비스의 책임 분담 모델  AWS 보안 글로벌 인프라를 바탕으로 자체 데이터 센터에서 온프레미스로 하는 것과 같은 방식으로 AWS클라우드에서 운영체제와 플랫폼을 설치 및 구성 불투명 계층에서 데이터 암호화, 인증 등 추가로 보안을 요구할 수 있다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/exam/part4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/exam/part4/</guid>
+      <description>영역4 - 비용에 최적화된 아키텍처 설계 비용 최적화 단계  가장 낮은 비용으로 용량 요구 사항을 충족하도록 적절하게 서비스 규모 조정 예약시 비용 절감 스팟 시장 사용 서비스 사용 모니터링 및 추적 Cost Explorer를 사용하여 비용 절감 최적화  서비스의 올바른 크기 조절 유형  EC2는 각 사용 사례에 맞게 최적화된 다양한 인스턴스 유형을 제공 인스턴스 유형은 CPU, 메모리 스토리지 및 네트워킹 용량의 다양한 조합으로 구성되며, 애플리케이션에 따라 적합한 리소스 조합 선택  인스턴스 유형 - 범용  범용 인스턴스는 균형있는 컴퓨팅, 메모리 및 네트워킹 리소스 제공 다양한 여러 워크로드에 사용 웹 서버 및 코드 리포지토리와 같이 이러한 리소스를 동등한 비율로 사용하는 어플리케이션에 적합   인스턴스 유형 - 컴퓨팅 최적화  고성능 프로세서를 활용하는 컴퓨팅 집약적인 애플리케이션에 적합 배치 처리 워크로드, 미디어 트랜스코딩, 고성능 웹 서버, HPC(고성능 컴퓨팅), 과학적 모델링, 전용 게임 서버 및 광고 서버 엔진, 기계 학습 추론 및 기타 컴퓨팅 집약적인 애플리케이션에 매우 적합   인스턴스 유형 - 메모리최적화  메모리 최적화 인스턴스는 메모리에서 대규모 데이터 세트를 처리하는 워크로드를 위한 빠른 성능을 제공하기 위해 설계되었습니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/exam/part5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/exam/part5/</guid>
+      <description>영역5 : 운영 면에서 탁월한 아키텍처 정의 CloudWatch 이벤트를 사용한 Amazon EC2 자동화  CloudWatch Events를 사용하여 AWS 서비스를 자동화하고 애플리케이션 가용성 문제나 리소스 변경 같은 시스템 이벤트에 자동으로 응답  CloudWatch 이벤트에서 자동으로 트리거 할수 있는 서비스  AWS Lambda 함수 호출 Amazon EC2 Run Command 호출 Amazon Kinesis Data Streams로 이벤트 릴레이 AWS Step Functions 상태 머신 활성화 Amazon SNS 주제 또는 Amazon SQS 대기열 알림  CloudWatch 이벤트를 Amazon EC2에 사용하는 몇 가지 예  새로운 Amazon EC2 인스턴스를 시작할 때마다 Lambda 함수를 활성화합니다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/iam/chapter01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/iam/chapter01/</guid>
+      <description>IAM 정리  IAM   Users Groups Policies Roles    Root account is simply the account created when first setup your aws account it has complete admin access
+  Always setup MFA on your root account.
+  password customise.
+  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/iam/chapter03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/iam/chapter03/</guid>
+      <description>S3 What is S3?
+ S3 is a safe place to store your files. It is Object-based storage. The data is spread across multiple devices and facilities.  Basic of S3
+ S3 is Object-based - i.e. allows you to upload files. Files can be from 0 Bytes to 5 TB. There is unlimited storage. Files are stored in Buckets. S3 is a universal namespace That is names must be unique globally.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/cloud/aws/iam/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/cloud/aws/iam/summary/</guid>
+      <description>S3 &amp;amp; IAM Identiti Access Management Consists of the follwing;
+ Users Groups Roles Policies  IAM summary
+ IAM is universal. if does not apply to regions at this time. The &amp;ldquo;root account&amp;rdquo; is simply the account created when first setup your AWS account. It has complete Admin access. New Users have NO permissions when first created. New Users are assigned Access Key ID &amp;amp; Secret Access Keys when first created.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/framework/mybatis/mybatis-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%95%B4%EA%B2%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/framework/mybatis/mybatis-%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%95%B4%EA%B2%B0/</guid>
+      <description>Mybatis 사용시 쿼리문에 문자열 비교연사자나 부등호를 사용할 때 가 있다.
+select * from user where salary &amp;gt; 100;
+일때 &amp;lsquo;&amp;gt;&#39;와 같은 기호가 괄호인지 비교연산자인지 모르는데,
+이럴때 &#39;&amp;lt;![CDATA[&amp;rsquo; 을 사용하면 CDATA 안에 들어가는 문장을 문자열로 인식하게 된다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/framework/springboot/java-reflection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/framework/springboot/java-reflection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/framework/springboot/jwt_authenticate_process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/framework/springboot/jwt_authenticate_process/</guid>
+      <description>Spring Security 필요개념  접근주체(Principal) : 접근 사용자 인증(Authenticate) : 접근 주체 확인 인가(Authorize) : 접근 주체의 권한 검사  스프링의 구조는 필터와 필터된 Authentication객체를 가지고 실질적인 Validation을 하는 Provider로 나뉜다.
+Filter chain 스프링 시큐리티 역시 Filter가 구성이 되어있다.
+기본적으로 11개의 Filter로 구성이 되어있고, Filter를 커스터마이징 하여 추가 확장 시킬수 있다.
+이때 중요한것은 필터간의 순서가 중요하다.
+Provider 프로바이더는 실질적인 검증을 하는 클래스로 AuthenticationProvider를 구현하고
+AuthenticationManagerBuilder에 커스터마이징하여 등록이 가능하다.
+@Override protected void configure(AuthenticationManagerBuilder auth) throws Exception { auth.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/framework/springboot/spring-aop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/framework/springboot/spring-aop/</guid>
+      <description>스프링 AOP를 구현하는 방법 기술. AOP 개념
+Aspect : 공통 기능을 말합니다.
+Advice : Aspect의 기능 자체를 말합니다.
+Jointpoint : Advice를 적용해야 하는 부분입니다. 필드나 메소드이고, 스프링에서는 메소드만
+해당됩니다.
+Pointcut : Jointpoint의 부분, 실제로 Advice가 적용된 부분
+Weaving : Advice를 핵심 기능에 적용하는 행위를 말합니다.
+  RTW (Runtime Weaving) 스프링 AOP에서 사용하는 위빙 방식. Proxy를 생성하여 실제 타깃 오브젝트의 변형없이 위빙을 수행. 실제 런타임 시, 메소드 호출과 동시에 위빙이 이루어 지는 방식이다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/framework/springboot/spring_basic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/framework/springboot/spring_basic/</guid>
+      <description>Anotation 어노테이셔 : 소스코드에 메타데이터를 표현하는것 Built-in Annotation @Override - 메소드 오버라이드 검증
+@Deprecated - 메소드를 사용하지 않도록 유도.
+@SuppressWarnings - 컴파일 경고를 무시하도록 함.
+@SafeVarargs - 제너릴 같은 가변인자 매개변수를 사용할 때 경고 무시 (자바 7 이상)
+@FunctionalInterface - 람다 함수등을 위한 인터페이스를 지정. 메소드가 두개 이상 되면 컴파일 오류 (자바 8 이상)
+Meta Annotations @Retention - 어노테이션 영향 범위 결정.
+@Documented - 어노테이션 정보 출력.
+@Target - 어노테이션 적용 위치 결정.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/home/</guid>
+      <description> Home Toy-project  마이그레이션   Category  Linux  Shell   AWS BigData  Kafka  Kafka(카프카) Kafka(카프카) 실행 Kafka(카프카) 인텔리제이 빌드 디버깅환경 구성     hexo  명령어   Database  Mysql  SQL 튜닝     Spring  Security  JWT 토큰          </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/language/java/environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/language/java/environment/</guid>
+      <description>Mac JDK 설치 및 환경변수 설정 Default 설치 위치는 /usr/libexec/java_home -V  로 확인 가능하다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/language/javascript/react/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/language/javascript/react/</guid>
+      <description>React Context React + Redux flow </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/language/shell/configuration_env_with_intellij/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/language/shell/configuration_env_with_intellij/</guid>
+      <description>인텔리제이 쉘스크립트 개발환경 구성 Linux/Mac라면 굳이 쉘스크립트 작성을 위한 개발환경이 필요하지 않아도 되지만,
+제품 빌드 스크립트등을 작성 할 시, 각종 환경변수와 컨피그 파일 로드를 포함하여 복잡한 스크립트를 작성해야 할 수도 있다.
+이 때, 조금이라도 더 편하게 스크립트를 작성 할 수 있을 것 같다&amp;hellip;ㅎㅎ
+Empty project 생성 단지 쉘스크립트를 위한 환경이니 빈프로젝트를 생성. 개인 취향에 맡게 개발 환경을 만들자. 나는 아래와 같은 폴더구조를 만들었다.
+테스트 프로그램 실행. 아래의 코드를 실행해보자 .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/language/shell/shellscript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/language/shell/shellscript/</guid>
+      <description>쉘스크립트 문법 정리  쉘스크립트 첫라인 #!/bin/bash 의미?
+  스크립트파일을 bash로 실행시킨다는 의미
+  기재하지 않으면 리눅스 배포판의 경우 디폴트가 bash이므로 무리 없이 작동하지만 다른 쉘간의 오류를 방지를 위함.
+   기본 문법  echo, printf $# : 스크립트에 전달되는 인자들의 수(C언어에서 argc) $0 : 실행하는 스크립트의 파일명으로 실행했을 때 경로를 포함한다면 경로를 포함해서 나옵니다. $1, $2 … : 스크립트로 전달된 인자들(C언어에서 argv[0], argv[1]…)  echo &amp;#34;Echo Test&amp;#34; printf &amp;#34;printf Test\n&amp;#34; printf &amp;#34;Name of script : %s\n&amp;#34; $0 printf &amp;#34;%d arguments %s %s\n&amp;#34; $# $1 $2 exit exit 100 # 스크립트 종료후 echo $?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/menu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/menu/</guid>
+      <description> Home Toy-project  마이그레이션   Category  Linux  Shell 스크립트 개발환경 만들기   AWS  Exam  FAQ Part1 Part2 Part3 Part4 Part5 Summary 용어     BigData  Kafka  Kafka(카프카) Kafka(카프카) 실행 Kafka(카프카) 인텔리제이 빌드 디버깅환경 구성     hexo  명령어   Database  Mysql  SQL 튜닝     Spring  AOP  개념 및 원리   Security  JWT 토큰          </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/seminar/agile/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3-%E1%84%8B%E1%85%A2%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/seminar/agile/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3-%E1%84%8B%E1%85%A2%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF-%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3/</guid>
+      <description>PI </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/seminar/google/gcp_seminar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/seminar/google/gcp_seminar/</guid>
+      <description>Google Cloud seminar Google vs AWS
+ 가격모델  더 합리적인듯 (할인(?)) 자체 머신러닝으로 사용 리소스 분석 -&amp;gt; 합리적인 스팩 추천   커스텀 머신 타입  GPU 등등   네트워크  A사의 경우 전통적인 모델 Each Region vpn set 하나의 VPC로 관리 -&amp;gt; 모든 리전 접근 가능    데이터베이스  Nosql , cansandra  bigtable : 분산저장처리 시작된 이유 -&amp;gt; 논문 한번 보자.
+보안  Forrester  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/posts/tools/vscode/shortcut/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/tools/vscode/shortcut/</guid>
+      <description></description>
     </item>
     
   </channel>

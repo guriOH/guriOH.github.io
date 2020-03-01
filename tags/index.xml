@@ -6,10 +6,172 @@
     <description>Recent content in Tags on henry site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jan 2020 12:45:02 +0000</lastBuildDate>
     
 	<atom:link href="https://gurioh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Framework</title>
+      <link>https://gurioh.github.io/tags/framework/</link>
+      <pubDate>Thu, 23 Jan 2020 12:45:02 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/framework/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Front</title>
+      <link>https://gurioh.github.io/tags/front/</link>
+      <pubDate>Thu, 23 Jan 2020 12:45:02 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/front/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://gurioh.github.io/tags/javascript/</link>
+      <pubDate>Thu, 23 Jan 2020 12:45:02 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>https://gurioh.github.io/tags/react/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TypsScript</title>
+      <link>https://gurioh.github.io/tags/typsscript/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/typsscript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bean</title>
+      <link>https://gurioh.github.io/tags/bean/</link>
+      <pubDate>Wed, 15 Jan 2020 10:32:09 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/bean/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IoC</title>
+      <link>https://gurioh.github.io/tags/ioc/</link>
+      <pubDate>Wed, 15 Jan 2020 10:32:09 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/ioc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring</title>
+      <link>https://gurioh.github.io/tags/spring/</link>
+      <pubDate>Wed, 15 Jan 2020 10:32:09 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/spring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>https://gurioh.github.io/tags/aws/</link>
+      <pubDate>Tue, 03 Dec 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hexo-command</title>
+      <link>https://gurioh.github.io/tags/hexo-command/</link>
+      <pubDate>Mon, 02 Dec 2019 09:21:02 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/hexo-command/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kafka</title>
+      <link>https://gurioh.github.io/tags/kafka/</link>
+      <pubDate>Sun, 01 Dec 2019 17:46:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Agile</title>
+      <link>https://gurioh.github.io/tags/agile/</link>
+      <pubDate>Fri, 01 Nov 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/agile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CRUD</title>
+      <link>https://gurioh.github.io/tags/crud/</link>
+      <pubDate>Fri, 01 Nov 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/crud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://gurioh.github.io/tags/database/</link>
+      <pubDate>Fri, 01 Nov 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>H2</title>
+      <link>https://gurioh.github.io/tags/h2/</link>
+      <pubDate>Fri, 01 Nov 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/h2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>migration</title>
+      <link>https://gurioh.github.io/tags/migration/</link>
+      <pubDate>Fri, 01 Nov 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/migration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scrum</title>
+      <link>https://gurioh.github.io/tags/scrum/</link>
+      <pubDate>Fri, 01 Nov 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/scrum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>socket</title>
+      <link>https://gurioh.github.io/tags/socket/</link>
+      <pubDate>Fri, 01 Nov 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/tags/socket/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>development</title>

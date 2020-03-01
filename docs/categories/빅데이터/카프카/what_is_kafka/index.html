@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="카프카(Kafka) 이해하기"><meta property="og:title" content="카프카(Kafka) 이해하기" />
+<meta property="og:description" content="카프카(Kafka) 이해하기 오늘은 카프카에 대해서 간략하게 알아보며 간단하게 실행을 시켜보는 시간을 가져보자.
+그냥 궁금해서.. :)
+​	Let&rsquo;s get it!
+메시징 서비스 먼저 카프카는 메시지 퍼블리싱 어플리케이션으로서 메시지를 서로 전달할 수 있도록 연결하는 오픈소스입니다.
+카프카는 특히 실시간 대량 정보를 다루는데에 유용하게 사용될 수 있는데, 여러 정보를 소비자에게 빠르게 전달하는 과정에서 생기는 문제점을 해결하기 위한 솔루션입니다.
+ 카프카는 활동 스트림 데이터를 처리하는 데 유용하다는 점에서 스크라이브 또는 플럼 과 유사해 보이지만 아키텍처 관점에서는 액티브엠큐, 래빗엠큐 같은 메시징 시스템에 더 가깝다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/what_is_kafka/" />
+<meta property="article:published_time" content="2019-12-01T17:46:57+00:00" />
+<meta property="article:modified_time" content="2019-12-01T17:46:57+00:00" />
+<title>카프카(Kafka) 이해하기 | henry site</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.829f7602029a29a47bf1b0c9c4bb52982089a6d13558c9433d3c8b7e38c8b3b8.css" integrity="sha256-gp92AgKaKaR78bDJxLtSmCCJptE1WMlDPTyLfjjIs7g=">
+
+
+<script defer src="/en.search.min.d5cb1ab78daa3fcce80675b72ff620313b03e5f65e247253ee6040394d8e24bf.js" integrity="sha256-1csat42qP8zoBnW3L/YgMTsD5fZeJHJT7mBAOU2OJL8="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>henry site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/shortcodes/" class="">Shortcodes</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/task/" class="">Task</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/categories/" class="">Categories</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="collapsed ">프로그래밍</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/" class="collapsed ">빅데이터</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/" class="collapsed ">카프카</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/how_to_build_kafka_with_intellij/" class="">카프카(Kafka) 실행시키기 - Intellj</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/how_to_build_kafka_source_intellij/" class="">카프카(Kafka) 실행시키기 - 스크립트</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/what_is_kafka/" class="active">카프카(Kafka) 이해하기</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>도구</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>오픈소스</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>클라우드</span>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        henry
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>카프카(Kafka) 이해하기</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#자바-생산자-api">자바 생산자 API</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#상위-레벨-소비자-api">상위 레벨 소비자 API</a></li>
+        <li><a href="#소비자-그룹">소비자 그룹</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><p><img src="../../image/kafka/1.jpeg" alt=""></p>
+<h1 id="카프카kafka-이해하기">카프카(Kafka) 이해하기</h1>
+<p>오늘은 카프카에 대해서 간략하게 알아보며 간단하게 실행을 시켜보는 시간을 가져보자.</p>
+<p>그냥 궁금해서.. :)</p>
+<p>​							Let&rsquo;s get it!</p>
+<h1 id="메시징-서비스">메시징 서비스</h1>
+<p>먼저 카프카는 메시지 퍼블리싱 어플리케이션으로서 메시지를 서로 전달할 수 있도록 연결하는 오픈소스입니다.</p>
+<p>카프카는 특히 실시간 대량 정보를 다루는데에 유용하게 사용될 수 있는데, 여러 정보를 소비자에게 빠르게 전달하는 과정에서 생기는 문제점을 해결하기 위한 솔루션입니다.</p>
+<blockquote>
+<p>카프카는 활동 스트림 데이터를 처리하는 데 유용하다는 점에서 스크라이브 또는 플럼 과 유사해 보이지만 아키텍처 관점에서는 액티브엠큐, 래빗엠큐 같은 메시징 시스템에 더 가깝다.</p>
+</blockquote>
+<h1 id="카프카-특징">카프카 특징</h1>
+<p>카프가는 아래와 같은 특징을 가집니다.</p>
+<ul>
+<li>비휘발성메시징 : 빅데이터로 부터 실제 가치를 끌어내기 위해선 어떠한 정보유실도 있어선 안되는데, 카프카는 O(1)의 디스크 구조로 디자인 되어서 많은 데이터의 저장 메시지라도 상수 시간의 성능을 제공</li>
+<li>높은 처리량 : 초당 수백건 (정확하지 않음)</li>
+<li>분산 : 카프카 서버들을 대상으로 메시지 파티셔닝을 지원. 또한 소비자 장비들이 속한 클러스터 단위 분산 소비를 지원하는데 파티션 단위로만 순서를 가짐</li>
+<li>다양한 클라이언트 지원 : 자바, 루비, 닷넷, PHP등등</li>
+<li>실시간</li>
+</ul>
+<h1 id="카프카-목적">카프카 목적</h1>
+<p>카프카의 목적은 하둡시스템으로의 병렬 로드와 클러스터의 장비들에 의한 실시간 분할 소비를 지원해서 오프라인</p>
+<p>과 온라인 처리를 통합하는것을 목적으로 합니다.</p>
+<h1 id="카프카-사용-예">카프카 사용 예</h1>
+<ul>
+<li>링크드인, 데이터시프트, 트위터 , 포스퀘어, 스퀘어</li>
+</ul>
+<h1 id="카프카-메시징-처리-과정">카프카 메시징 처리 과정</h1>
+<p>카프카 디자인의 핵심</p>
+<ol>
+<li>생산자는 카프카 브로커에 생성된 카프카 토픽으로 메시지를 보낸다.</li>
+<li>카프카 브로커는 카프카 서버로 동작</li>
+<li>소비자는 메시지를 얻기 위해 카프카 토픽을 구독한다.</li>
+</ol>
+<h1 id="카프카-주요-설계-요소">카프카 주요 설계 요소</h1>
+<ol>
+<li>카프카의 핵심은 메시지를 파일 시스템에 저장하고 캐싱하는 것이다. 데이터는 즉시 OS커널 페이지에 쓴다.
+데이터를 디스크에 캐시하고 플러시하는 것은 설정할 수 있다.</li>
+<li>카프카는 필요에 따라 메시지 소비후 다시 메시지를 소비 할 수 있게 메시지의 장기 보관을 지원</li>
+<li>카프카는 네트워크 부하를 줄이기 위해 메시지를 그룹으로 묶는 메시지 집합을 사용</li>
+<li>메시지 소비에 대한 메타정보가 서버에 저장되는 대부분의 메시지 시스템과 다르게 카프카는 소비자 레벨에서 소비된 메시지의 상태를 가지고 있다.
+<ul>
+<li>실패에 따른 메시지 유실 해결</li>
+<li>단일 메시지의 복수 전달</li>
+</ul>
+</li>
+<li>소비자는 상태를 주키퍼에 저장(기본설정), 온라인 트랜잭션 처리 애플리케이션으로 사용가능</li>
+<li>카프카는 생산자 소비자 Push and Pull 모델 방식.</li>
+<li>카프카에서 마스터 개념은 없고 모든 브로커를 피어로 다룸으로, 브로커의 메타 데이터는 주키퍼에 보관하고 생산자 소비자에 공유하므로, 브로커의 추가,제거가 쉽다.</li>
+<li>생산자는 메시지를 브로커에 보내는데 , 비동기, 동기 모드를 선택할 수 있다.</li>
+</ol>
+<h1 id="카프카-메시지-압축">카프카 메시지 압축</h1>
+<ul>
+<li>Gzip, Snappy 지원</li>
+<li>네트워크단의 부하를 줄이기 위해 압축지원, 소비자단은 부하가 증가.</li>
+</ul>
+<h1 id="카프카의-클러스터-미러링">카프카의 클러스터 미러링</h1>
+<p>카프카 미러링 기능은 기존 클러스터의 복사본을 만드는데 사용한다.</p>
+<p>ex &gt; 활성 데이터 센터로부터 비활성 데이터 센터로 복제하는 경우</p>
+<p><strong>카프카에서 원본 클러스터로부터 대상 클러스터로 미러링을 만드는 도구를 제공</strong> ( 살펴보장!)</p>
+<h1 id="카프카-리플리케이션이해-필요">카프카 리플리케이션(이해 필요)</h1>
+<p>메시지 파티셔닝</p>
+<p>어떻게 파티션될 것인지 메시지 생산자에 의해 결정, 브로커는 메시지가 들어온 순서대로 저장.</p>
+<p>파티션의 개수는 브로커 내의 각 토픽에 설정할 수 있다.</p>
+<h1 id="kafka-생산자">Kafka 생산자</h1>
+<p>생산자 어플리케이션은 메시지를 만들고 나중의 소비를 위해 카프카 브로커에 배포한다.</p>
+<p>생산자는 다양한 성격일 수 있다.</p>
+<ul>
+<li>애플리케이션 프론트엔드</li>
+<li>서비스의 백엔드</li>
+<li>프록시 애플리케이션</li>
+<li>하둡 생산자</li>
+<li>etc</li>
+</ul>
+<h1 id="메시지-생산자를-위한-카프카-api">메시지 생산자를 위한 카프카 API</h1>
+<h3 id="자바-생산자-api">자바 생산자 API</h3>
+<p>카프카는 단일 또는 다중 토픽에 메시지들을 생성하는 Producer&lt;K,V&gt; 클래스를 제공</p>
+<p>파티션은 선택사항이다.</p>
+<p>생산자는 스칼로 작성된 자바의 제네릭 타입이기 때문에 매개변수의 타입을 기술해야함.</p>
+<h1 id="kafka-소비자">Kafka 소비자</h1>
+<p>소비자 어플리케이션은 메시지들을 소비하고 메시지들로부터 데이터를 추출하는 어플리케이션이다.</p>
+<p>소비자 역시 다양한 성격일 수 있다.</p>
+<ul>
+<li>실시간 분석 어플리케이션</li>
+<li>NoSQL관련 어플리케이션</li>
+<li>데이터 웨어하우스 솔루션</li>
+<li>백엔드 서비스</li>
+<li>하둡 소비자</li>
+<li>구독 서비스</li>
+<li>etc</li>
+</ul>
+<h1 id="메시지-소비자를-위한-카프카-api">메시지 소비자를 위한 카프카 API</h1>
+<p>카프카는 자바 기반 Consumer로 두가지 타입의 API를 제공</p>
+<ul>
+<li>상위 레벨 소비자</li>
+<li>단순 소비자</li>
+</ul>
+<p>상위 레벨 소비자 API는 소비자 API의 하위 레벨의 구현을 추상화해 제공</p>
+<p>반변 단순 소비자 API는 기본 하위 레벨의 구현을 오버라이드할 수 있어 더 많은 제어를 할 수 있다.</p>
+<h3 id="상위-레벨-소비자-api">상위 레벨 소비자 API</h3>
+<p> 상위 레벨의 소비자 API는 메시지 오프셋을 다룰 필요 없이 데이터를 쓸 때 사용</p>
+<p>메시지 소비시 일어나는 대부분 하위 레벨의 기능을 추상화하였다.</p>
+<p>특징으로는 주키퍼의 특정 영역에 최근 읽은 오프셋을 저장하고 오프셋은 프로세스가 시작할 때 카프카에 제공된 소비자 그룹 이름에 기반을 둬서 저장한다.</p>
+<h3 id="소비자-그룹">소비자 그룹</h3>
+<p>소비자 그룹의 이름은 클러스터에서 유일하고 전역적이다.</p>
+<p>이미 사용중인 소비자 그룹 이름을 가진 새로운 소비자는 시스템에 예기치 못한 행동을 발생 시킬 수 있다.</p>
+<p>새로운 프로세스가 기존 소비자 그룹 이름을 가지고 시작하면 스레드 간 리발란스를 작동시키는데</p>
+<p>리발란스 후 새로운 프로세스로 가야하는 몇몇 메시지들이 이전 프로세스로 갈 수 있고 오작동을 초래할 수도 있다</p>
+<p>(현재 버전 2.13 에서는 확인해봐야 할 것 같다.)</p>
+<p>해결방법은 기존 소비자 그룹의 이름을 가지는 새로운 소비자를 시작 하려면 기존의 모든 소비자를 중단&hellip;</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+          
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#자바-생산자-api">자바 생산자 API</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#상위-레벨-소비자-api">상위 레벨 소비자 API</a></li>
+        <li><a href="#소비자-그룹">소비자 그룹</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Spring a O P"><meta property="og:title" content="" />
+<meta property="og:description" content="스프링 AOP를 구현하는 방법 기술. AOP 개념
+Aspect : 공통 기능을 말합니다.
+Advice : Aspect의 기능 자체를 말합니다.
+Jointpoint : Advice를 적용해야 하는 부분입니다. 필드나 메소드이고, 스프링에서는 메소드만
+해당됩니다.
+Pointcut : Jointpoint의 부분, 실제로 Advice가 적용된 부분
+Weaving : Advice를 핵심 기능에 적용하는 행위를 말합니다.
+  RTW (Runtime Weaving) 스프링 AOP에서 사용하는 위빙 방식. Proxy를 생성하여 실제 타깃 오브젝트의 변형없이 위빙을 수행. 실제 런타임 시, 메소드 호출과 동시에 위빙이 이루어 지는 방식이다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring-aop/" />
+
+<title>Spring a O P | henry site</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.829f7602029a29a47bf1b0c9c4bb52982089a6d13558c9433d3c8b7e38c8b3b8.css" integrity="sha256-gp92AgKaKaR78bDJxLtSmCCJptE1WMlDPTyLfjjIs7g=">
+
+
+<script defer src="/en.search.min.d5cb1ab78daa3fcce80675b72ff620313b03e5f65e247253ee6040394d8e24bf.js" integrity="sha256-1csat42qP8zoBnW3L/YgMTsD5fZeJHJT7mBAOU2OJL8="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>henry site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/shortcodes/" class="">Shortcodes</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/task/" class="">Task</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/categories/" class="">Categories</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="collapsed ">프로그래밍</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/" class="collapsed ">Java Script</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/" class="collapsed ">Spring Boot</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/batch_init/" class="">스프링 부트배치 디비 설정</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_bean_understanding/" class="">Spring bean life cycle</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring-20191205/" class="">Spring_20191205</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/springsecurity_#1/" class="">스프링 시큐리티 이해하기</a>
+  
+
+</li>
+      
+    
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/jwt_authenticate_process/" class="">J W T Authenticate Process</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring-aop/" class="active">Spring a O P</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_basic/" class="">Spring Basic</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/java/" class="collapsed ">Java</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/shell/" class="collapsed ">Shell</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/" class="collapsed ">빅데이터</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>도구</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>오픈소스</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>클라우드</span>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        henry
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Spring a O P</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents"></nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="스프링-aop를-구현하는-방법-기술">스프링 AOP를 구현하는 방법 기술.</h1>
+<p>AOP 개념</p>
+<p>Aspect : 공통 기능을 말합니다.</p>
+<p>Advice : Aspect의 기능 자체를 말합니다.</p>
+<p>Jointpoint : Advice를 적용해야 하는 부분입니다. 필드나 메소드이고, 스프링에서는 메소드만</p>
+<p>해당됩니다.</p>
+<p>Pointcut : Jointpoint의 부분,  실제로 Advice가 적용된 부분</p>
+<p>Weaving : Advice를 핵심 기능에 적용하는 행위를 말합니다.</p>
+<ul>
+<li>
+<p>RTW (Runtime Weaving)
+스프링 AOP에서 사용하는 위빙 방식. Proxy를 생성하여 실제 타깃 오브젝트의 변형없이 위빙을 수행.
+실제 런타임 시, 메소드 호출과 동시에 위빙이 이루어 지는 방식이다.</p>
+<p>장점 : 소스파일, 클래스파일의 변형이 없다.
+단점 : 포인트 컷에 대한 어드바이스 적용 갯수가 늘어 날수록 성능이 떨어진다.</p>
+</li>
+<li>
+<p>CTW (Compile time Weaving)
+AspectJ에는 AJC (AspectJ Compiler)라는 컴파일러가 있는데 Java Compiler를 확장한 형태의 컴파일러이다. AJC를 통해 java파일을 컴파일 하며, 컴파일 과정에서 바이트 코드 조작을 통해 Advisor 코드를 직접 삽입하여 위빙을 수행</p>
+<p>장점 : 위빙중 가장 빠른 퍼포먼스 (JVM상에 올라 갈때 메소드 내에 이미 advice 코드가 삽입 되어있기 때문에..)
+단점 : 컴파일 과정에서 lombok과 같이 컴파일 과정에서 코드를 조작하는 플러그인과 충돌이 발생할 가능성이 아주 높다. (거의 같이 사용 불가)</p>
+</li>
+<li>
+<p>LTW (Load time Weaving)
+ClassLoader를 통해 JVM에 로드 될 때 바이트 코드 조작을 통해 위빙이 되는 방식
+RTW와 마찬가지로 소스코드와 클래스파일에 조작이 없다.
+하지만 오브젝트가 메모리에 올라가는 과정에서 위빙이 일어나기 때문에 런타임 시, 시간은 CTW보다 상대적으로 느리다</p>
+<p>장점 : 소스파일, 클래스파일의 변형이 없다.
+단점 : performance가 저하, 설정의 복잡.</p>
+</li>
+</ul>
+<p>스프링 프레임워크에서 지원하는 3가지 AOP 기술</p>
+<ul>
+<li>JDK dynamic proxy, CGLIB, AspectJ</li>
+</ul>
+<p>AOP 적용 방식에 따른 분류</p>
+<ul>
+<li>프록시 기반 : JDK dynamic proxy, CGLIB</li>
+<li>타깃 오브젝트 조작 : AspectJ</li>
+</ul>
+<p><strong>JDK Dynamic Proxy &amp; CGLIB</strong></p>
+<p>Aspect 프레임워크와는 달리 스프링에서는 간단한 설정만으로 JDK Dynamic Proxy와 CGLIB 방식을 사용할 수 있도록 되어 있습니다. 두 방식의 차이는 인터페이스의 유무로서, AOP의 타깃이 되는 클래스가 인터페이스를 구현했다면 JDK Dynamic Proxy를 사용하고, 구현하지 않았다면 CGLIB 방식을 사용합니다</p>
+<p><strong>[출처]</strong> [Spring AOP에 관하여 - <a href="http://blog.naver.com/tmondev/220558804255">2] JDK Dynamic Proxy &amp; CGLIB</a></p>
+<p>Aspect란?</p>
+<p>도메인 로직에 필요한 다양한 부가기능을 추상화 시킨것.</p>
+<p>어노테이션 기반으로 AOP를 구현은 런타임이 아닌 <code>Compile</code> 시점에 Aspect를 적용하는 것이다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Aspect</span>
+<span style="color:#a6e22e">@Component</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestAspect</span> <span style="color:#f92672">{</span>
+
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Logger logger <span style="color:#f92672">=</span> LoggerFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>TestAspect<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+
+  <span style="color:#a6e22e">@Before</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;execution(* com.example.aop_example.service.*.test(..))&#34;</span><span style="color:#f92672">)</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onBeforeHandler</span><span style="color:#f92672">(</span>JoinPoint joinPoint<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;=============== onBeforeThing&#34;</span><span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#a6e22e">@After</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;execution(* com.example.aop_example.service.*.test(..))&#34;</span><span style="color:#f92672">)</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onAfterHandler</span><span style="color:#f92672">(</span>JoinPoint joinPoint<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;=============== onAfterHandler&#34;</span><span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#a6e22e">@AfterReturning</span><span style="color:#f92672">(</span>pointcut <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;execution(* com.example.aop_example.service.*.test(..))&#34;</span><span style="color:#f92672">,</span>
+      returning <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;str&#34;</span><span style="color:#f92672">)</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onAfterReturningHandler</span><span style="color:#f92672">(</span>JoinPoint joinPoint<span style="color:#f92672">,</span> Object str<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;@AfterReturning : &#34;</span> <span style="color:#f92672">+</span> str<span style="color:#f92672">);</span>
+    logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;=============== onAfterReturningHandler&#34;</span><span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#a6e22e">@Pointcut</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;execution(* com.example.aop_example.service.*.test(..))&#34;</span><span style="color:#f92672">)</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onPointcut</span><span style="color:#f92672">(</span>JoinPoint joinPoint<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;=============== onPointcut&#34;</span><span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+          
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents"></nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

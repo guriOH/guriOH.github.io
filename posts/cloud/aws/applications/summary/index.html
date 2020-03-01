@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Application Summary"><meta property="og:title" content="Application Summary" />
+<meta property="og:description" content="SQS  SQS is a way to decouple hour infrastructure SQS is pull based, not pushed based. Messages are 256 KB in size. Messages can be kept in the queue from 1 minute to 14 days; the default retention period is 4 days. Standard SQS and FIFO SQS Standard order is not quaranteed and messages can be delivered more than once. FIFO order is strictly maintained and messages are delivered only once." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gurioh.github.io/posts/cloud/aws/applications/summary/" />
+<meta property="article:published_time" content="2020-01-15T16:42:29+00:00" />
+<meta property="article:modified_time" content="2020-01-15T16:42:29+00:00" />
+<title>Application Summary | henry site</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.829f7602029a29a47bf1b0c9c4bb52982089a6d13558c9433d3c8b7e38c8b3b8.css" integrity="sha256-gp92AgKaKaR78bDJxLtSmCCJptE1WMlDPTyLfjjIs7g=">
+
+
+<script defer src="/en.search.min.d5cb1ab78daa3fcce80675b72ff620313b03e5f65e247253ee6040394d8e24bf.js" integrity="sha256-1csat42qP8zoBnW3L/YgMTsD5fZeJHJT7mBAOU2OJL8="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>henry site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/shortcodes/" class="">Shortcodes</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/task/" class="">Task</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/categories/" class="">Categories</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="collapsed ">프로그래밍</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/" class="collapsed ">빅데이터</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>도구</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>오픈소스</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>클라우드</span>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        henry
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Application Summary</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents"></nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/cloud/aws/applications/summary/">Application Summary</a>
+  </h1>
+  
+
+  <h5>January 15, 2020</h5>
+
+
+
+  
+
+  
+
+
+  <p><h1 id="sqs">SQS</h1>
+<ul>
+<li>SQS is a way to decouple hour infrastructure</li>
+<li>SQS is pull based, not pushed based.</li>
+<li>Messages are 256 KB in size.</li>
+<li>Messages can be kept in the queue from 1 minute to 14 days; the default retention period is 4 days.</li>
+<li>Standard SQS and FIFO SQS</li>
+<li>Standard order is not quaranteed and messages can be delivered more than once.</li>
+<li>FIFO order is strictly maintained and messages are delivered only once.</li>
+<li>SQS guarantees that your messages will be processed at least once.</li>
+</ul>
+<h1 id="swf-vs-sqs">SWF vs SQS</h1>
+<ul>
+<li>SQS has retention period of up to 14 days; with SWF, workflow executions can last up to 1 year.</li>
+<li>Amazon SWF presents a task-oriented APi, whereas Amazon SQS offers a message-oriented API.</li>
+<li>Amazon SWF ensures that a task is assigned only once and is never duplicated. With Amazon SQS, you need to handle duplicated messages and may also need to ensure that a message is processed only once.</li>
+<li>Amazon SWF keeps track of all the tasks and events in an application. With Amazon SQS, need to implement your own application-level tracking, especially if your application uses multiple queues.</li>
+</ul>
+<h1 id="swf-actors">SWF actors</h1>
+<ul>
+<li>Workflow starters</li>
+<li>Deciders</li>
+<li>Activity workers</li>
+</ul>
+<h1 id="sns-benefits">SNS Benefits</h1>
+<ul>
+<li>Instantaneous, push-based delivery (no polling)</li>
+<li>Simple APIs and easy integration with applications</li>
+<li>Flexble message delivery over multiple transport protocols</li>
+<li>Inexpensive, pay-as-you-go model with no up-front costs</li>
+<li>Web-based AWS Management Console offers the simplicithy of a point-and-click interface</li>
+</ul>
+<h1 id="sns-vs-sqs">SNS vs SQS</h1>
+<ul>
+<li>Both Messaging service</li>
+<li>SNS - push</li>
+<li>SQS - polls(Pulls)</li>
+</ul>
+<h1 id="elastic-transcoder">Elastic Transcoder</h1>
+<ul>
+<li>Just rememver that elastic transcoder is a media transcoder in the cloud. It converts media files from their original source format in to different formats that will play on smartphones, tablets, PCs etc</li>
+</ul>
+<h1 id="api-gateway">API Gateway</h1>
+<ul>
+<li>Remeber what api gatway is at a high level</li>
+<li>API gateway has caching capabilities to increase performance</li>
+<li>APi gateway is log cost and scales automatically</li>
+<li>You can throttle API Gateway to prevent attacks</li>
+<li>You can log results to CloudWatch</li>
+<li>If you are using Javascript/AJAX that uses multiple domains with API Gateway, ensure that you have enabled CORS on API Gateway</li>
+</ul>
+<h1 id="kinesis">Kinesis</h1>
+<ul>
+<li>Know the difference between kinesis streams and kinesis firehose. you will be geiven scenario quesions and you must choose the most relevant service.</li>
+<li>Understand what kineis Analytic is.</li>
+</ul>
+<h1 id="cognito">Cognito</h1>
+<ul>
+<li>Federation allows users to authenticate with a Web Identity Provider (Google, Facebook, Amazon)</li>
+</ul>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+          
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents"></nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

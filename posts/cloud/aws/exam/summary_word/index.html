@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AWS 용어 정리"><meta property="og:title" content="AWS 용어 정리" />
+<meta property="og:description" content="Basic service architecture Auto Scaling group   애플리케이션의 로드를 처리할 수 있는 정확한 수의 Amazon EC2 인스턴스를 보유하도록 보장
+  Auto Scaling 그룹이라는 EC2 인스턴스 모음을 생성하며, 최소값과 최대값을 지정하며 이 범위를 넘어서지 않는다.
+  bastion host  보루, 요새라는 뜻으로 중세 시대에 영주나 왕이 살고 있는 중요한 기지인 성을 둘러싸고 있는 방어막 컴퓨터 보안에서도 이런 의미를 가져와서 보호된 네트워크에 접근하기 위해 유일하게 외부에 노출되는 호스트를 Bastion 호스트라고 정의  Oracle Data Pump  import complex databases or databases that are several hundred megabytes or several terabytes in size." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gurioh.github.io/posts/cloud/aws/exam/summary_word/" />
+<meta property="article:published_time" content="2019-12-03T19:37:57+00:00" />
+<meta property="article:modified_time" content="2019-12-03T19:37:57+00:00" />
+<title>AWS 용어 정리 | henry site</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.829f7602029a29a47bf1b0c9c4bb52982089a6d13558c9433d3c8b7e38c8b3b8.css" integrity="sha256-gp92AgKaKaR78bDJxLtSmCCJptE1WMlDPTyLfjjIs7g=">
+
+
+<script defer src="/en.search.min.d5cb1ab78daa3fcce80675b72ff620313b03e5f65e247253ee6040394d8e24bf.js" integrity="sha256-1csat42qP8zoBnW3L/YgMTsD5fZeJHJT7mBAOU2OJL8="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>henry site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/shortcodes/" class="">Shortcodes</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/task/" class="">Task</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/categories/" class="">Categories</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="collapsed ">프로그래밍</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/" class="collapsed ">빅데이터</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>도구</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>오픈소스</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>클라우드</span>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        henry
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>AWS 용어 정리</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents"></nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/cloud/aws/exam/summary_word/">AWS 용어 정리</a>
+  </h1>
+  
+
+  <h5>December 3, 2019</h5>
+
+
+
+  
+  <div>
+    
+  </div>
+  
+
+  
+  <div>
+    
+        <a href="/tags/aws/">AWS</a>
+  </div>
+  
+
+
+  <p><h1 id="basic-service-architecture">Basic service architecture</h1>
+<p><img src="../../../image/2020-02-02-18-54-33.png" alt=""></p>
+<h1 id="auto-scaling-group">Auto Scaling group</h1>
+<ul>
+<li>
+<p>애플리케이션의 로드를 처리할 수 있는 정확한 수의 Amazon EC2 인스턴스를 보유하도록 보장</p>
+</li>
+<li>
+<p>Auto Scaling 그룹이라는 EC2 인스턴스 모음을 생성하며, 최소값과 최대값을 지정하며 이 범위를 넘어서지 않는다.</p>
+</li>
+</ul>
+<p><img src="../../../image/2020-01-27-15-34-48.png" alt=""></p>
+<h1 id="bastion-host">bastion host</h1>
+<ul>
+<li>보루, 요새라는 뜻으로 중세 시대에 영주나 왕이 살고 있는 중요한 기지인 성을 둘러싸고 있는 방어막</li>
+<li>컴퓨터 보안에서도 이런 의미를 가져와서 보호된 네트워크에 접근하기 위해 유일하게 외부에 노출되는 호스트를 Bastion 호스트라고 정의</li>
+</ul>
+<h1 id="oracle-data-pump">Oracle Data Pump</h1>
+<ul>
+<li>import complex databases or databases that are several hundred megabytes or several terabytes in size.</li>
+</ul>
+<h1 id="인터넷-게이트-웨이">인터넷 게이트 웨이</h1>
+<ul>
+<li>수평 확장되고, 가용성이 높은 중복 VPC 구성 요소로, VPC의 인스턴스와 인터넷 간에 통신할 수 있게 해줍니다</li>
+<li>인터넷 라우팅 기능 트래픽에 대한 VPC 라우팅 테이블에 대상을 제공,
+IPv4 주소가 할당된 인스턴스에 대해 NAT를 수행하는 두가지 목적이 있다.</li>
+</ul>
+<h1 id="nat-게이트-웨이">NAT 게이트 웨이</h1>
+<ul>
+<li>NAT 게이트웨이를 사용하여 프라이빗 서브네스이 인스턴스를 인터넷 또는 기타 AWS서비스에 연결하는 한편, 인터넷에서 해당 인스턴스와의 연결을 시작하지 못하게 할수 있다.
+<ul>
+<li>NAT 게이트웨이 기본사항
+<ul>
+<li>NAT 게이트웨이가 속할 퍼블릭 서브넷을 지정</li>
+<li>탄력적 IP 주소 지정</li>
+<li>인터넷 바운드 트래픽이 NAT 게이트웨이를 가리키도록 하나 이상의 프라이빗 서브넷과 연결된 라우팅 테이블을 업데이트</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="cross-region">Cross-region</h1>
+<h1 id="key-pairs">key pairs</h1>
+<ul>
+<li>
+<p>Key pairs consist of a public and private key, where you use the private key to create a digital
+44
+IT Certification Guaranteed, The Easy Way!
+signature, and then AWS uses the corresponding public key to validate the signature.</p>
+</li>
+<li>
+<p>Key pairs are used only for Amazon EC2 and Amazon CloudFront.</p>
+</li>
+</ul>
+<h1 id="amazon-resource-name">Amazon Resource Name</h1>
+<ul>
+<li>Amazon 리소스 이름(ARN)은 AWS 리소스를 고유하게 식별</li>
+<li>AM 정책, Amazon Relational Database Service(Amazon RDS) 태그 및 API 호출과 같은 모든 AWS에서 리소스를 명료하게 지정해야 하는 경우 ARN이 필요합니다.</li>
+</ul>
+<h1 id="amazon-ebs-볼륨-유형">Amazon EBS 볼륨 유형</h1>
+<p><img src="../../../image/2020-02-03-20-14-17.png" alt=""></p>
+<h1 id="raid">RAID</h1>
+<ul>
+<li>Redundant Array of Independent Disk (독립된 디스크의 복수 배열)
+Redundant Array of Inexpensive Disk (저렴한 디스크의 복수 배열)</li>
+<li>RAID는 여러개의 디스크를 묶어 하나의 디스크 처럼 사용하는 기술
+<ul>
+<li>기대효과
+<ul>
+<li>대용량의 단일 볼륨을 사용하는 효과</li>
+<li>디스크 I/O 병렬화로 인한 성능 향상 (RAID 0, RAID 5, RAID 6 등)</li>
+<li>데이터 복제로 인한 안정성 향상 (RAID 1 등)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="egress-only">egress-only</h1>
+<pre><code>- 외부 전용 인터넷 게이트웨이
+    - 외부 전용 인터넷 게이트웨이는 수평 확장되고 가용성이 높은 중복 VPC 구성 요소로서, VPC의 인스턴스에서 인터넷으로 IPv6를 통한 아웃바운드 통신을 가능케 하되 인터넷에서 해당 인스턴스와의 IPv6 연결을 시작하지 못하게 할 수 있습니다.
+    -  IPv4를 통한 아웃바운드 전용 인터넷 통신을 사용하려면 NAT 게이트웨이를 사용
+</code></pre>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+          
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents"></nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

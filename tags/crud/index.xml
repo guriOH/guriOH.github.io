@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CRUD on henry site</title>
+    <link>https://gurioh.github.io/tags/crud/</link>
+    <description>Recent content in CRUD on henry site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Nov 2019 19:37:57 +0000</lastBuildDate>
+    
+	<atom:link href="https://gurioh.github.io/tags/crud/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring_CRUD_practice</title>
+      <link>https://gurioh.github.io/posts/project/addressbook/</link>
+      <pubDate>Fri, 01 Nov 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/project/addressbook/</guid>
+      <description>Autor : 오 훈
+Title : AddressBook
+AddressBook (GitHub Link) 1. 목적  GET, PUT, POST, DELETE 를 이용한 주소록 CRUD 구현  2. 어플리케이션 디자인  구현에 앞서 기본적인 어플리케이션 디자인을 설명 드리겠습니다.
+어플리케이션은 크게 데이터 클래스 (Request, Response, Model), 비즈니스 로직을 포함한 데이터 처리 클래스로 나뉩니다.
+3. 프로젝트 구성  프로젝트는 SpringBoot 어플리케이션을 사용하여 작성하였습니다.
+Repository 컨트롤로는 JPA api를 사용하였고, DataBase로는 인메모리디비 H2를 사용하였습니다.
+3.1 데이터 구성 AddressInfo.class</description>
+    </item>
+    
+  </channel>
+</rss>

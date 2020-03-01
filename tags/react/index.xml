@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on henry site</title>
+    <link>https://gurioh.github.io/tags/react/</link>
+    <description>Recent content in React on henry site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Jan 2020 16:42:29 +0000</lastBuildDate>
+    
+	<atom:link href="https://gurioh.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ES6 연습환경</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/javascript_es6/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/javascript_es6/</guid>
+      <description>연습환경 만들기 원하는 폴더에서 아래 명령어 입력
+&amp;gt;npm init
+기본 정보들을 입력하고 package.json 이 생성된다.
+Babel CLI 설치
+&amp;gt; npm install --save-dev babel-cli
+위와 같이 package.json 파일에서 설정이 된걸 확인 할 수 있다.
+그리고 &amp;lsquo;start&amp;rsquo;, &amp;lsquo;test&amp;rsquo; 등등 npm 명령어를 등록하면 터미널에서 간단하게 코드를 실행할 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>ES6 연습환경</title>
+      <link>https://gurioh.github.io/posts/language/javascript/javascript_es6/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/language/javascript/javascript_es6/</guid>
+      <description>연습환경 만들기 원하는 폴더에서 아래 명령어 입력
+&amp;gt;npm init
+기본 정보들을 입력하고 package.json 이 생성된다.
+Babel CLI 설치
+&amp;gt; npm install --save-dev babel-cli
+위와 같이 package.json 파일에서 설정이 된걸 확인 할 수 있다.
+그리고 &amp;lsquo;start&amp;rsquo;, &amp;lsquo;test&amp;rsquo; 등등 npm 명령어를 등록하면 터미널에서 간단하게 코드를 실행할 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>리액트 훅(hook)!</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/react_hook/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/react_hook/</guid>
+      <description>Hooks 리액트 훅은 함수형 컴포넌트에서도 상태관리를 할 수 있는 useState, 렌더링 직후 작업을 설정하는 useEffect 등의 기능을 제공하여 기존의 함수형 컴포넌트에서 할 수 없었던 다양한 작업을 할 수 있게 한다.
+useState  함수형 컴포넌트가 가변적인 상태를 갖게 한다.    useState를 Import 하여 사용한다. 이러한 문법을 배열 비구조화 할당 문법이라고 하나보다.. ㅎㅎ  useEffect  리액트 컴포넌트가 렌더링 될 떄마다 특정 작업을 수해하도록 설정할 수 있는 Hook이다.   가장 처음 렌더링 됬을때만 실행하고 업데이트 할때는 필요없을 때  useEffect(() =&amp;gt; { console.</description>
+    </item>
+    
+    <item>
+      <title>리액트 훅(hook)!</title>
+      <link>https://gurioh.github.io/posts/language/javascript/react_hook/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/language/javascript/react_hook/</guid>
+      <description>Hooks 리액트 훅은 함수형 컴포넌트에서도 상태관리를 할 수 있는 useState, 렌더링 직후 작업을 설정하는 useEffect 등의 기능을 제공하여 기존의 함수형 컴포넌트에서 할 수 없었던 다양한 작업을 할 수 있게 한다.
+useState  함수형 컴포넌트가 가변적인 상태를 갖게 한다.    useState를 Import 하여 사용한다. 이러한 문법을 배열 비구조화 할당 문법이라고 하나보다.. ㅎㅎ  useEffect  리액트 컴포넌트가 렌더링 될 떄마다 특정 작업을 수해하도록 설정할 수 있는 Hook이다.   가장 처음 렌더링 됬을때만 실행하고 업데이트 할때는 필요없을 때  useEffect(() =&amp;gt; { console.</description>
+    </item>
+    
+    <item>
+      <title>타입스크립트로 리액트 사용하기</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/typescript_01/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/typescript_01/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>타입스크립트로 리액트 사용하기</title>
+      <link>https://gurioh.github.io/posts/language/javascript/typescript_01/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/language/javascript/typescript_01/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

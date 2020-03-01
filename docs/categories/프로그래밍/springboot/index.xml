@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>henry site</title>
+    <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/</link>
+    <description>Recent content on henry site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Jan 2020 16:42:29 +0000</lastBuildDate>
+    
+	<atom:link href="https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>스프링 부트배치 디비 설정</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/batch_init/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/batch_init/</guid>
+      <description> 기본적으로 H2 DB를 사용할 경우엔 해당 테이블을 Boot가 실행될때 자동으로 생성해주지만, MySQL이나 Oracle과 같은 DB를 사용할때는 개발자가 직접 생성  스프링 부트에서는 해당 테이블의 쿼리를 같이 배포하고 있다.
+ schema- 검색!! </description>
+    </item>
+    
+    <item>
+      <title>Spring bean life cycle</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_bean_understanding/</link>
+      <pubDate>Wed, 15 Jan 2020 10:32:09 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_bean_understanding/</guid>
+      <description>스프링에서는 빈의 생명주기 관리를 위한 방법을 몇가지를 제공하고 있다. 본 문서에서는 스프링 빈의 생명주기를 알아보고 관련 인터페이스 몇가지를 알아보자.
+Spring bean life cycle overview  Part 1 - 빈 생성이후 사용전까지 각 단계, 전 처리 단계, 각 생성자 호출하여 생성. Part 2 - 빈 삭제 단계  Aware Interfaces 많이 사용되는 인터페이스.
+ BeanFactoryAware : setBeanFactory() 제공 BeanNameAware : ThesetVeanName() 빈의 이름을 생성하는 인터페이스 제공 ApplicationContextAware : ThesetApplicationContext() 해당 빈의 ApplicationContext 객체 제공.</description>
+    </item>
+    
+    <item>
+      <title>Spring_20191205</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring-20191205/</link>
+      <pubDate>Fri, 06 Dec 2019 10:05:25 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring-20191205/</guid>
+      <description>스프링 제어 WebMvcConfigurer
+ 포멧, 메시지 컨버트 관련하여 스프링 MVC를 제어 한다.  </description>
+    </item>
+    
+    <item>
+      <title>스프링 시큐리티 이해하기</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/springsecurity_#1/</link>
+      <pubDate>Tue, 03 Dec 2019 13:32:19 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/springsecurity_#1/</guid>
+      <description>![스크린샷 2019-12-05 오전 11.13.11](/Users/hoonoh/Desktop/스크린샷 2019-12-05 오전 11.13.11.png)
+스프링시큐리티 시나리오
+ 인증 권한체크  Authentication 객체  이름 권한 인증여부  AuthenticatioFilter 에서 사용자 정보를 꺼내 Authentication 객체를 만들고,
+AuthenticationProvider에 전달한다.
+AuthenticationProvider에서는 실제 인증이 이루어 지고, 인증 결과를 Authentication에 담아 SecurityContextHolder에 저장 성공 여부에 따라 handler를 실행한다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/java-reflection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/java-reflection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/jwt_authenticate_process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/jwt_authenticate_process/</guid>
+      <description>Spring Security 필요개념  접근주체(Principal) : 접근 사용자 인증(Authenticate) : 접근 주체 확인 인가(Authorize) : 접근 주체의 권한 검사  스프링의 구조는 필터와 필터된 Authentication객체를 가지고 실질적인 Validation을 하는 Provider로 나뉜다.
+Filter chain 스프링 시큐리티 역시 Filter가 구성이 되어있다.
+기본적으로 11개의 Filter로 구성이 되어있고, Filter를 커스터마이징 하여 추가 확장 시킬수 있다.
+이때 중요한것은 필터간의 순서가 중요하다.
+Provider 프로바이더는 실질적인 검증을 하는 클래스로 AuthenticationProvider를 구현하고
+AuthenticationManagerBuilder에 커스터마이징하여 등록이 가능하다.
+@Override protected void configure(AuthenticationManagerBuilder auth) throws Exception { auth.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring-aop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring-aop/</guid>
+      <description>스프링 AOP를 구현하는 방법 기술. AOP 개념
+Aspect : 공통 기능을 말합니다.
+Advice : Aspect의 기능 자체를 말합니다.
+Jointpoint : Advice를 적용해야 하는 부분입니다. 필드나 메소드이고, 스프링에서는 메소드만
+해당됩니다.
+Pointcut : Jointpoint의 부분, 실제로 Advice가 적용된 부분
+Weaving : Advice를 핵심 기능에 적용하는 행위를 말합니다.
+  RTW (Runtime Weaving) 스프링 AOP에서 사용하는 위빙 방식. Proxy를 생성하여 실제 타깃 오브젝트의 변형없이 위빙을 수행. 실제 런타임 시, 메소드 호출과 동시에 위빙이 이루어 지는 방식이다.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_basic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_basic/</guid>
+      <description>Anotation 어노테이셔 : 소스코드에 메타데이터를 표현하는것 Built-in Annotation @Override - 메소드 오버라이드 검증
+@Deprecated - 메소드를 사용하지 않도록 유도.
+@SuppressWarnings - 컴파일 경고를 무시하도록 함.
+@SafeVarargs - 제너릴 같은 가변인자 매개변수를 사용할 때 경고 무시 (자바 7 이상)
+@FunctionalInterface - 람다 함수등을 위한 인터페이스를 지정. 메소드가 두개 이상 되면 컴파일 오류 (자바 8 이상)
+Meta Annotations @Retention - 어노테이션 영향 범위 결정.
+@Documented - 어노테이션 정보 출력.
+@Target - 어노테이션 적용 위치 결정.</description>
+    </item>
+    
+  </channel>
+</rss>

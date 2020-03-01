@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Summary"><meta property="og:title" content="" />
+<meta property="og:description" content="Summary Tips
+Pricing model  on Demand Reserved Spot  If the Spot instance is terminated by EC2, you will not be charged for a partial hour of usage, However if you terminate the instance yourself, you will be charged for any hour in which the instance ran   Dedicated Hosts  Instance Type EBS  Terminatin Protection is turned off by default, you must turn it omn On an EBS-backed instance, the default action is for the root EBS volume to be deleted whe the instance is termicated." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gurioh.github.io/posts/cloud/aws/ec2/summary/" />
+
+<title>Summary | henry site</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.829f7602029a29a47bf1b0c9c4bb52982089a6d13558c9433d3c8b7e38c8b3b8.css" integrity="sha256-gp92AgKaKaR78bDJxLtSmCCJptE1WMlDPTyLfjjIs7g=">
+
+
+<script defer src="/en.search.min.d5cb1ab78daa3fcce80675b72ff620313b03e5f65e247253ee6040394d8e24bf.js" integrity="sha256-1csat42qP8zoBnW3L/YgMTsD5fZeJHJT7mBAOU2OJL8="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>henry site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/shortcodes/" class="">Shortcodes</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/task/" class="">Task</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/categories/" class="">Categories</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="collapsed ">프로그래밍</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/" class="collapsed ">빅데이터</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>도구</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>오픈소스</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>클라우드</span>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        henry
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Summary</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#pricing-model">Pricing model</a></li>
+    <li><a href="#instance-type">Instance Type</a></li>
+    <li><a href="#ebs">EBS</a></li>
+    <li><a href="#security-groups">Security Groups</a></li>
+    <li><a href="#compare-ebs-types">Compare EBS Types</a></li>
+    <li><a href="#ebs-snapshots">EBS snapshots</a></li>
+    <li><a href="#migrating-ebs">Migrating EBS</a></li>
+    <li><a href="#ebs-encryption">EBS Encryption</a></li>
+    <li><a href="#encrypting-root-device-volumes">Encrypting Root Device Volumes</a></li>
+    <li><a href="#cloudwatch">CloudWatch</a></li>
+    <li><a href="#cli">CLI</a></li>
+    <li><a href="#roles">Roles</a></li>
+    <li><a href="#bootstrap-scripts">Bootstrap scripts</a></li>
+    <li><a href="#instance-meta-data--user-data">Instance meta data &amp; User data</a></li>
+    <li><a href="#efs">EFS</a></li>
+    <li><a href="#ec2-placement-groups">EC2 Placement Groups</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/cloud/aws/ec2/summary/"></a>
+  </h1>
+  
+
+
+
+  
+
+  
+
+
+  <p><h1 id="summary">Summary</h1>
+<p>Tips</p>
+<h2 id="pricing-model">Pricing model</h2>
+<ol>
+<li>on Demand</li>
+<li>Reserved</li>
+<li>Spot
+<ul>
+<li>If the Spot instance is terminated by EC2, you will not be charged for a partial hour of usage, However if you terminate the instance yourself, you will be charged for any hour in which the instance ran</li>
+</ul>
+</li>
+<li>Dedicated Hosts</li>
+</ol>
+<h2 id="instance-type">Instance Type</h2>
+<h2 id="ebs">EBS</h2>
+<ul>
+<li>Terminatin Protection is turned off by default, you must turn it omn</li>
+<li>On an EBS-backed instance, the default action is for the root EBS volume to be deleted whe the instance is termicated.</li>
+<li>EBS Root Volumes of your DEFAULT AMI&rsquo;s can be encrypted. You can also use a third party tool(such as bit locker etc) to encrypt the root volume, or this can be done when creating AMI&rsquo;s (remember the lab) in the AWS console or using the API.</li>
+<li>Additional volumes can be encrypted.</li>
+</ul>
+<h2 id="security-groups">Security Groups</h2>
+<ul>
+<li>All inbound traffic is blocked by defailt.</li>
+<li>All Outbound traffic is allowed.</li>
+<li>Changes to Security Groups take effect immediately.</li>
+<li>You can have any number of EC2 instances within a security group.</li>
+<li>You can have multiple security groups attached to EC2 instances.</li>
+<li>Security Groups are STATEFUL.</li>
+<li>If you create an inbound rule allowing traffic in, that traffic is automatically allowed back out again.</li>
+<li>You cannot block specific IP address using Security Groups, instead use Network Access Control Lists.</li>
+<li>You can specify allow rules, but not deny rules.</li>
+</ul>
+<h2 id="compare-ebs-types">Compare EBS Types</h2>
+<ol>
+<li>SSD
+<ul>
+<li>General Purpose SSD</li>
+<li>Provisioned IOPS SSD</li>
+</ul>
+</li>
+<li>HDD
+<ul>
+<li>Throughput Optimized HDD</li>
+<li>Cold HDD</li>
+<li>EBS Magnetic</li>
+</ul>
+</li>
+</ol>
+<h2 id="ebs-snapshots">EBS snapshots</h2>
+<ul>
+<li>Volumes exist on EBS, Think of EBS as a virtual hard disk.</li>
+<li>Snapshots exist on S3. Think of snapshots as a photograph of the disk.</li>
+<li>Snapshots are point in time copies of Volumes.</li>
+<li>Snapshots are incremental : this mean that only the blocks that have changed since your last snapshot are moved to S3</li>
+<li>If this is your first snapshots, it may take some time to create.</li>
+<li>To create a snapshots for amazon EBS volumes that serve as root devices, you should stop the instance before taking the snapshot.</li>
+<li>However you can take a snap while the instance is running.</li>
+<li>You can create AMI&rsquo;s from both volumes and snapshots</li>
+<li>You can change EBS volume sizes on the fly, including changing the size and storage type.</li>
+<li>Volumes will ALWAYS be in the same availability zone as EC2 instance</li>
+</ul>
+<h2 id="migrating-ebs">Migrating EBS</h2>
+<ul>
+<li>To move an ev2 volume from one AZ to another, take a snapshot of it, create an AMI from the snapshot and then use AMI to launch the EC2 instance in a new AZ.</li>
+<li>To move an EC2 volume from one region to another, take a snapshot of it, create an AMI from the snapshot and then copy the AMI from one region to the other. Then use the copied AMI to launch the new EC2 instance in the new region.</li>
+</ul>
+<h2 id="ebs-encryption">EBS Encryption</h2>
+<ul>
+<li>
+<p>Snapshots of encrypted volumes are encrypted automatically.</p>
+</li>
+<li>
+<p>Volumes restored from encrypted snapshots are encrypted automatically.</p>
+</li>
+<li>
+<p>You can share snapshots, but only if they are unencrypted.</p>
+</li>
+<li>
+<p>These snapshots can be shared with other AWS accounts or made public.</p>
+</li>
+<li>
+<p>Q1
+Root Device Volumes can now be encrypted. If you have an unencrypted root device volume that needs to be encrypted do th follwing;</p>
+<ul>
+<li>Create a Snapshot of the unencrypted root device volume</li>
+<li>Create a copy of the snapshot and select the encrypt option</li>
+<li>Create an AMI from the encrypted Snapshot</li>
+<li>Use that AMI to launch new encrypted instances</li>
+</ul>
+</li>
+<li>
+<p>EBS vs Instance Store</p>
+<ul>
+<li>Instance Store Volumes are sometimes called Ephemeral Storage.</li>
+<li>Instance store volumes cannot be stoppted. If the underlying host fails, you will lose your data.</li>
+<li>EBS backed instances can be stopped. You will not lose the data on this instance if it is stopped.</li>
+<li>You can reboot both, you will not lose your data.</li>
+<li>By default, both ROOT volumes will be deleted on termincation. However, with EBS volumes, you can tell AWS to keep the root device volume.</li>
+</ul>
+</li>
+</ul>
+<h2 id="encrypting-root-device-volumes">Encrypting Root Device Volumes</h2>
+<ul>
+<li>Create a Snapshot of the unencrypted root device volume.</li>
+<li>Create a copy of the Snapshot and select the encrypt option.</li>
+<li>Create an AMI from encypted Snapshot</li>
+<li>Use that AMI to launch new encypted instances.</li>
+</ul>
+<h2 id="cloudwatch">CloudWatch</h2>
+<ul>
+<li>
+<p>CloudWatch is used for monitoring performance</p>
+</li>
+<li>
+<p>CloudWatch can monitor most of AWS as well as your applications that run on AWS.</p>
+</li>
+<li>
+<p>CloudWatch with EC2 will monitor events every 5minutes by default.</p>
+</li>
+<li>
+<p>You can have 1 minute intervals by turning on detailed monitoring.</p>
+</li>
+<li>
+<p>You can create CloudWatch alarms which trigger notifications.</p>
+</li>
+<li>
+<p>CloudWatch is all about performance, CloudTrail is all about auditing.</p>
+</li>
+<li>
+<p>What can i do with CloudWatch?</p>
+<ul>
+<li>Dashboards - creates awsome dashboards to see what is happening with your AWS environment.</li>
+<li>Alarms - Allows you to set Alarms that notify you when particular thresholds are hit.</li>
+<li>Events - CloudWatch Events helps you to respond to state changes in your AWS resources.</li>
+<li>Logs - CloudWatch Logs helps you to aggregate, monitor, and store logs.</li>
+</ul>
+</li>
+<li>
+<p>CloudWatch vs CloudTrail</p>
+<ul>
+<li>CloudWatch monitors performance</li>
+<li>CloudTrail monitors API calls in the AWS platform.</li>
+</ul>
+</li>
+</ul>
+<h2 id="cli">CLI</h2>
+<ul>
+<li>You can interact with AWS from anywhere in the world just by using ther command line(CLI)</li>
+<li>You will need to set up access in IAM</li>
+<li>Commands themselves are not in the exam, but some basic commands will be useful to know for real life.</li>
+</ul>
+<h2 id="roles">Roles</h2>
+<ul>
+<li>Roles are more secure than storing your access key and secret access key on individual EC2 instances.</li>
+<li>Roles are easier to manage.</li>
+<li>Roles can be assigned to an EC2 instance after it is created using both the console &amp; command line.</li>
+<li>Roles are universal - you can use then in any region.</li>
+</ul>
+<h2 id="bootstrap-scripts">Bootstrap scripts</h2>
+<ul>
+<li>Bootstrap scrips run when an EC2 isntance first boots.</li>
+<li>Can be powerful way of automating software installs and updates.</li>
+</ul>
+<h2 id="instance-meta-data--user-data">Instance meta data &amp; User data</h2>
+<ul>
+<li>Used to get information about an instance (Such as public IP)</li>
+<li>curl http://123.123.123.123/latest/meta-data/</li>
+<li>curl http://123.123.123.123/latest/user-data/</li>
+</ul>
+<h2 id="efs">EFS</h2>
+<ul>
+<li>Supprots the Network FIle System version 4 (NFSv4) Protocol</li>
+<li>You only pay for the storage you use (no pre-provisioning required)</li>
+<li>Can scale up to the petabytes</li>
+<li>Can support thousands of concurrent NFS connections</li>
+<li>Data is stored across multiple AZ&rsquo;s within a region</li>
+<li>Read After Write Consistency</li>
+</ul>
+<h2 id="ec2-placement-groups">EC2 Placement Groups</h2>
+<p>Three types placement groups</p>
+<ol>
+<li>Clusterd Placement Group
+<ul>
+<li>Low Network Latency / High Network Throughput</li>
+</ul>
+</li>
+<li>Spread Placement Group
+<ul>
+<li>Individual Critical EC2 instances</li>
+</ul>
+</li>
+<li>Partitioned
+<ul>
+<li>Multiple EC2 instances HDFS, HBase, and Cassandra</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Tips
+<ul>
+<li>A clusted placement group can&rsquo;t span multiple Availabilty zones.</li>
+<li>A spread placement and partitioned group can.</li>
+<li>The name you specify for a placement group must be unique within your AWS accout</li>
+<li>Only certain types of instances can be launched in a placement group(Compute Optimized, GPU, Memory Optimized, Storage Optimized)</li>
+<li>AWS recommend homogenous instances within clustered placement groups.</li>
+<li>You can&rsquo;t merge placement groups.</li>
+<li>You can&rsquo;t move an exising instance into a placement group. You can create an AMI from your exiting instance, and then launch a new intance from the AMI into a placement group</li>
+</ul>
+</li>
+</ul>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+          
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#pricing-model">Pricing model</a></li>
+    <li><a href="#instance-type">Instance Type</a></li>
+    <li><a href="#ebs">EBS</a></li>
+    <li><a href="#security-groups">Security Groups</a></li>
+    <li><a href="#compare-ebs-types">Compare EBS Types</a></li>
+    <li><a href="#ebs-snapshots">EBS snapshots</a></li>
+    <li><a href="#migrating-ebs">Migrating EBS</a></li>
+    <li><a href="#ebs-encryption">EBS Encryption</a></li>
+    <li><a href="#encrypting-root-device-volumes">Encrypting Root Device Volumes</a></li>
+    <li><a href="#cloudwatch">CloudWatch</a></li>
+    <li><a href="#cli">CLI</a></li>
+    <li><a href="#roles">Roles</a></li>
+    <li><a href="#bootstrap-scripts">Bootstrap scripts</a></li>
+    <li><a href="#instance-meta-data--user-data">Instance meta data &amp; User data</a></li>
+    <li><a href="#efs">EFS</a></li>
+    <li><a href="#ec2-placement-groups">EC2 Placement Groups</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

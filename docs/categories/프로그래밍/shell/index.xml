@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>henry site</title>
+    <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/shell/</link>
+    <description>Recent content on henry site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/shell/configuration_env_with_intellij/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/shell/configuration_env_with_intellij/</guid>
+      <description>인텔리제이 쉘스크립트 개발환경 구성 Linux/Mac라면 굳이 쉘스크립트 작성을 위한 개발환경이 필요하지 않아도 되지만,
+제품 빌드 스크립트등을 작성 할 시, 각종 환경변수와 컨피그 파일 로드를 포함하여 복잡한 스크립트를 작성해야 할 수도 있다.
+이 때, 조금이라도 더 편하게 스크립트를 작성 할 수 있을 것 같다&amp;hellip;ㅎㅎ
+Empty project 생성 단지 쉘스크립트를 위한 환경이니 빈프로젝트를 생성. 개인 취향에 맡게 개발 환경을 만들자. 나는 아래와 같은 폴더구조를 만들었다.
+테스트 프로그램 실행. 아래의 코드를 실행해보자 .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/shell/shellscript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/shell/shellscript/</guid>
+      <description>쉘스크립트 문법 정리  쉘스크립트 첫라인 #!/bin/bash 의미?
+  스크립트파일을 bash로 실행시킨다는 의미
+  기재하지 않으면 리눅스 배포판의 경우 디폴트가 bash이므로 무리 없이 작동하지만 다른 쉘간의 오류를 방지를 위함.
+   기본 문법  echo, printf $# : 스크립트에 전달되는 인자들의 수(C언어에서 argc) $0 : 실행하는 스크립트의 파일명으로 실행했을 때 경로를 포함한다면 경로를 포함해서 나옵니다. $1, $2 … : 스크립트로 전달된 인자들(C언어에서 argv[0], argv[1]…)  echo &amp;#34;Echo Test&amp;#34; printf &amp;#34;printf Test\n&amp;#34; printf &amp;#34;Name of script : %s\n&amp;#34; $0 printf &amp;#34;%d arguments %s %s\n&amp;#34; $# $1 $2 exit exit 100 # 스크립트 종료후 echo $?</description>
+    </item>
+    
+  </channel>
+</rss>

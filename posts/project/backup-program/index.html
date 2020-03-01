@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Migration_java_program"><meta property="og:title" content="Migration_java_program" />
+<meta property="og:description" content="Autor : 오 훈
+Title : Backup-program
+Backup-program (GitHub Link) 1. 시스템 구성 1.1 역할 Master  0.1초 주기로 Random 하게 생성되는 정수 값을 TimeStamp와 함께 DB에 저장. 소켓 연결 시 1초 단위로 꺼내서 데이터 전달.  Slave  소켓 통신을 이용하여 DataSource로부터 데이터를 가져옴. 설정한 back up DB에 데이터 저장.  1.2 개발 방법  다중 Slave 접속을 위한 멀티 쓰레드 활용 ScheduledExecutorService를 이용한 Thread trigger Slave 세션별 Offset맵핑을 통한 데이터 유실 보안  2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gurioh.github.io/posts/project/backup-program/" />
+<meta property="article:published_time" content="2019-11-01T19:37:57+00:00" />
+<meta property="article:modified_time" content="2019-11-01T19:37:57+00:00" />
+<title>Migration_java_program | henry site</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.829f7602029a29a47bf1b0c9c4bb52982089a6d13558c9433d3c8b7e38c8b3b8.css" integrity="sha256-gp92AgKaKaR78bDJxLtSmCCJptE1WMlDPTyLfjjIs7g=">
+
+
+<script defer src="/en.search.min.d5cb1ab78daa3fcce80675b72ff620313b03e5f65e247253ee6040394d8e24bf.js" integrity="sha256-1csat42qP8zoBnW3L/YgMTsD5fZeJHJT7mBAOU2OJL8="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>henry site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/shortcodes/" class="">Shortcodes</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/task/" class="">Task</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/categories/" class="">Categories</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="collapsed ">프로그래밍</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/" class="collapsed ">빅데이터</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>도구</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>오픈소스</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>클라우드</span>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        henry
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Migration_java_program</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-시스템-구성">1. 시스템 구성</a>
+      <ul>
+        <li><a href="#11-역할">1.1 역할</a></li>
+        <li><a href="#12-개발-방법">1.2 개발 방법</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-master-상세-설명">2. Master 상세 설명</a>
+      <ul>
+        <li></li>
+        <li><a href="#211-serverstarter">2.1.1 ServerStarter</a></li>
+        <li><a href="#212-generatorclass">2.1.2. Generator.class</a></li>
+        <li><a href="#213-socketserviceclass">2.1.3. SocketService.class</a></li>
+        <li><a href="#214-workerpoolclass">2.1.4 WorkerPool.class</a></li>
+        <li><a href="#214-senderclass">2.1.4 Sender.class</a></li>
+        <li><a href="#214-master-sequence-flow-chartimagebackup_program4png">2.1.4 Master Sequence flow chart<img src="/image/backup_program/4.png" alt=""></a></li>
+      </ul>
+    </li>
+    <li><a href="#3-slave-상세-설명">3. Slave 상세 설명</a>
+      <ul>
+        <li><a href="#31-코드-설명imagebackup_program5png">3.1 코드 설명<img src="/image/backup_program/5.png" alt=""></a></li>
+        <li><a href="#311-clientstarterclass">3.1.1 ClientStarter.class</a></li>
+        <li><a href="#312-socketserviceclass">3.1.2 SocketService.class</a></li>
+        <li><a href="#311-recieverclass">3.1.1 Reciever.class</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-테스트방법-case-1">5. 테스트방법 Case 1</a>
+      <ul>
+        <li><a href="#postgresql-설치-주의-사항imagebackup_program6png">Postgresql 설치 주의 사항<img src="/image/backup_program/6.png" alt=""></a></li>
+        <li><a href="#데이터베이스-변경"><strong>데이터베이스 변경</strong></a></li>
+        <li><a href="#db_user-db_password"><strong>DB_USER, DB_PASSWORD</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#6-테스트방법-case-2">6. 테스트방법 case 2</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/project/backup-program/">Migration_java_program</a>
+  </h1>
+  
+
+  <h5>November 1, 2019</h5>
+
+
+
+  
+  <div>
+    
+  </div>
+  
+
+  
+  <div>
+    
+        <a href="/tags/socket/">socket</a>, 
+        <a href="/tags/migration/">migration</a>, 
+        <a href="/tags/database/">database</a>
+  </div>
+  
+
+
+  <p><p>Autor : 오 훈</p>
+<p>Title : Backup-program</p>
+<h1 id="backup-program-github-linkhttpsgithubcomguriohbackup-programgit">Backup-program (<a href="https://github.com/guriOH/backup-program.git">GitHub Link</a>)</h1>
+<h2 id="1-시스템-구성">1. 시스템 구성</h2>
+<p><img src="/image/backup_program/1.png" alt=""></p>
+<h3 id="11-역할">1.1 역할</h3>
+<h4 id="master">Master</h4>
+<ul>
+<li>0.1초 주기로 Random 하게 생성되는 정수 값을 TimeStamp와 함께 DB에 저장.</li>
+<li>소켓 연결 시 1초 단위로 꺼내서 데이터 전달.</li>
+</ul>
+<h4 id="slave">Slave</h4>
+<ul>
+<li>소켓 통신을 이용하여 DataSource로부터 데이터를 가져옴.</li>
+<li>설정한 back up DB에 데이터 저장.</li>
+</ul>
+<h3 id="12-개발-방법">1.2 개발 방법</h3>
+<ul>
+<li>다중 Slave 접속을 위한 멀티 쓰레드 활용</li>
+<li>ScheduledExecutorService를 이용한 Thread trigger</li>
+<li>Slave 세션별 Offset맵핑을 통한 데이터 유실 보안</li>
+</ul>
+<h2 id="2-master-상세-설명">2. Master 상세 설명</h2>
+<p><img src="/image/backup_program/2.png" alt="스크린샷 2019-08-26 오후 11.21.21"></p>
+<p>Master는 위와 같은 데이터 플로우를 가지고 있습니다.</p>
+<p>코드의 실행은 다음과 같습니다.</p>
+<ol>
+<li>
+<p><strong>Generator 실행</strong></p>
+<p>Master 프로그램은 데이터를 생성하는 중요한 프로그램입니다.
+따라서 멀티 유저와의 소켓 연결시 예측할수 없는 에러로 부터 최대한 분리하여야 하기때문에 별도의 Thread로 실행합니다.
+즉, 유저의 연결과 상관없이 Master가 실행이 되면 데이터 생성 및 적재를 시작합니다.</p>
+</li>
+<li>
+<p><strong>SocketService</strong> 실행
+SocketService는 다중 연결 접속을 지원합니다.
+먼저 SocketService는 소켓서버를 생성합니다.
+이후 Client(Slave)가 연결이 되면,  WorkerPool(쓰레드풀)에서  Thread를 생성하여 해당 소켓 연결을 별도의 Thread로 동작 시킵니다.
+Thread실행 후, 다른 소켓 연결을 대기합니다.
+​</p>
+</li>
+</ol>
+<h4 id="21-코드-설명-스크린샷-2019-08-28-오전-11552imagebackup_program3png"><strong>2.1 코드 설명</strong> <img src="/image/backup_program/3.png" alt="스크린샷 2019-08-28 오전 1.15.52"></h4>
+<h3 id="211-serverstarter">2.1.1 ServerStarter</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServerStarter</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">static</span> Logger logger <span style="color:#f92672">=</span> LogManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>ServerStarter<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+	
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Start</span><span style="color:#f92672">(</span>AppProperties props<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 데이터 제너레이터 실행
+</span><span style="color:#75715e"></span>		Generator generator <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Generator<span style="color:#f92672">(</span>props<span style="color:#f92672">);</span> 
+		generator<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+		
+        <span style="color:#75715e">//소켓 서비스 실행
+</span><span style="color:#75715e"></span>		SocketService service <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SocketService<span style="color:#f92672">();</span>
+		service<span style="color:#f92672">.</span><span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>props<span style="color:#f92672">);</span>
+		service<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+	<span style="color:#f92672">}</span>
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		String propFile <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>String l_arg <span style="color:#f92672">:</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> 
+            <span style="color:#75715e">/*
+</span><span style="color:#75715e">              =/Users/hoon/pjt/project/backup-program/p1/slave/src/main/resources/config/app.properties
+</span><span style="color:#75715e">            */</span>
+			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>l_arg<span style="color:#f92672">.</span><span style="color:#a6e22e">indexOf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				propFile <span style="color:#f92672">=</span> l_arg<span style="color:#f92672">.</span><span style="color:#a6e22e">split</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;=&#34;</span><span style="color:#f92672">)[</span>1<span style="color:#f92672">];</span>
+				
+				AppProperties props <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AppProperties<span style="color:#f92672">();</span>
+				props<span style="color:#f92672">.</span><span style="color:#a6e22e">initialize</span><span style="color:#f92672">();</span>
+				props<span style="color:#f92672">.</span><span style="color:#a6e22e">loadConfig</span><span style="color:#f92672">(</span>propFile<span style="color:#f92672">);</span>
+				
+				
+				Start<span style="color:#f92672">(</span>props<span style="color:#f92672">);</span>
+			<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+				logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Put properties location&#34;</span><span style="color:#f92672">);</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+		logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;There are no properties info&#34;</span><span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>프로그램의 실행을 위해 설정 파일의 Path를 읽어와야 합니다.</p>
+<p>만일 Path가 없거나 args 인자가 없다면 실행하지 않습니다.</p>
+<h3 id="212-generatorclass">2.1.2. Generator.class</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Generator</span><span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">static</span> Logger logger <span style="color:#f92672">=</span> LogManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>Generator<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+	<span style="color:#66d9ef">private</span> AbstractRepositoryManager repositoryManager <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> String target_data_table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;myData&#34;</span><span style="color:#f92672">;</span>
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Generator</span><span style="color:#f92672">(</span>AppProperties props<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">repositoryManager</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PostgresqlRepositoryManager<span style="color:#f92672">(</span>props<span style="color:#f92672">);</span> 
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">DB_TARGET_TABLE_NAME</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+    		target_data_table <span style="color:#f92672">=</span> props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">DB_TARGET_TABLE_NAME</span><span style="color:#f92672">);</span>
+    	<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+	<span style="color:#f92672">.</span>
+    <span style="color:#f92672">.</span>
+	<span style="color:#f92672">.</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Generator는 생성자로 부터 설정정보 객체를 전달 받아 DB커넥션 정보를 얻기 위한 RepositoryManager, 데이터 적재를 위한 테이블 네이밍 값을 초기화 합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">try</span><span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">final</span> Connection con <span style="color:#f92672">=</span> repositoryManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnection</span><span style="color:#f92672">();</span>
+			logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DataGenerator DB connection set&#34;</span><span style="color:#f92672">);</span>
+			
+			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>repositoryManager<span style="color:#f92672">.</span><span style="color:#a6e22e">isExist</span><span style="color:#f92672">(</span>con<span style="color:#f92672">,</span> target_data_table<span style="color:#f92672">)){</span>
+                <span style="color:#75715e">//테이블이 존재하지 않는다면 생성.
+</span><span style="color:#75715e"></span>				repositoryManager<span style="color:#f92672">.</span><span style="color:#a6e22e">createTargetDataTable</span><span style="color:#f92672">(</span>con<span style="color:#f92672">,</span> target_data_table<span style="color:#f92672">);</span>
+			<span style="color:#f92672">}</span>
+			
+			Runnable runnable <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+				String query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;INSERT INTO &#34;</span><span style="color:#f92672">+</span>target_data_table<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;(value, created) VALUES(?, ?)&#34;</span><span style="color:#f92672">;</span>
+				
+	            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+	            	<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+	            		Random rf <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Random<span style="color:#f92672">();</span>
+						PreparedStatement pst <span style="color:#f92672">=</span> con<span style="color:#f92672">.</span><span style="color:#a6e22e">prepareStatement</span><span style="color:#f92672">(</span>query<span style="color:#f92672">);</span>
+						pst<span style="color:#f92672">.</span><span style="color:#a6e22e">setInt</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span>rf<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">());</span>
+						pst<span style="color:#f92672">.</span><span style="color:#a6e22e">setTimestamp</span><span style="color:#f92672">(</span>2<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> Timestamp<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">()));</span>
+						pst<span style="color:#f92672">.</span><span style="color:#a6e22e">executeUpdate</span><span style="color:#f92672">();</span>
+					<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+					<span style="color:#f92672">}</span>
+	            <span style="color:#f92672">}</span>
+	        <span style="color:#f92672">};</span>
+	        ScheduledExecutorService service <span style="color:#f92672">=</span> Executors<span style="color:#f92672">.</span><span style="color:#a6e22e">newScheduledThreadPool</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+	        service<span style="color:#f92672">.</span><span style="color:#a6e22e">scheduleAtFixedRate</span><span style="color:#f92672">(</span>runnable<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> 100<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">MILLISECONDS</span><span style="color:#f92672">);</span>
+		
+		<span style="color:#f92672">}</span><span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			logger<span style="color:#f92672">.</span><span style="color:#a6e22e">error</span><span style="color:#f92672">(</span>e<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">());</span>
+		<span style="color:#f92672">}</span><span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>Generator의 수행 로직입니다.</p>
+<ol>
+<li>Connection 생성.</li>
+<li>테이블 생성.</li>
+<li>주기적으로 Insert를 실행시켜 데이터를 생성.</li>
+</ol>
+<p>주기적인 Thread 로직 수행을 위해 ScheduledExecutorService 클래스를 사용하였습니다.
+자세한 이유는 뒤에서 설명하겠습니다.</p>
+<h3 id="213-socketserviceclass">2.1.3. SocketService.class</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SocketService</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">static</span> Logger logger <span style="color:#f92672">=</span> LogManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>SocketService<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+	<span style="color:#66d9ef">private</span> WorkerPool workerPool<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> AbstractRepositoryManager repositoryManager <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> DEFAULT_PORT_NUM <span style="color:#f92672">=</span> 20000<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> port<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> String sync_table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sync_info&#34;</span><span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> ServerSocket _serverSocket<span style="color:#f92672">;</span>
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">SocketService</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>AppProperties props<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		workerPool <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> WorkerPool<span style="color:#f92672">(</span>props<span style="color:#f92672">);</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">repositoryManager</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PostgresqlRepositoryManager<span style="color:#f92672">(</span>props<span style="color:#f92672">);</span>
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;PORT&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+			port <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;PORT&#34;</span><span style="color:#f92672">));</span>
+		<span style="color:#f92672">}</span><span style="color:#66d9ef">else</span><span style="color:#f92672">{</span>
+			port <span style="color:#f92672">=</span> DEFAULT_PORT_NUM<span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">DB_SYNC_TABLE_NAME</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+			sync_table <span style="color:#f92672">=</span> props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">DB_SYNC_TABLE_NAME</span><span style="color:#f92672">);</span>
+    	<span style="color:#f92672">}</span>
+		
+		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+			repositoryManager<span style="color:#f92672">.</span><span style="color:#a6e22e">createSyncDataTable</span><span style="color:#f92672">(</span>sync_table<span style="color:#f92672">);</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SQLException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+		<span style="color:#f92672">};</span>
+
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">start</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+			_serverSocket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServerSocket<span style="color:#f92672">(</span>port<span style="color:#f92672">);</span>
+			Socket l_socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				l_socket <span style="color:#f92672">=</span> _serverSocket<span style="color:#f92672">.</span><span style="color:#a6e22e">accept</span><span style="color:#f92672">();</span>
+				Sender l_worker <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Sender<span style="color:#f92672">)</span> workerPool<span style="color:#f92672">.</span><span style="color:#a6e22e">getWorker</span><span style="color:#f92672">();</span>
+				l_worker<span style="color:#f92672">.</span><span style="color:#a6e22e">setSocket</span><span style="color:#f92672">(</span>l_socket<span style="color:#f92672">);</span>
+				
+				ScheduledExecutorService service <span style="color:#f92672">=</span> Executors<span style="color:#f92672">.</span><span style="color:#a6e22e">newSingleThreadScheduledExecutor</span><span style="color:#f92672">();</span>
+				service<span style="color:#f92672">.</span><span style="color:#a6e22e">scheduleAtFixedRate</span><span style="color:#f92672">(</span>l_worker<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> 1000<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">MILLISECONDS</span><span style="color:#f92672">);</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			logger<span style="color:#f92672">.</span><span style="color:#a6e22e">error</span><span style="color:#f92672">(</span>e<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">());</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+
+<span style="color:#f92672">}</span>
+</code></pre></div><p>SocketService는 slave와의 소켓 통신을 위한 소켓서버 역할을 합니다.</p>
+<p>SocketService 초기화시 Port번호와 Sync_table이 생성됩니다.</p>
+<p>먼저 설정된 Port 가 있다면 해당 Port로 초기화 하고, 이후 Start() 메소드에서 해당 Port 번호로 소켓서버를 생성합니다.</p>
+<p>sync_table은 데이터 유실을 막기위한 Client별 데이터 Offset정보를 가지는 테이블의 이름입니다.</p>
+<p>소켓연결 방법은 아래와 같습니다.</p>
+<ol>
+<li>소켓서버 연결대기 상태</li>
+<li>WorkerPool에서 Thread(Worker)생성</li>
+<li>소켓 연결</li>
+<li>Thread(Worker) 실행</li>
+<li>다시 1번 부터 반복</li>
+</ol>
+<p>Slave(Client)로 주기적인 데이터 전송을 위해 ScheduledExecutorService를 사용하였습니다.</p>
+<h3 id="214-workerpoolclass">2.1.4 WorkerPool.class</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WorkerPool</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">static</span> Logger logger <span style="color:#f92672">=</span> LogManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>WorkerPool<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+	<span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>AbstractWorker<span style="color:#f92672">&gt;</span> senderList <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+	
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Object lockObject <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">();</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> activeThreadCount <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+	
+	<span style="color:#66d9ef">private</span> AppProperties props<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> AbstractRepositoryManager repositoryManager <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+	
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">WorkerPool</span><span style="color:#f92672">(</span>AppProperties props<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">senderList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>AbstractWorker<span style="color:#f92672">&gt;();</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">props</span> <span style="color:#f92672">=</span> props<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">repositoryManager</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PostgresqlRepositoryManager<span style="color:#f92672">(</span>props<span style="color:#f92672">);</span>
+		logger<span style="color:#f92672">.</span><span style="color:#a6e22e">debug</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;WorkerPool is created.&#34;</span><span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>AbstractWorker<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getSenderList</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">return</span> senderList<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setSenderList</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>AbstractWorker<span style="color:#f92672">&gt;</span> senderList<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">senderList</span> <span style="color:#f92672">=</span> senderList<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getActiveThreadCount</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">return</span> activeThreadCount<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setActiveThreadCount</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> activeThreadCount<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">activeThreadCount</span> <span style="color:#f92672">=</span> activeThreadCount<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+	
+<span style="color:#f92672">}</span>
+</code></pre></div><p>WorkerPool은 현재 생성된 Thread의 상태 또는 갯수를 관리 합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> AbstractWorker <span style="color:#a6e22e">getWorker</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		AbstractWorker l_worker <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+		
+		<span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span>lockObject<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+				l_worker <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>AbstractWorker<span style="color:#f92672">)</span>Class<span style="color:#f92672">.</span><span style="color:#a6e22e">forName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;org.opensource.master.socket.Sender&#34;</span><span style="color:#f92672">)</span>
+						<span style="color:#f92672">.</span><span style="color:#a6e22e">getConstructor</span><span style="color:#f92672">(</span>AppProperties<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> AbstractRepositoryManager<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+						<span style="color:#f92672">.</span><span style="color:#a6e22e">newInstance</span><span style="color:#f92672">(</span>props<span style="color:#f92672">,</span> repositoryManager<span style="color:#f92672">);</span>
+				l_worker<span style="color:#f92672">.</span><span style="color:#a6e22e">setId</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Test&#34;</span><span style="color:#f92672">);</span>
+				<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">senderList</span><span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>l_worker<span style="color:#f92672">);</span>
+				<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">activeThreadCount</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">senderList</span><span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">();</span>
+			<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+			<span style="color:#f92672">}</span> 
+		<span style="color:#f92672">}</span>
+		
+		<span style="color:#66d9ef">return</span> l_worker<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Master의 소켓서비스는 다중 연결을 지원하기때문에, Thread 생성시 데드락 방지를 위해 synchronized를 사용합니다.</p>
+<p>Thread객체인 Sender를 생성하며, 생성된 Thread를 리스트에 담고, 사용 Thread 갯수를 최신화 합니다.</p>
+<p>위 정보는 소켓 연결이 끊어지거나 Thread에 문제가 있을경우, Thread 컨드롤에 사용하기 위해 추가 하였습니다.</p>
+<p>하지만 현재 기능을 개발은 못하였습니다.</p>
+<h3 id="214-senderclass">2.1.4 Sender.class</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Sender</span> <span style="color:#66d9ef">extends</span> AbstractWorker<span style="color:#f92672">{</span>
+
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">static</span> Logger logger <span style="color:#f92672">=</span> LogManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>Sender<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+	<span style="color:#66d9ef">private</span> AbstractRepositoryManager repositoryManager <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> LIMIT <span style="color:#f92672">=</span> 100<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> Socket _socket<span style="color:#f92672">;</span>
+	
+	<span style="color:#66d9ef">private</span> String target_data_table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;myData&#34;</span><span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> String sync_table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;sync_info&#34;</span><span style="color:#f92672">;</span>
+	
+	String slaveID <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">;</span>
+	ObjectInputStream ois <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+	ObjectOutputStream oos <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+	Connection con <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Sender</span><span style="color:#f92672">(</span>AppProperties props<span style="color:#f92672">,</span> AbstractRepositoryManager repositoryManager<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">repositoryManager</span> <span style="color:#f92672">=</span> repositoryManager<span style="color:#f92672">;</span> 
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">DB_SYNC_TABLE_NAME</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+			sync_table <span style="color:#f92672">=</span> props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">DB_SYNC_TABLE_NAME</span><span style="color:#f92672">);</span>
+    	<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">DB_TARGET_TABLE_NAME</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+    		target_data_table <span style="color:#f92672">=</span> props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">DB_TARGET_TABLE_NAME</span><span style="color:#f92672">);</span>
+    	<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">DB_DATA_LIMIT</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+			LIMIT <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">DB_DATA_LIMIT</span><span style="color:#f92672">));</span>
+    	<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>Sender는 Slave와 연결된 소켓으로 데이터를 전송하는 실질적인 로직이 수행되는 역할을 하고 있습니다.</p>
+<p>target_data_table은 데이터를 적제할 테이블이고, Limit값은 데이터 전송을 위해 DB에서 Select시 한번에 얼마만큼 가져올지를 나타내는 설정입니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setSocket</span><span style="color:#f92672">(</span>Socket p_socket<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		_socket <span style="color:#f92672">=</span> p_socket<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+			ois <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectInputStream<span style="color:#f92672">(</span>_socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getInputStream</span><span style="color:#f92672">());</span>
+            slaveID <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>String<span style="color:#f92672">)</span> ois<span style="color:#f92672">.</span><span style="color:#a6e22e">readObject</span><span style="color:#f92672">();</span>
+            logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Connected client ID : &#34;</span> <span style="color:#f92672">+</span> slaveID<span style="color:#f92672">);</span>
+            oos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectOutputStream<span style="color:#f92672">(</span>_socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">());</span>
+			
+            con <span style="color:#f92672">=</span> repositoryManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnection</span><span style="color:#f92672">();</span>
+			logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Client connection set&#34;</span><span style="color:#f92672">);</span>
+			
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+			logger<span style="color:#f92672">.</span><span style="color:#a6e22e">error</span><span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+		<span style="color:#f92672">}</span><span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+			
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>setSocket 메소드는 소켓 연결과 stream연결과 DB 커넥션을 연결하는 메소드입니다.</p>
+<p>이때, 소켓이 연결 되면 Slave는 자신의 ID를 서버에 전송합니다.</p>
+<p>해당 ID는 클래스변수로 관리되며 해당 세션에서 Offset과 함께 사용이 됩니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+       <span style="color:#75715e">// 데이터 전송에 사용할 DataContainer 객체를 생성
+</span><span style="color:#75715e"></span>		DataContainer dataContainer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DataContainer<span style="color:#f92672">();</span>
+		dataContainer<span style="color:#f92672">.</span><span style="color:#a6e22e">setSlaveID</span><span style="color:#f92672">(</span>slaveID<span style="color:#f92672">);</span> <span style="color:#75715e">// 현재 연결된 Slave의 ID값을 헤더정보로 세팅.
+</span><span style="color:#75715e"></span>    	String sql <span style="color:#f92672">=</span> buildSyncInfoSQL<span style="color:#f92672">(</span>slaveID<span style="color:#f92672">);</span> 
+        <span style="color:#75715e">// Sync_table에 현재 Slave에 전송된 데이터 Offset값을 가져쿼리 생성.
+</span><span style="color:#75715e"></span>    	<span style="color:#66d9ef">int</span> offset <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> <span style="color:#75715e">//Default값은 0
+</span><span style="color:#75715e"></span>    	
+    	<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+    		Statement st <span style="color:#f92672">=</span> con<span style="color:#f92672">.</span><span style="color:#a6e22e">createStatement</span><span style="color:#f92672">();</span>
+    		ResultSet rs <span style="color:#f92672">=</span> st<span style="color:#f92672">.</span><span style="color:#a6e22e">executeQuery</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">);</span>
+    		
+    		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                <span style="color:#75715e">//만약 Offset 값이 있다면 해당 값으로 Offset값을 변경
+</span><span style="color:#75715e"></span>    			offset <span style="color:#f92672">=</span> rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getInt</span><span style="color:#f92672">(</span>2<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+    		sql <span style="color:#f92672">=</span> buildSelectDataSQL<span style="color:#f92672">(</span>String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>offset<span style="color:#f92672">));</span>
+    		
+    		<span style="color:#75715e">//target_data_table에 Offset 값 만큼 데이터를 가져온다.
+</span><span style="color:#75715e"></span>            rs <span style="color:#f92672">=</span> st<span style="color:#f92672">.</span><span style="color:#a6e22e">executeQuery</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">);</span>
+    		<span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+    		<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">()){</span>
+               <span style="color:#75715e">//해당 데이터들을 객체로 변환
+</span><span style="color:#75715e"></span>    			dataContainer<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>
+    				<span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;(</span>
+    					Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>
+    							String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getInt</span><span style="color:#f92672">(</span>1<span style="color:#f92672">)),</span> 
+    							rs<span style="color:#f92672">.</span><span style="color:#a6e22e">getTimestamp</span><span style="color:#f92672">(</span>2<span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()</span>
+    					<span style="color:#f92672">)</span>
+    				<span style="color:#f92672">)</span>
+    			<span style="color:#f92672">);</span>
+    			count<span style="color:#f92672">++;</span>
+    		<span style="color:#f92672">}</span>
+    		
+            <span style="color:#75715e">// 객체 전송
+</span><span style="color:#75715e"></span>    		oos<span style="color:#f92672">.</span><span style="color:#a6e22e">writeObject</span><span style="color:#f92672">(</span>dataContainer<span style="color:#f92672">);</span>
+    		
+            <span style="color:#75715e">// 객체 전송이 완료가 되면, 현재의 Offset값을 최신화 시킨다.
+</span><span style="color:#75715e"></span>     		sql <span style="color:#f92672">=</span> buildUpdateOffsetSQL<span style="color:#f92672">(</span>slaveID<span style="color:#f92672">,</span> offset<span style="color:#f92672">+</span>count<span style="color:#f92672">);</span>
+    		<span style="color:#66d9ef">int</span> var <span style="color:#f92672">=</span> st<span style="color:#f92672">.</span><span style="color:#a6e22e">executeUpdate</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">);</span>
+    		
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			setWorkerState<span style="color:#f92672">(</span>WorkerState<span style="color:#f92672">.</span><span style="color:#a6e22e">NON_ACTIVE</span><span style="color:#f92672">);</span>
+			<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+				ois<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+				oos<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+			<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				e1<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+			<span style="color:#f92672">}</span>
+    		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+				<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">wait</span><span style="color:#f92672">();</span>
+				
+			<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>InterruptedException e1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				e1<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>Sender의 수행 로직입니다.</p>
+<ol>
+<li>데이터 전송에 사용할 DataContainer 객체를 생성</li>
+<li>해당 DataContainer의 헤더 정보로 현재 연결된 Slave의 ID값을 세팅</li>
+<li>Sync_table에 현재 Slave에 전송된 데이터 Offset값을 가져쿼리 생성</li>
+<li>만약 Offset 값이 있다면 해당 값으로 Offset값을 변경</li>
+<li>target_data_table에 Offset 값 만큼 데이터 로드</li>
+<li>DataContainer에 데이터 추가</li>
+<li>데이터 전송</li>
+<li>객체 전송이 완료가 되면, 현재의 Offset값을 최신화
+​</li>
+</ol>
+<h3 id="214-master-sequence-flow-chartimagebackup_program4png">2.1.4 Master Sequence flow chart<img src="/image/backup_program/4.png" alt=""></h3>
+<h2 id="3-slave-상세-설명">3. Slave 상세 설명</h2>
+<h3 id="31-코드-설명imagebackup_program5png">3.1 코드 설명<img src="/image/backup_program/5.png" alt=""></h3>
+<h3 id="311-clientstarterclass">3.1.1 ClientStarter.class</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClientStarter</span> <span style="color:#f92672">{</span>
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">static</span> Logger logger <span style="color:#f92672">=</span> LogManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>ClientStarter<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+	
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Start</span><span style="color:#f92672">(</span>AppProperties props<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		SocketService service <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SocketService<span style="color:#f92672">();</span>
+		service<span style="color:#f92672">.</span><span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>props<span style="color:#f92672">);</span>
+		service<span style="color:#f92672">.</span><span style="color:#a6e22e">socketClientStart</span><span style="color:#f92672">();</span>
+	<span style="color:#f92672">}</span>
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		
+		String propFile <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>String l_arg <span style="color:#f92672">:</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>l_arg<span style="color:#f92672">.</span><span style="color:#a6e22e">indexOf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				propFile <span style="color:#f92672">=</span> l_arg<span style="color:#f92672">.</span><span style="color:#a6e22e">split</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;=&#34;</span><span style="color:#f92672">)[</span>1<span style="color:#f92672">];</span>
+				
+				AppProperties props <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AppProperties<span style="color:#f92672">();</span>
+				props<span style="color:#f92672">.</span><span style="color:#a6e22e">initialize</span><span style="color:#f92672">();</span>
+				props<span style="color:#f92672">.</span><span style="color:#a6e22e">loadConfig</span><span style="color:#f92672">(</span>propFile<span style="color:#f92672">);</span>
+				
+				
+				Start<span style="color:#f92672">(</span>props<span style="color:#f92672">);</span>
+			<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+				logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Put properties location&#34;</span><span style="color:#f92672">);</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+		logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;There are no properties info&#34;</span><span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Slave(Client)역시 프로그램의 실행을 위해 설정 파일의 Path를 읽어와야 합니다.</p>
+<p>만일 Path가 없거나 args 인자가 없다면 실행하지 않습니다.</p>
+<h3 id="312-socketserviceclass">3.1.2 SocketService.class</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SocketService</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">static</span> Logger logger <span style="color:#f92672">=</span> LogManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>SocketService<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+	
+	<span style="color:#66d9ef">private</span> AbstractRepositoryManager repositoryManager <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> AppProperties props<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> String back_data_table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;myData&#34;</span><span style="color:#f92672">;</span>
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">SocketService</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+	<span style="color:#f92672">}</span>
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initialize</span><span style="color:#f92672">(</span>AppProperties props<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		repositoryManager <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PostgresqlRepositoryManager<span style="color:#f92672">(</span>props<span style="color:#f92672">);</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">props</span> <span style="color:#f92672">=</span> props<span style="color:#f92672">;</span>
+		
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">DB_BACKUP_TABLE_NAME</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+			back_data_table <span style="color:#f92672">=</span> props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">DB_BACKUP_TABLE_NAME</span><span style="color:#f92672">);</span>
+    	<span style="color:#f92672">}</span>
+		
+		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+			repositoryManager<span style="color:#f92672">.</span><span style="color:#a6e22e">createTargetDataTable</span><span style="color:#f92672">(</span>back_data_table<span style="color:#f92672">);</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SQLException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">socketClientStart</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		Reciever reciever <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Reciever<span style="color:#f92672">(</span>props<span style="color:#f92672">,</span> repositoryManager<span style="color:#f92672">);</span>
+		reciever<span style="color:#f92672">.</span><span style="color:#a6e22e">startReciving</span><span style="color:#f92672">();</span>
+		logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;client start&#34;</span><span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+	
+<span style="color:#f92672">}</span>
+</code></pre></div><p>SocketService 초기화시 벡업 테이블이 생성됩니다.</p>
+<p>먼저 설정된 벡업 테이블 네임이없다면 default네임은 myData입니다.</p>
+<h3 id="311-recieverclass">3.1.1 Reciever.class</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Reciever</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">static</span> Logger logger <span style="color:#f92672">=</span> LogManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>Reciever<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> PORT <span style="color:#f92672">=</span> 20000<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> String IP <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;127.0.0.1&#34;</span><span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> String ID <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;TEST&#34;</span><span style="color:#f92672">;</span>
+	
+	AbstractRepositoryManager repositoryManager<span style="color:#f92672">;</span>
+	
+	<span style="color:#66d9ef">private</span> String back_data_table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;myData&#34;</span><span style="color:#f92672">;</span>
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Reciever</span><span style="color:#f92672">(</span>AppProperties props<span style="color:#f92672">,</span> AbstractRepositoryManager repositoryManager<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">repositoryManager</span> <span style="color:#f92672">=</span> repositoryManager<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">MASTERPORT</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+			PORT <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">MASTERPORT</span><span style="color:#f92672">));</span>
+		<span style="color:#f92672">}</span><span style="color:#66d9ef">else</span><span style="color:#f92672">{</span>
+			PORT <span style="color:#f92672">=</span> 20000<span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">MASTERIP</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+			IP <span style="color:#f92672">=</span> props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">MASTERIP</span><span style="color:#f92672">);</span>
+		<span style="color:#f92672">}</span><span style="color:#66d9ef">else</span><span style="color:#f92672">{</span>
+			IP <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;127.0.0.1&#34;</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">SLAVEID</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+			ID <span style="color:#f92672">=</span> props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">SLAVEID</span><span style="color:#f92672">);</span>
+		<span style="color:#f92672">}</span><span style="color:#66d9ef">else</span><span style="color:#f92672">{</span>
+			ID <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Slave&#34;</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">DB_BACKUP_TABLE_NAME</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+			back_data_table <span style="color:#f92672">=</span> props<span style="color:#f92672">.</span><span style="color:#a6e22e">getPropsMap</span><span style="color:#f92672">().</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>Constant<span style="color:#f92672">.</span><span style="color:#a6e22e">DB_BACKUP_TABLE_NAME</span><span style="color:#f92672">);</span>
+    	<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+	<span style="color:#f92672">.</span>
+	<span style="color:#f92672">.</span>
+</code></pre></div><p>Reciever는 Slave에서 데이터의 수신과 저장을 하는 역할을 합니다.</p>
+<p>생성자를 통해 접속할 서버의 IP, PORT 정보를 설정값으로 초기화 하고, 현재 Slave의 ID값도 초기화 합니다.</p>
+<p>각 변수의 Default값은 각각 &ldquo;127.0.0.1&rdquo;,  &ldquo;20000&rdquo;, &ldquo;Slave&rdquo; 입니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">startReciving</span><span style="color:#f92672">(){</span>
+		Socket socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+		ObjectOutputStream oos <span style="color:#f92672">=</span><span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+		ObjectInputStream ois <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+			socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Socket<span style="color:#f92672">(</span>IP<span style="color:#f92672">,</span>PORT<span style="color:#f92672">);</span>
+		
+			oos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectOutputStream<span style="color:#f92672">(</span>socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">());</span>
+            <span style="color:#75715e">// 현재 실행된 Slave의 ID를 전송.
+</span><span style="color:#75715e"></span>			oos<span style="color:#f92672">.</span><span style="color:#a6e22e">writeObject</span><span style="color:#f92672">(</span>ID<span style="color:#f92672">);</span>
+			logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Sending request to Socket Server&#34;</span><span style="color:#f92672">);</span>
+			ois <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectInputStream<span style="color:#f92672">(</span>socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getInputStream</span><span style="color:#f92672">());</span>
+			
+			<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">){</span>
+				<span style="color:#66d9ef">if</span><span style="color:#f92672">(!</span>socket<span style="color:#f92672">.</span><span style="color:#a6e22e">isConnected</span><span style="color:#f92672">())</span> <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span> <span style="color:#75715e">// 소켓이 끊겼다면 서비스 로직 종료.
+</span><span style="color:#75715e"></span>		        DataContainer dataContainer <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>DataContainer<span style="color:#f92672">)</span> ois<span style="color:#f92672">.</span><span style="color:#a6e22e">readObject</span><span style="color:#f92672">();</span>
+		        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>dataContainer<span style="color:#f92672">.</span><span style="color:#a6e22e">getSlaveID</span><span style="color:#f92672">().</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>ID<span style="color:#f92672">)){</span> <span style="color:#75715e">// 현재 연결된 Slave의 ID가 아니라면 데이터를 적재하지 않는다.
+</span><span style="color:#75715e"></span>		        	logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Reciever Data Count: &#34;</span> <span style="color:#f92672">+</span> dataContainer<span style="color:#f92672">.</span><span style="color:#a6e22e">getRowCount</span><span style="color:#f92672">());</span>
+	            	backUpData<span style="color:#f92672">(</span>dataContainer<span style="color:#f92672">);</span> <span style="color:#75715e">// 수신한 데이터 백업테이블에 적재.
+</span><span style="color:#75715e"></span>		        <span style="color:#f92672">}</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+			logger<span style="color:#f92672">.</span><span style="color:#a6e22e">error</span><span style="color:#f92672">(</span>e<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">());</span>
+		<span style="color:#f92672">}</span><span style="color:#66d9ef">finally</span><span style="color:#f92672">{</span>
+			 <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+				ois<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+				oos<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+			<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>소켓 연결시 현재 Slave의 ID를 Master에 전송합니다.</p>
+<p>이후, DataContainer객체로 데이터를 수신하여 backUpData(dataContainer)에서 데이터를 백업 테이블에 저장합니다.</p>
+<p>하지만 만일 전달 받은  DataContainer가 현재 연결된 Slave의 ID가 아니라면 데이터를 저장하지 않습니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">backUpData</span><span style="color:#f92672">(</span>DataContainer dataContainer<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		SimpleDateFormat format <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;yyyy-MM-dd hh:mm:ss.SSS&#34;</span><span style="color:#f92672">);</span>
+		Connection con <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+			con <span style="color:#f92672">=</span> repositoryManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnection</span><span style="color:#f92672">();</span>
+			
+			Statement stmt <span style="color:#f92672">=</span> con<span style="color:#f92672">.</span><span style="color:#a6e22e">createStatement</span><span style="color:#f92672">();</span>
+            con<span style="color:#f92672">.</span><span style="color:#a6e22e">setAutoCommit</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+			PreparedStatement pstmt <span style="color:#f92672">=</span> con<span style="color:#f92672">.</span><span style="color:#a6e22e">prepareStatement</span><span style="color:#f92672">(</span>
+                    <span style="color:#e6db74">&#34;INSERT INTO &#34;</span><span style="color:#f92672">+</span>back_data_table<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;(value, created) VALUES(?,?)&#34;</span><span style="color:#f92672">);</span>
+			
+			<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> row <span style="color:#f92672">:</span> dataContainer<span style="color:#f92672">.</span><span style="color:#a6e22e">getRowList</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                <span style="color:#75715e">// Add each parameter to the row.
+</span><span style="color:#75715e"></span>                pstmt<span style="color:#f92672">.</span><span style="color:#a6e22e">setInt</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>row<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">)));</span>
+                Date d <span style="color:#f92672">=</span> format<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>row<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>1<span style="color:#f92672">));</span>
+                pstmt<span style="color:#f92672">.</span><span style="color:#a6e22e">setTimestamp</span><span style="color:#f92672">(</span>2<span style="color:#f92672">,</span>  <span style="color:#66d9ef">new</span> Timestamp<span style="color:#f92672">(</span>d<span style="color:#f92672">.</span><span style="color:#a6e22e">getTime</span><span style="color:#f92672">()));</span>
+                pstmt<span style="color:#f92672">.</span><span style="color:#a6e22e">addBatch</span><span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span>
+	     
+            <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+                pstmt<span style="color:#f92672">.</span><span style="color:#a6e22e">executeBatch</span><span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Error message: &#34;</span> <span style="color:#f92672">+</span> e<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">());</span>
+                <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span> 
+            <span style="color:#f92672">}</span>
+            
+            con<span style="color:#f92672">.</span><span style="color:#a6e22e">commit</span><span style="color:#f92672">();</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			logger<span style="color:#f92672">.</span><span style="color:#a6e22e">error</span><span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">finally</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+				con<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+			<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>SQLException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>backUpData 메소드에서는 다중 PreparedStatement을 생성하여 batch로 데이터 Insert를 수행 합니다.</p>
+<h2 id="5-테스트방법-case-1">5. 테스트방법 Case 1</h2>
+<ul>
+<li>
+<p>JDK 8</p>
+</li>
+<li>
+<p>eclipse 설치</p>
+</li>
+<li>
+<p>Postgresql 9.4 of higher 설치</p>
+</li>
+</ul>
+<h3 id="postgresql-설치-주의-사항imagebackup_program6png">Postgresql 설치 주의 사항<img src="/image/backup_program/6.png" alt=""></h3>
+<ul>
+<li>
+<h3 id="데이터베이스-변경"><strong>데이터베이스 변경</strong></h3>
+<ul>
+<li>
+<h5 id="db_url의-jdbcpostgresqllocalhost5432db_name">DB_URL의 jdbc:postgresql://localhost:5432/{DB_Name}</h5>
+<p>postgres는 postgres설치시 디폴트 DB 입니다. 다른것을 이용하고자 한다면 DB 생성후 해당 DB이름으로 변경</p>
+<p>ex&gt; jdbc:postgresql://localhost:5432/opensource</p>
+</li>
+<li>
+<p>소문자로 생성 하는 것을 권장합니다.</p>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="db_user-db_password"><strong>DB_USER, DB_PASSWORD</strong></h3>
+<p>DB_USER, DB_PASSWORD 역시 postgres 설치 시 설정한 유저명과 비밀번호 입니다. 새로운 유저로 사용하고자 한다면 해당 DB 접속 후
+USER, PASSWORD 생성 후 properties에 변경 (소문자로 생성 하는 것을 권장합니다.)</p>
+<p>ex&gt; ![](/image/backup_program/스크린샷 2019-08-28 오전 6.17.07.png)</p>
+</li>
+</ul>
+<h4 id="511-git-clone-httpsgithubcomguriohbackup-programgit">5.1.1 git clone <a href="https://github.com/guriOH/backup-program.git">https://github.com/guriOH/backup-program.git</a></h4>
+<h4 id="512-eclipse-maven-import">5.1.2 eclipse maven import</h4>
+<!-- raw HTML omitted -->
+<h4 id="513-maven-build">5.1.3 Maven build</h4>
+<!-- raw HTML omitted -->
+<h4 id="514-run-master--slave-imagebackup_program9png">5.1.4 Run Master &amp; Slave <img src="/image/backup_program/9.png" alt=""></h4>
+<p>Program arguments : &lsquo;={app.properties 파일 위치}&rsquo;</p>
+<p>VM arguments : &lsquo;-Dlog4j.configurationFile=file:////{log4j2.xml 파일 위치}&rsquo;</p>
+<h2 id="6-테스트방법-case-2">6. 테스트방법 case 2</h2>
+<h4 id="61-5113-까지-동일">6.1 5.1.1~3 까지 동일</h4>
+<h4 id="62-runnable-jar-file-각각-export">6.2 Runnable JAR file 각각 export</h4>
+<!-- raw HTML omitted -->
+<h4 id="63-terminal-command">6.3 Terminal command</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">java -Dlog4j.configurationFile<span style="color:#f92672">=</span>file:////<span style="color:#f92672">{</span>log4j2.xml 파일 위치<span style="color:#f92672">}</span> -jar master.jar <span style="color:#f92672">{=</span>app.properties 파일 위치<span style="color:#f92672">}</span>
+java -Dlog4j.configurationFile<span style="color:#f92672">=</span>file:////<span style="color:#f92672">{</span>log4j2.xml 파일 위치<span style="color:#f92672">}</span> -jar slave.jar <span style="color:#f92672">{=</span>app.properties 파일 위치<span style="color:#f92672">}</span>
+</code></pre></div></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+          
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-시스템-구성">1. 시스템 구성</a>
+      <ul>
+        <li><a href="#11-역할">1.1 역할</a></li>
+        <li><a href="#12-개발-방법">1.2 개발 방법</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-master-상세-설명">2. Master 상세 설명</a>
+      <ul>
+        <li></li>
+        <li><a href="#211-serverstarter">2.1.1 ServerStarter</a></li>
+        <li><a href="#212-generatorclass">2.1.2. Generator.class</a></li>
+        <li><a href="#213-socketserviceclass">2.1.3. SocketService.class</a></li>
+        <li><a href="#214-workerpoolclass">2.1.4 WorkerPool.class</a></li>
+        <li><a href="#214-senderclass">2.1.4 Sender.class</a></li>
+        <li><a href="#214-master-sequence-flow-chartimagebackup_program4png">2.1.4 Master Sequence flow chart<img src="/image/backup_program/4.png" alt=""></a></li>
+      </ul>
+    </li>
+    <li><a href="#3-slave-상세-설명">3. Slave 상세 설명</a>
+      <ul>
+        <li><a href="#31-코드-설명imagebackup_program5png">3.1 코드 설명<img src="/image/backup_program/5.png" alt=""></a></li>
+        <li><a href="#311-clientstarterclass">3.1.1 ClientStarter.class</a></li>
+        <li><a href="#312-socketserviceclass">3.1.2 SocketService.class</a></li>
+        <li><a href="#311-recieverclass">3.1.1 Reciever.class</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-테스트방법-case-1">5. 테스트방법 Case 1</a>
+      <ul>
+        <li><a href="#postgresql-설치-주의-사항imagebackup_program6png">Postgresql 설치 주의 사항<img src="/image/backup_program/6.png" alt=""></a></li>
+        <li><a href="#데이터베이스-변경"><strong>데이터베이스 변경</strong></a></li>
+        <li><a href="#db_user-db_password"><strong>DB_USER, DB_PASSWORD</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#6-테스트방법-case-2">6. 테스트방법 case 2</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Spring_CRUD_practice"><meta property="og:title" content="Spring_CRUD_practice" />
+<meta property="og:description" content="Autor : 오 훈
+Title : AddressBook
+AddressBook (GitHub Link) 1. 목적  GET, PUT, POST, DELETE 를 이용한 주소록 CRUD 구현  2. 어플리케이션 디자인  구현에 앞서 기본적인 어플리케이션 디자인을 설명 드리겠습니다.
+어플리케이션은 크게 데이터 클래스 (Request, Response, Model), 비즈니스 로직을 포함한 데이터 처리 클래스로 나뉩니다.
+3. 프로젝트 구성  프로젝트는 SpringBoot 어플리케이션을 사용하여 작성하였습니다.
+Repository 컨트롤로는 JPA api를 사용하였고, DataBase로는 인메모리디비 H2를 사용하였습니다.
+3.1 데이터 구성 AddressInfo.class" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gurioh.github.io/posts/project/addressbook/" />
+<meta property="article:published_time" content="2019-11-01T19:37:57+00:00" />
+<meta property="article:modified_time" content="2019-11-01T19:37:57+00:00" />
+<title>Spring_CRUD_practice | henry site</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.829f7602029a29a47bf1b0c9c4bb52982089a6d13558c9433d3c8b7e38c8b3b8.css" integrity="sha256-gp92AgKaKaR78bDJxLtSmCCJptE1WMlDPTyLfjjIs7g=">
+
+
+<script defer src="/en.search.min.d5cb1ab78daa3fcce80675b72ff620313b03e5f65e247253ee6040394d8e24bf.js" integrity="sha256-1csat42qP8zoBnW3L/YgMTsD5fZeJHJT7mBAOU2OJL8="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>henry site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/shortcodes/" class="">Shortcodes</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/task/" class="">Task</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/categories/" class="">Categories</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="collapsed ">프로그래밍</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/" class="collapsed ">빅데이터</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>도구</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>오픈소스</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>클라우드</span>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        henry
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Spring_CRUD_practice</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-목적">1. 목적</a></li>
+    <li><a href="#2-어플리케이션-디자인">2. 어플리케이션 디자인</a>
+      <ul>
+        <li><a href="#imageaddressinfo1png"><img src="/image/addressInfo/1.png" alt=""></a></li>
+      </ul>
+    </li>
+    <li><a href="#3-프로젝트-구성">3. 프로젝트 구성</a></li>
+    <li><a href="#imageaddressinfo2png"><img src="/image/addressInfo/2.png" alt=""></a>
+      <ul>
+        <li><a href="#31-데이터-구성">3.1 데이터 구성</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-상세-설명">4. 상세 설명</a>
+      <ul>
+        <li><a href="#41-get">4.1 GET</a></li>
+        <li><a href="#42-post">4.2 POST</a></li>
+        <li><a href="#43-put">4.3 PUT</a></li>
+        <li><a href="#44-delete">4.4 DELETE</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-테스트">5. 테스트</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/project/addressbook/">Spring_CRUD_practice</a>
+  </h1>
+  
+
+  <h5>November 1, 2019</h5>
+
+
+
+  
+  <div>
+    
+  </div>
+  
+
+  
+  <div>
+    
+        <a href="/tags/spring/">spring</a>, 
+        <a href="/tags/h2/">H2</a>, 
+        <a href="/tags/crud/">CRUD</a>
+  </div>
+  
+
+
+  <p><p>Autor : 오 훈</p>
+<p>Title : AddressBook</p>
+<h1 id="addressbook-github-linkhttpsgithubcomguriohaddressbookgit">AddressBook (<a href="https://github.com/guriOH/AddressBook.git">GitHub Link</a>)</h1>
+<h2 id="1-목적">1. 목적</h2>
+<ul>
+<li>GET, PUT, POST, DELETE 를 이용한  주소록  CRUD 구현</li>
+</ul>
+<h2 id="2-어플리케이션-디자인">2. 어플리케이션 디자인</h2>
+<h3 id="imageaddressinfo1png"><img src="/image/addressInfo/1.png" alt=""></h3>
+<p>구현에 앞서 기본적인 어플리케이션 디자인을 설명 드리겠습니다.</p>
+<p>어플리케이션은 크게 데이터 클래스 (Request, Response, Model), 비즈니스 로직을 포함한 데이터 처리 클래스로 나뉩니다.</p>
+<h2 id="3-프로젝트-구성">3. 프로젝트 구성</h2>
+<h2 id="imageaddressinfo2png"><img src="/image/addressInfo/2.png" alt=""></h2>
+<p>프로젝트는  SpringBoot 어플리케이션을 사용하여 작성하였습니다.</p>
+<p>Repository 컨트롤로는 JPA api를 사용하였고,  DataBase로는  인메모리디비 H2를 사용하였습니다.</p>
+<h3 id="31-데이터-구성">3.1 데이터 구성</h3>
+<p>AddressInfo.class</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Entity</span>
+<span style="color:#a6e22e">@ToString</span>
+<span style="color:#a6e22e">@Getter</span> <span style="color:#a6e22e">@Setter</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddressInfo</span> <span style="color:#66d9ef">implements</span> Serializable <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> serialVersionUID <span style="color:#f92672">=</span> 1L<span style="color:#f92672">;</span>
+	
+	<span style="color:#a6e22e">@Id</span>
+	<span style="color:#a6e22e">@GeneratedValue</span><span style="color:#f92672">(</span>strategy<span style="color:#f92672">=</span> GenerationType<span style="color:#f92672">.</span><span style="color:#a6e22e">SEQUENCE</span><span style="color:#f92672">)</span>
+	<span style="color:#66d9ef">private</span> Integer id<span style="color:#f92672">;</span>
+	
+	
+	<span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> String phonenumber<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> String address<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">private</span> String email<span style="color:#f92672">;</span>
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">AddressInfo</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		
+	<span style="color:#f92672">}</span>
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">AddressInfo</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">,</span> String phonenumber<span style="color:#f92672">,</span> String address<span style="color:#f92672">,</span> String email<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">phonenumber</span> <span style="color:#f92672">=</span> phonenumber<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">address</span> <span style="color:#f92672">=</span> address<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">email</span> <span style="color:#f92672">=</span> email<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>AddressInfo 클래스는 데이터 테이블에 저장될 데이터의 모델로서 Key값은 Integer형태의 Id를 Auto 생성합니다.
+그리고 주소록에 들어갈 내용으로는 이름, 연락처, 주소, 이메일이 있습니다.</p>
+<p>Getter, Setter 어노테이션을 사용하도록  org.projectlombok.lombok 라이브러리를 사용하였습니다.</p>
+<h2 id="4-상세-설명">4. 상세 설명</h2>
+<h3 id="41-get">4.1 GET</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Controller</span>
+<span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/address&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddressController</span> <span style="color:#f92672">{</span>
+
+	<span style="color:#a6e22e">@Autowired</span>
+	<span style="color:#66d9ef">private</span> AddressServiceImpl addressService<span style="color:#f92672">;</span>
+
+  	<span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/{id}&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">)</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">@ResponseBody</span> AddressResponse <span style="color:#a6e22e">getAddress</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)</span><span style="color:#66d9ef">final</span> Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> errors <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+		AddressInfo toDoItem <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+			toDoItem <span style="color:#f92672">=</span> addressService<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+			errors<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>e<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">());</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">return</span> AddressAdapter<span style="color:#f92672">.</span><span style="color:#a6e22e">addressInfoResponse</span><span style="color:#f92672">(</span>toDoItem<span style="color:#f92672">,</span> errors<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+  
+	<span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">)</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">@ResponseBody</span> List<span style="color:#f92672">&lt;</span>AddressResponse<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getAllMember</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> errors <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+		List<span style="color:#f92672">&lt;</span>AddressInfo<span style="color:#f92672">&gt;</span> toDoItems <span style="color:#f92672">=</span> addressService<span style="color:#f92672">.</span><span style="color:#a6e22e">findAllMembers</span><span style="color:#f92672">();</span> 
+		List<span style="color:#f92672">&lt;</span>AddressResponse<span style="color:#f92672">&gt;</span> toDoItemResponses <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+		toDoItems<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">forEach</span><span style="color:#f92672">(</span>toDoItem <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+			toDoItemResponses<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>AddressAdapter<span style="color:#f92672">.</span><span style="color:#a6e22e">addressInfoResponse</span><span style="color:#f92672">(</span>toDoItem<span style="color:#f92672">,</span> errors<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">));</span>
+		<span style="color:#f92672">});</span>
+		<span style="color:#66d9ef">return</span> toDoItemResponses<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>AddressController는 어노테이션을 이용하여 이 클래스가 RESTFul API임을 명시합니다.</p>
+<p>그리고 @RequestMapping을 사용하여 해당 컨트롤러의 최상위 URL을 정의 합니다.</p>
+<p>@RequestMapping(value = &ldquo;/{id}&quot;, method = RequestMethod.GET)</p>
+<ul>
+<li>
+<p>AddressResponse getAddress(@PathVariable(&ldquo;id&rdquo;)final Integer id)</p>
+<ol>
+<li>
+<p>getAddress는 GET 방식 사용하여 호출합니다. @PathVariable으로 정의되어 있는 값을  URL에서 선택하여 getAddress의 인자 ID로 넣어 줍니다.</p>
+</li>
+<li>
+<p>addressService.findById(id)에서는 내부적으로 repository서비스 구현 클래스를 호출하여 해당  ID(key value)를 가진 데이터를 가져옵니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">public</span> AddressInfo <span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+   <span style="color:#66d9ef">return</span> addressRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">).</span><span style="color:#a6e22e">orElse</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>
+<p>AddressAdapter.addressInfoResponse(toDoItem, errors, null)
+가져온 결과값을 Adapter에서 Response객체로 변환하여 반환합니다.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>List<!-- raw HTML omitted --> getAllMember()</p>
+<ol>
+<li>
+<p>getAllMember GET 방식 사용하여 호출합니다.</p>
+</li>
+<li>
+<p>addressService.findAllMembers()에서는 addressRepository.findAll()를 호출하여 모든 주소 데이터를 가져옵니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>AddressInfo<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">findAllMembers</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+   <span style="color:#66d9ef">return</span> addressRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">findAll</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>
+<p>AddressAdapter.addressInfoResponse(toDoItem, errors, null) 가져온 결과값을 Adapter에서 Response객체로 변환하여 반환합니다.</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="42-post">4.2 POST</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">POST</span><span style="color:#f92672">)</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">@ResponseBody</span> AddressResponse <span style="color:#a6e22e">create</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> <span style="color:#66d9ef">final</span> AddressRequest addressReqeust<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> errors <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+		AddressInfo addressInfo <span style="color:#f92672">=</span> AddressAdapter<span style="color:#f92672">.</span><span style="color:#a6e22e">addressInfo</span><span style="color:#f92672">(</span>addressReqeust<span style="color:#f92672">);</span>
+		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+			addressInfo <span style="color:#f92672">=</span> addressService<span style="color:#f92672">.</span><span style="color:#a6e22e">saveMember</span><span style="color:#f92672">(</span>addressInfo<span style="color:#f92672">);</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+			errors<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>e<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">());</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">return</span> AddressAdapter<span style="color:#f92672">.</span><span style="color:#a6e22e">addressInfoResponse</span><span style="color:#f92672">(</span>addressInfo<span style="color:#f92672">,</span> errors<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>@RequestBody를 사용하여 HTTP 요청을 AddressRequest로 받고, AddressAdapter에서는 이  Http요청을 AddressInfo객체로 변환한다.</p>
+<ul>
+<li>
+<p>AddressResponse create(@RequestBody final AddressRequest addressReqeust)</p>
+<ol>
+<li>
+<p>addressService.saveMemver(addressInfo)에서는 addressRepository.save(member)를 호출하여 데이터를 저장한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">public</span> AddressInfo <span style="color:#a6e22e">saveMember</span><span style="color:#f92672">(</span>AddressInfo member<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+   <span style="color:#66d9ef">return</span> addressRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>member<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
+</ol>
+</li>
+</ul>
+<p>@ResponseBody는 create 메소드 결과 객체를 Http 결과를  Json형태로 돌려준다.</p>
+<h3 id="43-put">4.3 PUT</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/{id}&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">PUT</span><span style="color:#f92672">)</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">@ResponseBody</span> AddressResponse <span style="color:#a6e22e">updateAddress</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)</span> Integer id<span style="color:#f92672">,</span>  <span style="color:#a6e22e">@RequestBody</span> <span style="color:#66d9ef">final</span> AddressRequest addressReqeust<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> errors <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+		AddressInfo source <span style="color:#f92672">=</span> AddressAdapter<span style="color:#f92672">.</span><span style="color:#a6e22e">addressInfo</span><span style="color:#f92672">(</span>addressReqeust<span style="color:#f92672">);</span>
+		AddressInfo updated <span style="color:#f92672">=</span> addressService<span style="color:#f92672">.</span><span style="color:#a6e22e">updateMember</span><span style="color:#f92672">(</span>id<span style="color:#f92672">,</span> source<span style="color:#f92672">);</span>
+		<span style="color:#66d9ef">return</span> AddressAdapter<span style="color:#f92672">.</span><span style="color:#a6e22e">addressInfoResponse</span><span style="color:#f92672">(</span>updated<span style="color:#f92672">,</span> errors<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>PUT을 사용하여 데이터를 수정합니다. 먼저 @PathVariable(&ldquo;id&rdquo;)와 같이 URL에서 변환 대상 객체의 Key(Id)와 수정 내용를 전달 받습니다.</p>
+<ul>
+<li>
+<p>AddressAdapter.addressInfo(addressReqeust) 먼저 수정할 내용의 객체를 AddressAdapter에서 Model 객체로 변환합니다.</p>
+</li>
+<li>
+<p>addressService.updateMember(id, source)는 내부적으로 모든 주소록을 가져와 해당 ID값을 가지는  Model을 수정할  Model로 업데이트 합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+  <span style="color:#66d9ef">public</span> AddressInfo <span style="color:#a6e22e">updateMember</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">,</span> AddressInfo source<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      AddressInfo target <span style="color:#f92672">=</span> addressRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">).</span><span style="color:#a6e22e">orElse</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+      <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>target <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+  		
+      target<span style="color:#f92672">.</span><span style="color:#a6e22e">setAddress</span><span style="color:#f92672">(</span>source<span style="color:#f92672">.</span><span style="color:#a6e22e">getAddress</span><span style="color:#f92672">());</span>
+      target<span style="color:#f92672">.</span><span style="color:#a6e22e">setEmail</span><span style="color:#f92672">(</span>source<span style="color:#f92672">.</span><span style="color:#a6e22e">getEmail</span><span style="color:#f92672">());</span>
+      target<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>source<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+      target<span style="color:#f92672">.</span><span style="color:#a6e22e">setPhonenumber</span><span style="color:#f92672">(</span>source<span style="color:#f92672">.</span><span style="color:#a6e22e">getPhonenumber</span><span style="color:#f92672">());</span>
+  		
+      addressRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">(</span>target<span style="color:#f92672">);</span>
+      <span style="color:#66d9ef">return</span> target<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+</code></pre></div></li>
+</ul>
+<p>@ResponseBody는 create 메소드 결과 객체를 Http 결과를  Json형태로 돌려준다.</p>
+<h3 id="44-delete">4.4 DELETE</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/{id}&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">DELETE</span><span style="color:#f92672">)</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">@ResponseBody</span> AddressResponse <span style="color:#a6e22e">deleteAddress</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span><span style="color:#f92672">(</span>value<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)</span> Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> errors <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+		String info <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Delete fail&#34;</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>addressService<span style="color:#f92672">.</span><span style="color:#a6e22e">deleteMember</span><span style="color:#f92672">(</span>id<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+				info <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Delete success&#34;</span><span style="color:#f92672">;</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span><span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+			errors<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>e<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">());</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">return</span> AddressAdapter<span style="color:#f92672">.</span><span style="color:#a6e22e">addressInfoResponse</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> errors<span style="color:#f92672">,</span> info<span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>DELETE를 사용하여 데이터를 삭제합니다. @PathVariable(&ldquo;id&rdquo;)에 명시된 내용을 URL에서 가져옵니다.</p>
+<ul>
+<li>
+<p>addressService.deleteMember(id) 에 삭제할 대상  key값을 주어, 해당 객체를 가져와 delete 합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+  <span style="color:#66d9ef">public</span> Boolean <span style="color:#a6e22e">deleteMember</span><span style="color:#f92672">(</span>Integer id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      AddressInfo target <span style="color:#f92672">=</span> addressRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">findById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">).</span><span style="color:#a6e22e">orElse</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+      <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span> target <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+      <span style="color:#66d9ef">else</span>
+          addressRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>target<span style="color:#f92672">);</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+</code></pre></div></li>
+</ul>
+<h2 id="5-테스트">5. 테스트</h2>
+<ol>
+<li>Postman을 활용한 로직 호출 (DB 로그 확인)</li>
+</ol>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+          
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-목적">1. 목적</a></li>
+    <li><a href="#2-어플리케이션-디자인">2. 어플리케이션 디자인</a>
+      <ul>
+        <li><a href="#imageaddressinfo1png"><img src="/image/addressInfo/1.png" alt=""></a></li>
+      </ul>
+    </li>
+    <li><a href="#3-프로젝트-구성">3. 프로젝트 구성</a></li>
+    <li><a href="#imageaddressinfo2png"><img src="/image/addressInfo/2.png" alt=""></a>
+      <ul>
+        <li><a href="#31-데이터-구성">3.1 데이터 구성</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-상세-설명">4. 상세 설명</a>
+      <ul>
+        <li><a href="#41-get">4.1 GET</a></li>
+        <li><a href="#42-post">4.2 POST</a></li>
+        <li><a href="#43-put">4.3 PUT</a></li>
+        <li><a href="#44-delete">4.4 DELETE</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-테스트">5. 테스트</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

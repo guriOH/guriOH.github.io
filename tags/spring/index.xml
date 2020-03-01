@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spring on henry site</title>
+    <link>https://gurioh.github.io/tags/spring/</link>
+    <description>Recent content in spring on henry site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Jan 2020 10:32:09 +0000</lastBuildDate>
+    
+	<atom:link href="https://gurioh.github.io/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring bean life cycle</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_bean_understanding/</link>
+      <pubDate>Wed, 15 Jan 2020 10:32:09 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_bean_understanding/</guid>
+      <description>스프링에서는 빈의 생명주기 관리를 위한 방법을 몇가지를 제공하고 있다. 본 문서에서는 스프링 빈의 생명주기를 알아보고 관련 인터페이스 몇가지를 알아보자.
+Spring bean life cycle overview  Part 1 - 빈 생성이후 사용전까지 각 단계, 전 처리 단계, 각 생성자 호출하여 생성. Part 2 - 빈 삭제 단계  Aware Interfaces 많이 사용되는 인터페이스.
+ BeanFactoryAware : setBeanFactory() 제공 BeanNameAware : ThesetVeanName() 빈의 이름을 생성하는 인터페이스 제공 ApplicationContextAware : ThesetApplicationContext() 해당 빈의 ApplicationContext 객체 제공.</description>
+    </item>
+    
+    <item>
+      <title>Spring bean life cycle</title>
+      <link>https://gurioh.github.io/posts/framework/springboot/spring_bean_understanding/</link>
+      <pubDate>Wed, 15 Jan 2020 10:32:09 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/framework/springboot/spring_bean_understanding/</guid>
+      <description>스프링에서는 빈의 생명주기 관리를 위한 방법을 몇가지를 제공하고 있다. 본 문서에서는 스프링 빈의 생명주기를 알아보고 관련 인터페이스 몇가지를 알아보자.
+Spring bean life cycle overview  Part 1 - 빈 생성이후 사용전까지 각 단계, 전 처리 단계, 각 생성자 호출하여 생성. Part 2 - 빈 삭제 단계  Aware Interfaces 많이 사용되는 인터페이스.
+ BeanFactoryAware : setBeanFactory() 제공 BeanNameAware : ThesetVeanName() 빈의 이름을 생성하는 인터페이스 제공 ApplicationContextAware : ThesetApplicationContext() 해당 빈의 ApplicationContext 객체 제공.</description>
+    </item>
+    
+    <item>
+      <title>Spring_CRUD_practice</title>
+      <link>https://gurioh.github.io/posts/project/addressbook/</link>
+      <pubDate>Fri, 01 Nov 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/project/addressbook/</guid>
+      <description>Autor : 오 훈
+Title : AddressBook
+AddressBook (GitHub Link) 1. 목적  GET, PUT, POST, DELETE 를 이용한 주소록 CRUD 구현  2. 어플리케이션 디자인  구현에 앞서 기본적인 어플리케이션 디자인을 설명 드리겠습니다.
+어플리케이션은 크게 데이터 클래스 (Request, Response, Model), 비즈니스 로직을 포함한 데이터 처리 클래스로 나뉩니다.
+3. 프로젝트 구성  프로젝트는 SpringBoot 어플리케이션을 사용하여 작성하였습니다.
+Repository 컨트롤로는 JPA api를 사용하였고, DataBase로는 인메모리디비 H2를 사용하였습니다.
+3.1 데이터 구성 AddressInfo.class</description>
+    </item>
+    
+  </channel>
+</rss>

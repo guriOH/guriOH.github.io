@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kafka on henry site</title>
+    <link>https://gurioh.github.io/tags/kafka/</link>
+    <description>Recent content in Kafka on henry site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Dec 2019 17:46:57 +0000</lastBuildDate>
+    
+	<atom:link href="https://gurioh.github.io/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>카프카(Kafka) 실행시키기 - Intellj</title>
+      <link>https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/how_to_build_kafka_with_intellij/</link>
+      <pubDate>Sun, 01 Dec 2019 17:46:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/how_to_build_kafka_with_intellij/</guid>
+      <description>앞선 내용에서 Kafka에서 제공하는 스크립트를 통해 카프카를 실행 시켜 보았다.
+오늘은 카프카를 IDE를 통하여 실행을 시킴으로서 Kafka가 내부적으로 어떻게 동작을 하는지 더 정확히 확인을 해보려고 한다
+오늘의 목표
+ Intellij를 이용하여 Kafka 빌드  우선 Kafka 빌드에 앞서 선행적으로 준비가 되어야 할 것이 있다.
+ git Java 8 IntelliJ  위 환경이 준비가 되었다는 가정하에 문서를 보면 된다.
+ 인텔리제이의 경우 Scala, Gradle을 플러그인 형태로 아주 쉽게 다운로드 받을 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>카프카(Kafka) 실행시키기 - Intellj</title>
+      <link>https://gurioh.github.io/posts/opensource/bigdata/kafka/how_to_build_kafka_with_intellij/</link>
+      <pubDate>Sun, 01 Dec 2019 17:46:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/opensource/bigdata/kafka/how_to_build_kafka_with_intellij/</guid>
+      <description>앞선 내용에서 Kafka에서 제공하는 스크립트를 통해 카프카를 실행 시켜 보았다.
+오늘은 카프카를 IDE를 통하여 실행을 시킴으로서 Kafka가 내부적으로 어떻게 동작을 하는지 더 정확히 확인을 해보려고 한다
+오늘의 목표
+ Intellij를 이용하여 Kafka 빌드  우선 Kafka 빌드에 앞서 선행적으로 준비가 되어야 할 것이 있다.
+ git Java 8 IntelliJ  위 환경이 준비가 되었다는 가정하에 문서를 보면 된다.
+ 인텔리제이의 경우 Scala, Gradle을 플러그인 형태로 아주 쉽게 다운로드 받을 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>카프카(Kafka) 실행시키기 - 스크립트</title>
+      <link>https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/how_to_build_kafka_source_intellij/</link>
+      <pubDate>Sun, 01 Dec 2019 17:46:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/how_to_build_kafka_source_intellij/</guid>
+      <description>이제 카프카를 실행 시켜 보자!!
+목표는 아래와 같다.
+ 카프카를 설치해서 빌드된 스크립트를 이용하여 카프카의 동작여부를 확인해보자. 최종적으로는 Intellij를 통해 빌드해보며 어떤 식으로 돌아가는지 코드로 확인해 보자.  카프카(Kafka) 실행시키기 - 스크립트 Step.1 DownLoad 카프카 공식 홈페이지에서 다운로드!!
+현재기준 kafka 최신 버전은 2.3.0이다.
+$ tar -zvxf kafka_2.12-2.3.0.tgz $ cd kafka_2.12-2.3.0.tgz 다운로드 받아서 압축을 푹어준다.
+Step.2 실행시키기 카프카를 실행 시켜주면 된다.
+먼저 카프카는 기본적으로 Zookeeper에서 관리가 되고 있기 때문에 Zookeeper가 실행이 되어야만 동작한다.</description>
+    </item>
+    
+    <item>
+      <title>카프카(Kafka) 실행시키기 - 스크립트</title>
+      <link>https://gurioh.github.io/posts/opensource/bigdata/kafka/how_to_build_kafka_source_intellij/</link>
+      <pubDate>Sun, 01 Dec 2019 17:46:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/opensource/bigdata/kafka/how_to_build_kafka_source_intellij/</guid>
+      <description>이제 카프카를 실행 시켜 보자!!
+목표는 아래와 같다.
+ 카프카를 설치해서 빌드된 스크립트를 이용하여 카프카의 동작여부를 확인해보자. 최종적으로는 Intellij를 통해 빌드해보며 어떤 식으로 돌아가는지 코드로 확인해 보자.  카프카(Kafka) 실행시키기 - 스크립트 Step.1 DownLoad 카프카 공식 홈페이지에서 다운로드!!
+현재기준 kafka 최신 버전은 2.3.0이다.
+$ tar -zvxf kafka_2.12-2.3.0.tgz $ cd kafka_2.12-2.3.0.tgz 다운로드 받아서 압축을 푹어준다.
+Step.2 실행시키기 카프카를 실행 시켜주면 된다.
+먼저 카프카는 기본적으로 Zookeeper에서 관리가 되고 있기 때문에 Zookeeper가 실행이 되어야만 동작한다.</description>
+    </item>
+    
+    <item>
+      <title>카프카(Kafka) 이해하기</title>
+      <link>https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/what_is_kafka/</link>
+      <pubDate>Sun, 01 Dec 2019 17:46:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/%EC%B9%B4%ED%94%84%EC%B9%B4/what_is_kafka/</guid>
+      <description>카프카(Kafka) 이해하기 오늘은 카프카에 대해서 간략하게 알아보며 간단하게 실행을 시켜보는 시간을 가져보자.
+그냥 궁금해서.. :)
+​	Let&amp;rsquo;s get it!
+메시징 서비스 먼저 카프카는 메시지 퍼블리싱 어플리케이션으로서 메시지를 서로 전달할 수 있도록 연결하는 오픈소스입니다.
+카프카는 특히 실시간 대량 정보를 다루는데에 유용하게 사용될 수 있는데, 여러 정보를 소비자에게 빠르게 전달하는 과정에서 생기는 문제점을 해결하기 위한 솔루션입니다.
+ 카프카는 활동 스트림 데이터를 처리하는 데 유용하다는 점에서 스크라이브 또는 플럼 과 유사해 보이지만 아키텍처 관점에서는 액티브엠큐, 래빗엠큐 같은 메시징 시스템에 더 가깝다.</description>
+    </item>
+    
+    <item>
+      <title>카프카(Kafka) 이해하기</title>
+      <link>https://gurioh.github.io/posts/opensource/bigdata/kafka/what_is_kafka/</link>
+      <pubDate>Sun, 01 Dec 2019 17:46:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/opensource/bigdata/kafka/what_is_kafka/</guid>
+      <description>카프카(Kafka) 이해하기 오늘은 카프카에 대해서 간략하게 알아보며 간단하게 실행을 시켜보는 시간을 가져보자.
+그냥 궁금해서.. :)
+​	Let&amp;rsquo;s get it!
+메시징 서비스 먼저 카프카는 메시지 퍼블리싱 어플리케이션으로서 메시지를 서로 전달할 수 있도록 연결하는 오픈소스입니다.
+카프카는 특히 실시간 대량 정보를 다루는데에 유용하게 사용될 수 있는데, 여러 정보를 소비자에게 빠르게 전달하는 과정에서 생기는 문제점을 해결하기 위한 솔루션입니다.
+ 카프카는 활동 스트림 데이터를 처리하는 데 유용하다는 점에서 스크라이브 또는 플럼 과 유사해 보이지만 아키텍처 관점에서는 액티브엠큐, 래빗엠큐 같은 메시징 시스템에 더 가깝다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>henry site</title>
+    <link>https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/</link>
+    <description>Recent content on henry site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Dec 2019 17:46:57 +0000</lastBuildDate>
+    
+	<atom:link href="https://gurioh.github.io/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

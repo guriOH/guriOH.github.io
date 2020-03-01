@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="카프카(Kafka) 실행시키기 - Intellj"><meta property="og:title" content="카프카(Kafka) 실행시키기 - Intellj" />
+<meta property="og:description" content="앞선 내용에서 Kafka에서 제공하는 스크립트를 통해 카프카를 실행 시켜 보았다.
+오늘은 카프카를 IDE를 통하여 실행을 시킴으로서 Kafka가 내부적으로 어떻게 동작을 하는지 더 정확히 확인을 해보려고 한다
+오늘의 목표
+ Intellij를 이용하여 Kafka 빌드  우선 Kafka 빌드에 앞서 선행적으로 준비가 되어야 할 것이 있다.
+ git Java 8 IntelliJ  위 환경이 준비가 되었다는 가정하에 문서를 보면 된다.
+ 인텔리제이의 경우 Scala, Gradle을 플러그인 형태로 아주 쉽게 다운로드 받을 수 있다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gurioh.github.io/posts/opensource/bigdata/kafka/how_to_build_kafka_with_intellij/" />
+<meta property="article:published_time" content="2019-12-01T17:46:57+00:00" />
+<meta property="article:modified_time" content="2019-12-01T17:46:57+00:00" />
+<title>카프카(Kafka) 실행시키기 - Intellj | henry site</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.829f7602029a29a47bf1b0c9c4bb52982089a6d13558c9433d3c8b7e38c8b3b8.css" integrity="sha256-gp92AgKaKaR78bDJxLtSmCCJptE1WMlDPTyLfjjIs7g=">
+
+
+<script defer src="/en.search.min.d5cb1ab78daa3fcce80675b72ff620313b03e5f65e247253ee6040394d8e24bf.js" integrity="sha256-1csat42qP8zoBnW3L/YgMTsD5fZeJHJT7mBAOU2OJL8="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>henry site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/shortcodes/" class="">Shortcodes</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/task/" class="">Task</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/categories/" class="">Categories</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="collapsed ">프로그래밍</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/" class="collapsed ">빅데이터</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>도구</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>오픈소스</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>클라우드</span>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        henry
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>카프카(Kafka) 실행시키기 - Intellj</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#step-1-git-clone">Step-1. Git clone</a></li>
+    <li><a href="#step-2-build">Step-2. Build</a></li>
+    <li><a href="#step-3-run-kafka">Step-3. Run Kafka</a></li>
+    <li><a href="#error-1">Error-#1</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/opensource/bigdata/kafka/how_to_build_kafka_with_intellij/">카프카(Kafka) 실행시키기 - Intellj</a>
+  </h1>
+  
+
+  <h5>December 1, 2019</h5>
+
+
+
+  
+  <div>
+    
+  </div>
+  
+
+  
+  <div>
+    
+        <a href="/tags/kafka/">Kafka</a>
+  </div>
+  
+
+
+  <p><p>앞선 내용에서 Kafka에서 제공하는 스크립트를 통해 카프카를 실행 시켜 보았다.</p>
+<p>오늘은 카프카를 IDE를 통하여 실행을 시킴으로서 Kafka가 내부적으로 어떻게 동작을 하는지 더 정확히 확인을 해보려고 한다</p>
+<p>오늘의 목표</p>
+<ul>
+<li>Intellij를 이용하여 Kafka 빌드</li>
+</ul>
+<p>우선 Kafka 빌드에 앞서 선행적으로 준비가 되어야 할 것이 있다.</p>
+<ul>
+<li>git</li>
+<li>Java 8</li>
+<li>IntelliJ</li>
+</ul>
+<p>위 환경이 준비가 되었다는 가정하에 문서를 보면 된다.</p>
+<blockquote>
+<p>인텔리제이의 경우 Scala, Gradle을 플러그인 형태로 아주 쉽게 다운로드 받을 수 있다.</p>
+<p>만약 이클립스를 사용한다면 위 두가지를 다운로드 받거나 플러그인이 있다면 추가해서 사용하자.</p>
+<p>카프카는 Scala 로 작성된 어플리케이션 이다.</p>
+</blockquote>
+<h1 id="카프카kafka--실행시키기-with-intellij">카프카(Kafka)  실행시키기 with Intellij</h1>
+<h2 id="step-1-git-clone">Step-1. Git clone</h2>
+<pre><code>git clone https://github.com/apache/kafka.git
+</code></pre><p>위 명령어를 통해 Kafka 소스를 내려 받는다.</p>
+<h2 id="step-2-build">Step-2. Build</h2>
+<p>카프카의 실행에 앞서 실행에 필요한 서드 파티 파일들을 받아야 한다.</p>
+<pre><code>./gradlew clean
+./gradlew jar
+</code></pre><h2 id="step-3-run-kafka">Step-3. Run Kafka</h2>
+<p><img src="/image/kafka/3.png" alt=""></p>
+<pre><code>VM Options
+-Dkafka.logs.dir=/tmp/kafka -Dlog4j.configuration=file:config/log4j.properties
+
+Program arguments
+config/server.properties
+</code></pre><p>VM Options은 server.properties 에 설정해둔 로그파일 저장 위치와 log4j 설정 정보를 입력한다.</p>
+<h2 id="error-1">Error-#1</h2>
+<pre><code>SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+SLF4J: Failed to load class &quot;org.slf4j.impl.StaticMDCBinder&quot;.
+SLF4J: Defaulting to no-operation MDCAdapter implementation.
+SLF4J: See http://www.slf4j.org/codes.html#no_static_mdc_binder for further details.
+</code></pre><p>실행했을때 위와 같은 에러로그가 발생한다면</p>
+<pre><code>kafka/build.gradle
+project(':core') {
+  dependencies {
+     compile project(':clients')
+     compile libs.slf4jlog4j12
+     ....
+  }
+}
+kafka/gradle/dependencies.gradle
+versions += [
+   ....
+   zstd: &quot;1.4.3-1&quot;,
+   slf4jlog4j12: &quot;2.0.0-alpha1&quot;
+]
+libs += [
+  .....
+  httpclient:     &quot;org.apache.httpcomponents:httpclient:$versions.httpclient&quot;,
+slf4jlog4j12: &quot;org.slf4j:slf4j-log4j12:$versions.slf4jlog4j12&quot;
+]
+</code></pre><p>위와 같이 &lsquo;slf4jlog4j12'를 추가.</p>
+<p>Ref. <a href="https://medium.com/@chandreshpancholi007/how-to-setup-apache-kafka-source-code-on-intellij-b204966d7c2">https://medium.com/@chandreshpancholi007/how-to-setup-apache-kafka-source-code-on-intellij-b204966d7c2</a></p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+          
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#step-1-git-clone">Step-1. Git clone</a></li>
+    <li><a href="#step-2-build">Step-2. Build</a></li>
+    <li><a href="#step-3-run-kafka">Step-3. Run Kafka</a></li>
+    <li><a href="#error-1">Error-#1</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

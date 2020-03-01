@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Spring bean life cycle"><meta property="og:title" content="Spring bean life cycle" />
+<meta property="og:description" content="스프링에서는 빈의 생명주기 관리를 위한 방법을 몇가지를 제공하고 있다. 본 문서에서는 스프링 빈의 생명주기를 알아보고 관련 인터페이스 몇가지를 알아보자.
+Spring bean life cycle overview  Part 1 - 빈 생성이후 사용전까지 각 단계, 전 처리 단계, 각 생성자 호출하여 생성. Part 2 - 빈 삭제 단계  Aware Interfaces 많이 사용되는 인터페이스.
+ BeanFactoryAware : setBeanFactory() 제공 BeanNameAware : ThesetVeanName() 빈의 이름을 생성하는 인터페이스 제공 ApplicationContextAware : ThesetApplicationContext() 해당 빈의 ApplicationContext 객체 제공." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_bean_understanding/" />
+<meta property="article:published_time" content="2020-01-15T10:32:09+00:00" />
+<meta property="article:modified_time" content="2020-01-15T10:32:09+00:00" />
+<title>Spring bean life cycle | henry site</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/book.min.829f7602029a29a47bf1b0c9c4bb52982089a6d13558c9433d3c8b7e38c8b3b8.css" integrity="sha256-gp92AgKaKaR78bDJxLtSmCCJptE1WMlDPTyLfjjIs7g=">
+
+
+<script defer src="/en.search.min.d5cb1ab78daa3fcce80675b72ff620313b03e5f65e247253ee6040394d8e24bf.js" integrity="sha256-1csat42qP8zoBnW3L/YgMTsD5fZeJHJT7mBAOU2OJL8="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>henry site</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/shortcodes/" class="">Shortcodes</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/buttons/" class="">Buttons</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/katex/" class="">Katex</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/mermaid/" class="">Mermaid</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/shortcodes/task/" class="">Task</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li class="book-section-flat" >
+    
+
+  
+  <a href="/docs/categories/" class="">Categories</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="collapsed ">프로그래밍</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/" class="collapsed ">Java Script</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/" class="collapsed ">Spring Boot</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/batch_init/" class="">스프링 부트배치 디비 설정</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_bean_understanding/" class="active">Spring bean life cycle</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring-20191205/" class="">Spring_20191205</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/springsecurity_#1/" class="">스프링 시큐리티 이해하기</a>
+  
+
+</li>
+      
+    
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/jwt_authenticate_process/" class="">J W T Authenticate Process</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring-aop/" class="">Spring a O P</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/springboot/spring_basic/" class="">Spring Basic</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/java/" class="collapsed ">Java</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/shell/" class="collapsed ">Shell</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/docs/categories/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0/" class="collapsed ">빅데이터</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>도구</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>오픈소스</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>클라우드</span>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        henry
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Spring bean life cycle</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#spring-bean-life-cycle-overview">Spring bean life cycle overview</a></li>
+        <li><a href="#aware-interfaces">Aware Interfaces</a></li>
+        <li><a href="#bean-post-processor">Bean Post Processor</a></li>
+        <li><a href="#initializingbean-and-disposablebean-callback-interfaces">InitializingBean and DisposableBean Callback Interfaces</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><p>스프링에서는 빈의 생명주기 관리를 위한 방법을 몇가지를 제공하고 있다.
+본 문서에서는 스프링 빈의 생명주기를 알아보고 관련 인터페이스 몇가지를 알아보자.</p>
+<h3 id="spring-bean-life-cycle-overview">Spring bean life cycle overview</h3>
+<p><img src="../../../image/2020-01-15-11-08-05.png" alt=""></p>
+<p><img src="../../../image/2020-01-15-10-39-16.png" alt=""></p>
+<ul>
+<li>Part 1 - 빈 생성이후 사용전까지 각 단계, 전 처리 단계, 각 생성자 호출하여 생성.</li>
+<li>Part 2 - 빈 삭제 단계</li>
+</ul>
+<h3 id="aware-interfaces">Aware Interfaces</h3>
+<p>많이 사용되는 인터페이스.</p>
+<ul>
+<li><code>BeanFactoryAware</code> : setBeanFactory() 제공</li>
+<li><code>BeanNameAware</code> : ThesetVeanName() 빈의 이름을 생성하는 인터페이스 제공</li>
+<li><code>ApplicationContextAware</code> : ThesetApplicationContext() 해당 빈의 ApplicationContext 객체 제공.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">exmaple 1 
+</code></pre></div><h3 id="bean-post-processor">Bean Post Processor</h3>
+<p>BeanPostProcessor 인터페이스는 개발자가 원하는 로직 의존성 처리로직 등을 구현 할 수 있는 콜백 메소드를 정의</p>
+<ul>
+<li><code>BeanPostProcessor</code>
+<ul>
+<li>postProcessBeforeInitialization: 빈의 초기화 전 수행
+<blockquote>
+<p>InitializingBean’s afterPropertiesSet or a custom init-method.</p>
+</blockquote>
+</li>
+<li>postProcessAfterInitialization: 빈 초기화 후 수행
+<blockquote>
+<p>Spring calls this method after any bean initialization callbacks.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="initializingbean-and-disposablebean-callback-interfaces">InitializingBean and DisposableBean Callback Interfaces</h3>
+<ul>
+<li><code>InitializingBean</code>
+<ul>
+<li>afterPropertiesSet 메소드 선언 , 초기화 로직 작성 가능.</li>
+</ul>
+</li>
+<li><code>DisposableBean</code>
+<ul>
+<li>destroy 메서드 선언, 빈의 삭제와 관련 코드 클린업</li>
+</ul>
+</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+
+
+</div>
+
+ 
+          
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#spring-bean-life-cycle-overview">Spring bean life cycle overview</a></li>
+        <li><a href="#aware-interfaces">Aware Interfaces</a></li>
+        <li><a href="#bean-post-processor">Bean Post Processor</a></li>
+        <li><a href="#initializingbean-and-disposablebean-callback-interfaces">InitializingBean and DisposableBean Callback Interfaces</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TypsScript on henry site</title>
+    <link>https://gurioh.github.io/tags/typsscript/</link>
+    <description>Recent content in TypsScript on henry site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Jan 2020 16:42:29 +0000</lastBuildDate>
+    
+	<atom:link href="https://gurioh.github.io/tags/typsscript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ES6 연습환경</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/javascript_es6/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/javascript_es6/</guid>
+      <description>연습환경 만들기 원하는 폴더에서 아래 명령어 입력
+&amp;gt;npm init
+기본 정보들을 입력하고 package.json 이 생성된다.
+Babel CLI 설치
+&amp;gt; npm install --save-dev babel-cli
+위와 같이 package.json 파일에서 설정이 된걸 확인 할 수 있다.
+그리고 &amp;lsquo;start&amp;rsquo;, &amp;lsquo;test&amp;rsquo; 등등 npm 명령어를 등록하면 터미널에서 간단하게 코드를 실행할 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>ES6 연습환경</title>
+      <link>https://gurioh.github.io/posts/language/javascript/javascript_es6/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/language/javascript/javascript_es6/</guid>
+      <description>연습환경 만들기 원하는 폴더에서 아래 명령어 입력
+&amp;gt;npm init
+기본 정보들을 입력하고 package.json 이 생성된다.
+Babel CLI 설치
+&amp;gt; npm install --save-dev babel-cli
+위와 같이 package.json 파일에서 설정이 된걸 확인 할 수 있다.
+그리고 &amp;lsquo;start&amp;rsquo;, &amp;lsquo;test&amp;rsquo; 등등 npm 명령어를 등록하면 터미널에서 간단하게 코드를 실행할 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>타입스크립트로 리액트 사용하기</title>
+      <link>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/typescript_01/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/docs/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/javascript/typescript_01/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>타입스크립트로 리액트 사용하기</title>
+      <link>https://gurioh.github.io/posts/language/javascript/typescript_01/</link>
+      <pubDate>Wed, 15 Jan 2020 16:42:29 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/language/javascript/typescript_01/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scrum on henry site</title>
+    <link>https://gurioh.github.io/tags/scrum/</link>
+    <description>Recent content in Scrum on henry site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Nov 2019 19:37:57 +0000</lastBuildDate>
+    
+	<atom:link href="https://gurioh.github.io/tags/scrum/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Agile daily scrum</title>
+      <link>https://gurioh.github.io/posts/seminar/agile/agile_daily_scrum/</link>
+      <pubDate>Fri, 01 Nov 2019 19:37:57 +0000</pubDate>
+      
+      <guid>https://gurioh.github.io/posts/seminar/agile/agile_daily_scrum/</guid>
+      <description>#스크럼 마스터 역할
+###진행
+ 이슈 유도  ###개발속도 확인 및 고융
+ 번다운차트 활용 필요한 경우 우선순위  ###장애요소 수집 및 해소
+###커뮤니케이션</description>
+    </item>
+    
+  </channel>
+</rss>
